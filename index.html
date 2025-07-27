@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skirk Bot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background: url('https://i.postimg.cc/C58Ktjsr/wp13793193-skirk-wallpapers-1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur830.cur'), auto;
+  }
+
+  a, button {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur830.cur'), auto;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 64, 0.7);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #00f0ff55;
+    backdrop-filter: blur(8px);
+  }
+
+  nav button {
+    margin: 0 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: black;
+    border: 1px solid #00d9ff33;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.1);
+    overflow: hidden;
+  }
+
+  nav button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00d9ff;
+  }
+
+  nav button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, #00f2ff88 10%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  nav button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  nav button span {
+    position: relative;
+    z-index: 1;
+  }
+
+  section {
+    min-height: 100vh;
+    padding: 4rem;
+    background-color: rgba(0, 0, 32, 0.6);
+  }
+
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .grid-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    flex-direction: row;
+  }
+
+  .grid-buttons a {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #0048ff, #00bfff);
+    border-radius: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
+  }
+
+  .grid-buttons a:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 25px #00f0ffaa;
+  }
+
+  .grid-buttons a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #00e6ff88 10%, transparent 70%);
+    transition: transform 0.4s ease;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .grid-buttons a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .grid-buttons a span {
+    position: relative;
+    z-index: 1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 64, 0.8);
+    border-top: 2px solid #00f0ff55;
+  }
+
+  #how p {
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+  }
+</style>
+
+  <section id="intro">
+    <h1>Welcome to Skirk Bot</h1>
+    <div class="grid-buttons">
+      <a href="https://discord.com/discovery/applications/1131915476335870023" target="_blank"><span>1. Invite Bot</span></a>
+      <a href="https://discord.gg/ApE66m9FVu" target="_blank"><span>2. Join Server</span></a>
+      <a href="#policy"><span>3. Privacy & Policy</span></a>
+      <a href="#how"><span>4. How to Use</span></a>
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <img src="https://i.postimg.cc/HnLZV3F0/skirk-character-demo-skirk-animated-demo.gif" alt="Skirk GIF" width="60%" style="border-radius: 20px; box-shadow: 0 0 20px #0099ff;">
+    </div>
+    
+  </section>
+
+<section id="how" style="padding: 2rem 0;">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="https://i.postimg.cc/sDnqBvd1/battle.png" alt="battle">
+      <img src="https://i.postimg.cc/tCR8CFcL/burst.png" alt="burst">
+      <img src="https://i.postimg.cc/KjxwTT83/hunt.png" alt="hunt">
+      <img src="https://i.postimg.cc/QdwzbwM3/shop.png" alt="shop">
+      <img src="https://i.postimg.cc/y6ywHLLm/w-wish-100.png" alt="wish100">
+      <img src="https://i.postimg.cc/d0CxS67T/wallpaper.png" alt="wallpaper">
+      <img src="https://i.postimg.cc/yxj5yNDQ/wish.png" alt="wish">
+    </div>
+  </div>
+
+<div class="help-text-glow">
+  <h2><img src="https://i.postimg.cc/X7WPJm2H/e510234ba1f0536294e70e028f291e6c-removebg-preview-256x256.png" alt="Skirk Emoji" style="height: 1.2em; vertical-align: middle;"> Skirk Help Menu</h2>
+  <p>Discover Skirk's full functionality — hunting, PvP, wishing, shipping, systems, and more!</p>
+
+  <div class="help-category">🎮 Gameplay</div>
+  <ul>
+    <li>› <code>--apply</code> – Register as a hunter</li>
+    <li>› <code>--hunt</code> – Fight monsters & collect loot</li>
+    <li>› <code>--sell</code> – Convert loot to Mora</li>
+    <li>› <code>--shop</code> – Trade Mora for Primogems</li>
+    <li>› <code>--wish</code> – Gacha: Pull characters/weapons</li>
+    <li>› <code>--profile</code> – View your stats & pity</li>
+    <li>› <code>--vote</code> – Earn 6K Mora + Primos</li>
+    <li>› <code>--cloot</code> / <code>--wloot</code> – View your pulls</li>
+    <li>› <code>--shop1</code> – View wallpaper shop</li>
+    <li>› <code>--buy [code]</code> – Buy wallpaper</li>
+    <li>› <code>--mywalls</code> – View owned wallpapers</li>
+    <li>› <code>--setwallpaper [code]</code> – Equip wallpaper</li>
+    <li>› <code>--addteam</code> / <code>--removeteam</code> / <code>--team</code> – Manage team</li>
+    <li>› <code>--battle</code> – Fight weekly bosses</li>
+    <li>› <code>--daily</code> – Get your daily quests</li>
+    <li>› <code>--leaderboard</code> / <code>--blist</code> – Rankings</li>
+    <li>› <code>/add_weapon</code> / <code>/remove_weapon</code> – Equip/unequip weapon</li>
+  </ul>
+
+  <div class="help-category">💞 Shipping</div>
+  <ul>
+    <li>› <code>--ship</code> – Ship with a random user</li>
+    <li>› <code>--ship @user</code> – Ship with someone specific</li>
+    <li>› <code>--gship</code> – Genshin character ship</li>
+    <li>› <code>--gship [char]</code> – Specific character</li>
+    <li>› <code>--gship name1 name2</code> – Custom names</li>
+    <li>› <code>--tship</code> – Genshin x Genshin ship</li>
+    <li>› <code>--list</code> – All shippable characters</li>
+  </ul>
+
+  <div class="help-category">⚔️ PvP</div>
+  <ul>
+    <li>› <code>pvp</code> – Battle someone from the server</li>
+  </ul>
+
+  <div class="help-category">⚙️ System</div>
+  <ul>
+    <li>› <code>/enableannouncing</code> – Enable boss alerts</li>
+    <li>› <code>/disableannouncing</code> – Disable alerts</li>
+    <li>› <code>/setannounce</code> – Set alert channel</li>
+    <li>› <code>/embed</code> – Create embed</li>
+    <li>› <code>/edit embed</code> – Edit embed (Admin-only)</li>
+    <li>› <code>--setprefix [symbol]</code> – Change prefix</li>
+    <li>› <code>--prefix</code> – View current prefix</li>
+  </ul>
+</div>
+<body>
+<div class="grid-buttons">
+  <a href="https://discord.com/discovery/applications/1131915476335870023" target="_blank"><span>1. Invite Bot</span></a>
+  <a href="https://discord.gg/ApE66m9FVu" target="_blank"><span>2. Join Server</span></a>
+</div>
+</body>
+
+<style>
+  /* Global styles */
+  
+  
+  body {
+    background: linear-gradient(to bottom right, #000010, #001f33);
+    font-family: "Segoe UI", sans-serif;
+    color: #e6f9ff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  section {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  section:nth-of-type(1) { animation-delay: 0.2s; }
+  section:nth-of-type(2) { animation-delay: 0.4s; }
+  section:nth-of-type(3) { animation-delay: 0.6s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #intro {
+    background: rgba(0, 0, 32, 0.7);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3), 0 0 50px rgba(0, 255, 255, 0.2);
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+    max-width: 90%;
+    transition: box-shadow 0.4s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  #intro:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.5), 0 0 70px rgba(0, 255, 255, 0.4);
+  }
+
+  #intro h1 {
+    font-size: 2.75rem;
+    color: #fff;
+    text-shadow: 0 0 15px #00eaffaa;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #intro img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #00f0ff, 0 0 40px #00e6ff44;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #intro img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px #00f0ff, 0 0 70px #00e6ff77;
+  }
+
+  .help-text-glow {
+    max-width: 780px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(5, 15, 25, 0.9);
+    border: 1px solid #00ccff;
+    box-shadow: 0 0 20px #00ccff88;
+  }
+
+  .help-text-glow h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 0.8rem;
+    background: linear-gradient(to right, #002244, #004477);
+    color: #00ccff;
+    border-radius: 12px;
+    text-shadow: 0 0 8px #00ccff;
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .help-category {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    color: #00ccff;
+    font-weight: bold;
+    text-shadow: 0 0 6px #00ccff;
+    border-bottom: 1px solid #00ccff88;
+    padding-bottom: 0.4rem;
+  }
+
+  .help-text-glow ul {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .help-text-glow li {
+    margin: 0.3rem 0;
+    color: #e6f9ff;
+    text-shadow: 0 0 4px #00ccff88;
+  }
+
+  .help-text-glow code {
+    background: rgba(0, 153, 255, 0.1);
+    border: 1px solid rgba(0, 153, 255, 0.2);
+    border-radius: 5px;
+    padding: 2px 6px;
+    color: #00ddff;
+    font-size: 0.95rem;
+    font-family: monospace;
+  }
+
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 12px rgba(0, 191, 255, 0.4); }
+    50% { box-shadow: 0 0 22px rgba(0, 191, 255, 0.9); }
+    100% { box-shadow: 0 0 12px rgba(0, 191, 255, 0.4); }
+  }
+
+  .carousel-container {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 0 20px #00bfff;
+    position: relative;
+    background: #111;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+    cursor: grab;
+  }
+
+  .carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .help-text {
+    max-width: 720px;
+    margin: 2rem auto;
+    background: #222;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #00bfff;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+  }
+
+  .help-text h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1.8rem;
+    padding: 0.7rem 1rem;
+    background: linear-gradient(to right, #001f33, #003d66);
+    color: #00bfff;
+    border: 1px solid #00bfff;
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+    text-shadow: 0 0 6px #00bfff;
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .help-text strong {
+    color: #00bfff;
+  }
+</style>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = track.children;
+  let index = 0;
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    updateSlide();
+  }
+
+  function updateSlide() {
+    const width = track.parentElement.offsetWidth;
+    track.style.transform = `translateX(-${index * width}px)`;
+  }
+
+  setInterval(nextSlide, 4000);
+
+  let isDown = false;
+  let startX, scrollLeft;
+
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    track.style.transition = "none";
+    startX = e.pageX;
+    scrollLeft = index * track.parentElement.offsetWidth;
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDown) return;
+    isDown = false;
+    const moved = e.pageX - startX;
+    if (moved > 50 && index > 0) index--;
+    else if (moved < -50 && index < slides.length - 1) index++;
+    updateSlide();
+    track.style.transition = "transform 0.5s ease";
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const dx = e.pageX - startX;
+    track.style.transform = `translateX(${-index * track.parentElement.offsetWidth + dx}px)`;
+  });
+
+  window.addEventListener('resize', updateSlide);
+</script>
+
+
+
+<section id="policy">
+  <h2 style="font-weight: 700; font-size: 2rem; color: #00ccff; text-shadow: 0 0 10px #0088ff; margin-top: 3rem;">
+    📜 Privacy & Data Policy
+  </h2>
+
+  <div style="max-width: 850px; margin: 2rem auto; background: rgba(0, 0, 0, 0.6); padding: 2.5rem; border-radius: 20px; box-shadow: 0 0 20px rgba(0, 136, 255, 0.6); font-size: 1.1rem; color: #ddd; line-height: 1.8; text-align: left;">
+    
+    <p><strong>Skirk Bot</strong> is designed with your privacy and data safety in mind. We only collect the bare minimum required to provide an immersive and enjoyable experience. We do not track personal activity, and your data is never sold or shared.</p>
+
+    <hr style="border: 0; border-top: 1px solid #00ccff; margin: 1.5rem 0;">
+
+    <h3 style="color: #00ccff; font-size: 1.3rem; font-weight: 600;">✅ What We Collect</h3>
+    <ul style="list-style: none; padding-left: 1rem;">
+      <li>• Your Discord user ID</li>
+      <li>• Game-related data (wishes, team setup, inventory, levels)</li>
+      <li>• Command usage (e.g. `--hunt`, `/profile`, `/pvp`)</li>
+    </ul>
+
+    <h3 style="color: #00ccff; font-size: 1.3rem; font-weight: 600; margin-top: 1.5rem;">❌ What We Don’t Collect</h3>
+    <ul style="list-style: none; padding-left: 1rem;">
+      <li>• Message logs or chat history</li>
+      <li>• Presence data logs (no online/offline storage)</li>
+      <li>• Personal identifiable info (email, IP, etc.)</li>
+      <li>• Anything unrelated to gameplay</li>
+    </ul>
+
+    <h3 style="color: #00ccff; font-size: 1.3rem; font-weight: 600; margin-top: 1.5rem;">🔐 How We Use Your Data</h3>
+    <ul style="list-style: none; padding-left: 1rem;">
+      <li>• To enable core features like profiles, gacha pulls, and leaderboards</li>
+      <li>• To personalize your experience (team builds, wallpaper settings)</li>
+      <li>• To improve game balance and engagement over time</li>
+    </ul>
+
+    <h3 style="color: #00ccff; font-size: 1.3rem; font-weight: 600; margin-top: 1.5rem;">🔄 Opt-Out & Removal</h3>
+    <p>If you want your data deleted, just contact us through our support server. You can also disable presence-based features by going invisible or not using commands that rely on online status.</p>
+
+    <p style="margin-top: 2rem; font-size: 0.95rem; color: #999;">Last Updated: July 2025</p>
+  </div>
+</section>
+
+<footer>
+  <p>Skirk Bot &copy; 2025 • Made with 💙 by Galaxy Hunter</p>
+</footer>
+
+<script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
