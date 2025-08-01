@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* All your existing CSS styles remain the same */
     :root {
       --primary-color: #00d9ff;
       --secondary-color: #0048ff;
@@ -169,6 +170,59 @@
     .enter-btn:hover::before {
       width: 300px;
       height: 300px;
+    }
+    
+    /* Social buttons for intro overlay */
+    .intro-social-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .intro-social-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .intro-social-button:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .intro-social-button.youtube {
+      background: linear-gradient(135deg, #FF0000, #cc0000);
+    }
+    
+    .intro-social-button.discord {
+      background: linear-gradient(135deg, #5865F2, #4752C4);
+    }
+    
+    .intro-social-button.instagram {
+      background: linear-gradient(135deg, #E1306C, #C13584);
+    }
+    
+    .intro-social-button.spotify {
+      background: linear-gradient(135deg, #1DB954, #1AA34A);
+    }
+    
+    .intro-social-button.website {
+      background: linear-gradient(135deg, #9146FF, #7C3AED);
+      background-image: url('https://i.postimg.cc/2jtYd7GK/a2d570aa9a5f6deed118c5074d86ed23.jpg');
+      background-size: cover;
+      background-position: center;
     }
     
     /* Portal Effect */
@@ -1223,6 +1277,12 @@
         padding: 1rem 2rem;
         font-size: 1.2rem;
       }
+      
+      .intro-social-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
     }
     
     @media (max-width: 480px) {
@@ -1271,6 +1331,12 @@
       .creator-profile {
         width: 60px;
         height: 60px;
+      }
+      
+      .intro-social-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
       }
     }
     
@@ -1684,6 +1750,24 @@
       <div class="intro-icon"></div>
       <h1>Skirk Bot</h1>
       <p>Ultimate Genshin Impact Discord Bot</p>
+      
+      <!-- Social buttons added here -->
+      <div class="intro-social-buttons">
+        <a href="https://www.youtube.com/@GalaxyHunter_Atomic" target="_blank" class="intro-social-button youtube" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://discord.gg/ApE66m9FVu" target="_blank" class="intro-social-button discord" title="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://www.instagram.com/galaxyhunter999/" target="_blank" class="intro-social-button instagram" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://open.spotify.com/user/3175tlxvpow2m6y7hgmfbixgr4e4?si=97b83fcbefd94478" target="_blank" class="intro-social-button spotify" title="Spotify">
+          <i class="fab fa-spotify"></i>
+        </a>
+        <a href="https://galaxy-hunter-neon.vercel.app/" target="_blank" class="intro-social-button website" title="Website"></a>
+      </div>
+      
       <button class="enter-btn" id="enterBtn">Enter the World</button>
     </div>
     <div class="portal" id="portal"></div>
@@ -3468,7 +3552,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    // Enhanced Intro Experience
+    // Initialize intro overlay functionality
     document.addEventListener('DOMContentLoaded', function() {
       // Create floating particles for intro
       const introParticles = document.getElementById('introParticles');
@@ -3499,21 +3583,24 @@
       const introOverlay = document.getElementById('introOverlay');
       const portal = document.getElementById('portal');
       
-      enterBtn.addEventListener('click', function() {
-        // Activate portal effect
-        portal.classList.add('active');
-        
-        // Hide intro overlay after portal animation
-        setTimeout(() => {
-          introOverlay.classList.add('hidden');
+      // Make sure the button click handler works properly
+      if (enterBtn) {
+        enterBtn.addEventListener('click', function() {
+          // Activate portal effect
+          portal.classList.add('active');
           
-          // Trigger scroll animations for sections
-          const fadeElements = document.querySelectorAll('.fade-in');
-          fadeElements.forEach(element => {
-            element.classList.add('visible');
-          });
-        }, 1500);
-      });
+          // Hide intro overlay after portal animation
+          setTimeout(() => {
+            introOverlay.classList.add('hidden');
+            
+            // Trigger scroll animations for sections
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+              element.classList.add('visible');
+            });
+          }, 1500);
+        });
+      }
     });
     
     // Generate random stars
@@ -3594,6 +3681,57 @@
     };
     
     window.addEventListener('scroll', fadeInOnScroll);
+    
+    // Navigation buttons with airplane transition
+    const navButtons = document.querySelectorAll('nav button');
+    const pageTransition = document.createElement('div');
+    pageTransition.className = 'page-transition';
+    pageTransition.innerHTML = '<div class="airplane">✈</div>';
+    document.body.appendChild(pageTransition);
+    
+    navButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const buttonText = button.textContent.trim();
+        let targetId;
+        
+        switch(buttonText) {
+          case 'Home':
+            targetId = 'intro';
+            break;
+          case 'Features':
+            targetId = 'how';
+            break;
+          case 'Premium':
+            targetId = 'premium-info';
+            break;
+          case 'Support':
+            window.open('https://discord.gg/ApE66m9FVu', '_blank');
+            return; // No transition for external links
+        }
+        
+        if (targetId) {
+          // Show transition overlay
+          pageTransition.classList.add('active');
+          
+          // Reset and start airplane animation
+          const airplane = pageTransition.querySelector('.airplane');
+          airplane.style.animation = 'none';
+          setTimeout(() => {
+            airplane.style.animation = 'fly 2s ease-in-out';
+          }, 10);
+          
+          // Scroll to target after a delay
+          setTimeout(() => {
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            
+            // Hide transition overlay after animation completes
+            setTimeout(() => {
+              pageTransition.classList.remove('active');
+            }, 1000);
+          }, 1000);
+        }
+      });
+    });
     
     // Carousel functionality
     const track = document.querySelector('.carousel-track');
@@ -3677,62 +3815,6 @@
       progressBar.value = 0;
     });
     
-    audio.addEventListener('play', () => {
-      playPauseBtn.textContent = '⏸';
-    });
-    
-    audio.addEventListener('pause', () => {
-      playPauseBtn.textContent = '▶';
-    });
-    
-    // Navigation buttons with airplane transition
-    const navButtons = document.querySelectorAll('nav button');
-    const pageTransition = document.getElementById('pageTransition');
-    const airplane = document.getElementById('airplane');
-    
-    navButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const buttonText = button.textContent.trim();
-        let targetId;
-        
-        switch(buttonText) {
-          case 'Home':
-            targetId = 'intro';
-            break;
-          case 'Features':
-            targetId = 'how';
-            break;
-          case 'Premium':
-            targetId = 'premium-info';
-            break;
-          case 'Support':
-            window.open('https://discord.gg/ApE66m9FVu', '_blank');
-            return; // No transition for external links
-        }
-        
-        if (targetId) {
-          // Show transition overlay
-          pageTransition.classList.add('active');
-          
-          // Reset and start airplane animation
-          airplane.style.animation = 'none';
-          setTimeout(() => {
-            airplane.style.animation = 'fly 2s ease-in-out';
-          }, 10);
-          
-          // Scroll to target after a delay
-          setTimeout(() => {
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-            
-            // Hide transition overlay after animation completes
-            setTimeout(() => {
-              pageTransition.classList.remove('active');
-            }, 1000);
-          }, 1000);
-        }
-      });
-    });
-    
     // Tab functionality
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -3741,11 +3823,11 @@
       button.addEventListener('click', () => {
         const tabId = button.getAttribute('data-tab');
         
-        // Remove active class from all tabs and contents
+        // Remove active class from all buttons and contents
         tabButtons.forEach(btn => btn.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
         
-        // Add active class to clicked tab and corresponding content
+        // Add active class to clicked button and corresponding content
         button.classList.add('active');
         document.getElementById(tabId).classList.add('active');
       });
@@ -3753,42 +3835,39 @@
     
     // Search functionality
     const searchInput = document.getElementById('commandSearch');
-    const commandBoxes = document.querySelectorAll('.command-box');
     const noResults = document.getElementById('noResults');
     
-    searchInput.addEventListener('input', () => {
-      const searchTerm = searchInput.value.toLowerCase();
-      let visibleCount = 0;
-      
-      commandBoxes.forEach(box => {
-        const commandName = box.querySelector('.command-name-large').textContent.toLowerCase();
-        const commandSyntax = box.querySelector('.command-syntax').textContent.toLowerCase();
-        const commandDesc = box.querySelector('.command-description').textContent.toLowerCase();
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const commandBoxes = document.querySelectorAll('.command-box');
+        let hasResults = false;
         
-        if (commandName.includes(searchTerm) || commandSyntax.includes(searchTerm) || commandDesc.includes(searchTerm)) {
-          box.style.display = 'flex';
-          visibleCount++;
-        } else {
-          box.style.display = 'none';
+        commandBoxes.forEach(box => {
+          const text = box.textContent.toLowerCase();
+          if (text.includes(searchTerm)) {
+            box.style.display = '';
+            hasResults = true;
+          } else {
+            box.style.display = 'none';
+          }
+        });
+        
+        // Show/hide no results message
+        if (noResults) {
+          noResults.style.display = hasResults ? 'none' : 'block';
         }
       });
-      
-      // Show/hide no results message
-      if (visibleCount === 0 && searchTerm !== '') {
-        noResults.style.display = 'block';
-      } else {
-        noResults.style.display = 'none';
-      }
-    });
+    }
     
-    // Copy to clipboard functionality
+    // Copy button functionality
     const copyButtons = document.querySelectorAll('.copy-button');
     
     copyButtons.forEach(button => {
       button.addEventListener('click', () => {
         const textToCopy = button.getAttribute('data-copy');
         
-        // Create a temporary textarea element
+        // Create a temporary textarea element to copy the text
         const textarea = document.createElement('textarea');
         textarea.value = textToCopy;
         document.body.appendChild(textarea);
@@ -3799,39 +3878,10 @@
         // Change button text temporarily
         const originalText = button.textContent;
         button.textContent = 'Copied!';
-        button.style.background = 'rgba(76, 175, 80, 0.3)';
-        
-        // Reset button after 2 seconds
         setTimeout(() => {
           button.textContent = originalText;
-          button.style.background = '';
         }, 2000);
       });
-    });
-    
-    // Add staggered animation to help menu items
-    const helpItems = document.querySelectorAll('.help-text-glow li');
-    helpItems.forEach((item, index) => {
-      item.style.animationDelay = `${index * 0.05}s`;
-      item.classList.add('fade-in');
-    });
-    
-    // Add animation to command cards
-    const commandCards = document.querySelectorAll('.command-box');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    commandCards.forEach(card => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(card);
     });
   </script>
 </body>
