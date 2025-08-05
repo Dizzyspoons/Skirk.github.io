@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* All your existing CSS styles remain the same */
+    /* CSS Variables */
     :root {
       --primary-color: #00d9ff;
       --secondary-color: #0048ff;
@@ -27,6 +27,7 @@
       --chibi-icon: url('https://i.postimg.cc/t4HSQQf0/9f3ab8a0c05635c6685d2fd4df0ca369-1.jpg');
     }
     
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -51,7 +52,7 @@
       cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur830.cur'), auto;
     }
     
-    /* Enhanced Intro Overlay */
+    /* Intro Overlay */
     .intro-overlay {
       position: fixed;
       top: 0;
@@ -877,6 +878,40 @@
       color: var(--light-text);
     }
     
+    /* Donation Tiers */
+    .donation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .donation-tier {
+      background: rgba(0, 30, 60, 0.7);
+      border: 1px solid rgba(0, 200, 255, 0.3);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .donation-tier:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 150, 255, 0.3);
+      border-color: var(--primary-color);
+    }
+    
+    .donation-tier h4 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .donation-tier p {
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+    
     /* Policy Section */
     #policy {
       background: linear-gradient(135deg, rgba(0, 10, 30, 0.8), rgba(0, 20, 60, 0.7));
@@ -1283,6 +1318,47 @@
         height: 50px;
         font-size: 1.2rem;
       }
+      
+      /* Mobile improvements for premium section */
+      .tier-card {
+        padding: 1.2rem;
+      }
+      
+      .tier-card h3 {
+        font-size: 1.1rem;
+      }
+      
+      .tier-card ul {
+        padding-left: 0.5rem;
+      }
+      
+      .tier-card li {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+      
+      .donation-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.8rem;
+      }
+      
+      /* Mobile improvements for commands section */
+      .command-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .command-box {
+        padding: 1rem;
+      }
+      
+      .command-icon-large {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .command-name-large {
+        font-size: 1rem;
+      }
     }
     
     @media (max-width: 480px) {
@@ -1302,6 +1378,9 @@
       
       #intro img {
         width: 95%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 15px;
       }
       
       .help-text-glow, #premium-info, #policy {
@@ -1849,7 +1928,7 @@
       <img
         src="https://i.postimg.cc/HnLZV3F0/skirk-character-demo-skirk-animated-demo.gif"
         alt="Skirk GIF"
-        style="border-radius: 200px; box-shadow: 0 0 20px #0099ff; width: 1500px; height: 300px;"
+        style="border-radius: 15px; box-shadow: 0 0 20px #0099ff; max-width: 100%; height: auto;"
       />
     </div>
   </section>
@@ -1899,7 +1978,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Register</div>
-                <div class="command-syntax">--apply</div>
+                <div class="command-syntax">/apply or --apply</div>
               </div>
             </div>
             <div class="command-description">
@@ -1907,6 +1986,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /apply
+                <button class="copy-button" data-copy="/apply">Copy</button>
+              </div>
               <div class="command-example">
                 --apply
                 <button class="copy-button" data-copy="--apply">Copy</button>
@@ -1921,7 +2004,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Hunt Monsters</div>
-                <div class="command-syntax">--hunt</div>
+                <div class="command-syntax">/hunt or --hunt</div>
               </div>
             </div>
             <div class="command-description">
@@ -1929,6 +2012,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /hunt
+                <button class="copy-button" data-copy="/hunt">Copy</button>
+              </div>
               <div class="command-example">
                 --hunt
                 <button class="copy-button" data-copy="--hunt">Copy</button>
@@ -1943,7 +2030,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Sell Loot</div>
-                <div class="command-syntax">--sell</div>
+                <div class="command-syntax">/sell or --sell</div>
               </div>
             </div>
             <div class="command-description">
@@ -1951,6 +2038,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /sell
+                <button class="copy-button" data-copy="/sell">Copy</button>
+              </div>
               <div class="command-example">
                 --sell
                 <button class="copy-button" data-copy="--sell">Copy</button>
@@ -1965,7 +2056,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Shop</div>
-                <div class="command-syntax">--shop</div>
+                <div class="command-syntax">/shop or --shop</div>
               </div>
             </div>
             <div class="command-description">
@@ -1973,6 +2064,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /shop
+                <button class="copy-button" data-copy="/shop">Copy</button>
+              </div>
               <div class="command-example">
                 --shop
                 <button class="copy-button" data-copy="--shop">Copy</button>
@@ -1987,7 +2082,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Wish</div>
-                <div class="command-syntax">--wish</div>
+                <div class="command-syntax">/wish or --wish</div>
               </div>
             </div>
             <div class="command-description">
@@ -1995,6 +2090,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /wish
+                <button class="copy-button" data-copy="/wish">Copy</button>
+              </div>
               <div class="command-example">
                 --wish
                 <button class="copy-button" data-copy="--wish">Copy</button>
@@ -2009,7 +2108,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Profile</div>
-                <div class="command-syntax">--profile</div>
+                <div class="command-syntax">/profile or --profile</div>
               </div>
             </div>
             <div class="command-description">
@@ -2017,6 +2116,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /profile
+                <button class="copy-button" data-copy="/profile">Copy</button>
+              </div>
               <div class="command-example">
                 --profile
                 <button class="copy-button" data-copy="--profile">Copy</button>
@@ -2031,7 +2134,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Daily Quests</div>
-                <div class="command-syntax">--daily</div>
+                <div class="command-syntax">/daily or --daily</div>
               </div>
             </div>
             <div class="command-description">
@@ -2039,6 +2142,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /daily
+                <button class="copy-button" data-copy="/daily">Copy</button>
+              </div>
               <div class="command-example">
                 --daily
                 <button class="copy-button" data-copy="--daily">Copy</button>
@@ -2053,7 +2160,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Battle Bosses</div>
-                <div class="command-syntax">--battle</div>
+                <div class="command-syntax">/battle or --battle</div>
               </div>
             </div>
             <div class="command-description">
@@ -2062,8 +2169,90 @@
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
+                /battle
+                <button class="copy-button" data-copy="/battle">Copy</button>
+              </div>
+              <div class="command-example">
                 --battle
                 <button class="copy-button" data-copy="--battle">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-vote-yea"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Vote Rewards</div>
+                <div class="command-syntax">/vote or --vote</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Vote for the bot and earn 6,000 Mora + Primogems as a reward.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /vote
+                <button class="copy-button" data-copy="/vote">Copy</button>
+              </div>
+              <div class="command-example">
+                --vote
+                <button class="copy-button" data-copy="--vote">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fa-solid fa-toolbox"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Character Loot</div>
+                <div class="command-syntax">/cloot or --cloot</div>
+              </div>
+            </div>
+            <div class="command-description">
+              View all the characters you've obtained from wishing.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /cloot
+                <button class="copy-button" data-copy="/cloot">Copy</button>
+              </div>
+              <div class="command-example">
+                --cloot
+                <button class="copy-button" data-copy="--cloot">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fa-solid fa-toolbox"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Weapon Loot</div>
+                <div class="command-syntax">/wloot or --wloot</div>
+              </div>
+            </div>
+            <div class="command-description">
+              View all the weapons you've obtained from wishing.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /wloot
+                <button class="copy-button" data-copy="/wloot">Copy</button>
+              </div>
+              <div class="command-example">
+                --wloot
+                <button class="copy-button" data-copy="--wloot">Copy</button>
               </div>
             </div>
           </div>
@@ -2080,7 +2269,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Wallpaper Shop</div>
-                <div class="command-syntax">--shop1</div>
+                <div class="command-syntax">/shop1 or --shop1</div>
               </div>
             </div>
             <div class="command-description">
@@ -2088,6 +2277,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /shop1
+                <button class="copy-button" data-copy="/shop1">Copy</button>
+              </div>
               <div class="command-example">
                 --shop1
                 <button class="copy-button" data-copy="--shop1">Copy</button>
@@ -2102,7 +2295,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Buy Wallpaper</div>
-                <div class="command-syntax">--buy [code]</div>
+                <div class="command-syntax">/buy [code] or --buy [code]</div>
               </div>
             </div>
             <div class="command-description">
@@ -2110,6 +2303,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /buy A001
+                <button class="copy-button" data-copy="/buy A001">Copy</button>
+              </div>
               <div class="command-example">
                 --buy A001
                 <button class="copy-button" data-copy="--buy A001">Copy</button>
@@ -2124,7 +2321,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">My Wallpapers</div>
-                <div class="command-syntax">--mywalls</div>
+                <div class="command-syntax">/mywalls or --mywalls</div>
               </div>
             </div>
             <div class="command-description">
@@ -2132,6 +2329,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /mywalls
+                <button class="copy-button" data-copy="/mywalls">Copy</button>
+              </div>
               <div class="command-example">
                 --mywalls
                 <button class="copy-button" data-copy="--mywalls">Copy</button>
@@ -2146,7 +2347,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Set Wallpaper</div>
-                <div class="command-syntax">--setwallpaper [code]</div>
+                <div class="command-syntax">/setwallpaper [code] or --setwallpaper [code]</div>
               </div>
             </div>
             <div class="command-description">
@@ -2154,6 +2355,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /setwallpaper A001
+                <button class="copy-button" data-copy="/setwallpaper A001">Copy</button>
+              </div>
               <div class="command-example">
                 --setwallpaper A001
                 <button class="copy-button" data-copy="--setwallpaper A001">Copy</button>
@@ -2173,7 +2378,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Add Character</div>
-                <div class="command-syntax">--addteam [character]</div>
+                <div class="command-syntax">/addteam [character] or --addteam [character]</div>
               </div>
             </div>
             <div class="command-description">
@@ -2181,6 +2386,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /addteam Hu Tao
+                <button class="copy-button" data-copy="/addteam Hu Tao">Copy</button>
+              </div>
               <div class="command-example">
                 --addteam Hu Tao
                 <button class="copy-button" data-copy="--addteam Hu Tao">Copy</button>
@@ -2195,7 +2404,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Remove Character</div>
-                <div class="command-syntax">--removeteam [character]</div>
+                <div class="command-syntax">/removeteam [character] or --removeteam [character]</div>
               </div>
             </div>
             <div class="command-description">
@@ -2203,6 +2412,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /removeteam Diluc
+                <button class="copy-button" data-copy="/removeteam Diluc">Copy</button>
+              </div>
               <div class="command-example">
                 --removeteam Diluc
                 <button class="copy-button" data-copy="--removeteam Diluc">Copy</button>
@@ -2217,7 +2430,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">View Team</div>
-                <div class="command-syntax">--team</div>
+                <div class="command-syntax">/team or --team</div>
               </div>
             </div>
             <div class="command-description">
@@ -2225,6 +2438,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /team
+                <button class="copy-button" data-copy="/team">Copy</button>
+              </div>
               <div class="command-example">
                 --team
                 <button class="copy-button" data-copy="--team">Copy</button>
@@ -2235,7 +2452,7 @@
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-              <i class="fa-solid fa-gun"></i>
+                <i class="fa-solid fa-gun"></i>
               </div>
               <div class="command-title">
                 <div class="command-name-large">Add Weapon</div>
@@ -2276,201 +2493,11 @@
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="tab-content" id="social">
-        <div class="command-category">
-          <i class="fas fa-heart"></i> Shipping System
-        </div>
-        <div class="command-grid">
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-random"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Random Ship</div>
-                <div class="command-syntax">--ship</div>
-              </div>
-            </div>
-            <div class="command-description">
-              Get paired with a random user from the server in a fun ship.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                --ship
-                <button class="copy-button" data-copy="--ship">Copy</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-user-friends"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Ship with User</div>
-                <div class="command-syntax">--ship @user</div>
-              </div>
-            </div>
-            <div class="command-description">
-              Create a ship with a specific user you mention.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                --ship @Friend
-                <button class="copy-button" data-copy="--ship @Friend">Copy</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Character Ship</div>
-                <div class="command-syntax">--gship</div>
-              </div>
-            </div>
-            <div class="command-description">
-              Create a ship with a random Genshin character.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                --gship
-                <button class="copy-button" data-copy="--gship">Copy</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Specific Character Ship</div>
-                <div class="command-syntax">--gship [character]</div>
-              </div>
-            </div>
-            <div class="command-description">
-              Create a ship with a specific Genshin character.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                --gship Raiden Shogun
-                <button class="copy-button" data-copy="--gship Raiden Shogun">Copy</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Custom Names Ship</div>
-                <div class="command-syntax">--gship name1 name2</div>
-              </div>
-            </div>
-            <div class="command-description">
-              Create a ship with two custom names of your choice.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                --gship Ayaka Kamisato
-                <button class="copy-button" data-copy="--gship Ayaka Kamisato">Copy</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-list"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Shippable Characters</div>
-                <div class="command-syntax">--list</div>
-              </div>
-            </div>
-            <div class="command-description">
-              View all characters available for shipping.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                --list
-                <button class="copy-button" data-copy="--list">Copy</button>
-              </div>
-            </div>
-          </div>
-        </div>
         
         <div class="command-category">
-          <i class="fas fa-fist-raised"></i> Battle System
+          <i class="fas fa-trophy"></i> Leaderboards
         </div>
         <div class="command-grid">
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-fist-raised"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Player vs Player</div>
-                <div class="command-syntax">pvp</div>
-              </div>
-            </div>
-            <div class="command-description">
-              Challenge another player from your server to a battle.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                pvp
-                <button class="copy-button" data-copy="pvp">Copy</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tab-content" id="system">
-        <div class="command-category">
-          <i class="fas fa-cog"></i> System Commands
-        </div>
-        <div class="command-grid">
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-vote-yea"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Vote Rewards</div>
-                <div class="command-syntax">--vote</div>
-              </div>
-            </div>
-            <div class="command-description">
-              Vote for the bot and earn 6,000 Mora + Primogems as a reward.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                --vote
-                <button class="copy-button" data-copy="--vote">Copy</button>
-              </div>
-            </div>
-          </div>
-          
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
@@ -2478,7 +2505,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Leaderboard</div>
-                <div class="command-syntax">--leaderboard</div>
+                <div class="command-syntax">/leaderboard or --leaderboard</div>
               </div>
             </div>
             <div class="command-description">
@@ -2486,6 +2513,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /leaderboard
+                <button class="copy-button" data-copy="/leaderboard">Copy</button>
+              </div>
               <div class="command-example">
                 --leaderboard
                 <button class="copy-button" data-copy="--leaderboard">Copy</button>
@@ -2500,7 +2531,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Battle Leaderboard</div>
-                <div class="command-syntax">--blist</div>
+                <div class="command-syntax">/blist or --blist</div>
               </div>
             </div>
             <div class="command-description">
@@ -2509,30 +2540,45 @@
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
+                /blist
+                <button class="copy-button" data-copy="/blist">Copy</button>
+              </div>
+              <div class="command-example">
                 --blist
                 <button class="copy-button" data-copy="--blist">Copy</button>
               </div>
             </div>
           </div>
-          
+        </div>
+      </div>
+      
+      <div class="tab-content" id="social">
+        <div class="command-category">
+          <i class="fas fa-heart"></i> Shipping System
+        </div>
+        <div class="command-grid">
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-                <i class="fa-solid fa-toolbox"></i>
+                <i class="fas fa-random"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">Character Loot</div>
-                <div class="command-syntax">--cloot</div>
+                <div class="command-name-large">Random Ship</div>
+                <div class="command-syntax">/ship or --ship</div>
               </div>
             </div>
             <div class="command-description">
-              View all the characters you've obtained from wishing.
+              Get paired with a random user from the server in a fun ship.
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
-                --cloot
-                <button class="copy-button" data-copy="--cloot">Copy</button>
+                /ship
+                <button class="copy-button" data-copy="/ship">Copy</button>
+              </div>
+              <div class="command-example">
+                --ship
+                <button class="copy-button" data-copy="--ship">Copy</button>
               </div>
             </div>
           </div>
@@ -2540,21 +2586,333 @@
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-                <i class="fa-solid fa-toolbox"></i>
+                <i class="fas fa-user-friends"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">Weapon Loot</div>
-                <div class="command-syntax">--wloot</div>
+                <div class="command-name-large">Ship with User</div>
+                <div class="command-syntax">/ship @user or --ship @user</div>
               </div>
             </div>
             <div class="command-description">
-              View all the weapons you've obtained from wishing.
+              Create a ship with a specific user you mention.
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
-                --wloot
-                <button class="copy-button" data-copy="--wloot">Copy</button>
+                /ship @Friend
+                <button class="copy-button" data-copy="/ship @Friend">Copy</button>
+              </div>
+              <div class="command-example">
+                --ship @Friend
+                <button class="copy-button" data-copy="--ship @Friend">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Character Ship</div>
+                <div class="command-syntax">/gship or --gship</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Create a ship with a random Genshin character.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /gship
+                <button class="copy-button" data-copy="/gship">Copy</button>
+              </div>
+              <div class="command-example">
+                --gship
+                <button class="copy-button" data-copy="--gship">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Specific Character Ship</div>
+                <div class="command-syntax">/gship [character] or --gship [character]</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Create a ship with a specific Genshin character.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /gship Raiden Shogun
+                <button class="copy-button" data-copy="/gship Raiden Shogun">Copy</button>
+              </div>
+              <div class="command-example">
+                --gship Raiden Shogun
+                <button class="copy-button" data-copy="--gship Raiden Shogun">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Custom Names Ship</div>
+                <div class="command-syntax">/gship name1 name2 or --gship name1 name2</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Create a ship with two custom names of your choice.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /gship Ayaka Kamisato
+                <button class="copy-button" data-copy="/gship Ayaka Kamisato">Copy</button>
+              </div>
+              <div class="command-example">
+                --gship Ayaka Kamisato
+                <button class="copy-button" data-copy="--gship Ayaka Kamisato">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Genshin x Genshin Ship</div>
+                <div class="command-syntax">/tship or --tship</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Create a ship between two random Genshin characters.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /tship
+                <button class="copy-button" data-copy="/tship">Copy</button>
+              </div>
+              <div class="command-example">
+                --tship
+                <button class="copy-button" data-copy="--tship">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-list"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Shippable Characters</div>
+                <div class="command-syntax">/list or --list</div>
+              </div>
+            </div>
+            <div class="command-description">
+              View all characters available for shipping.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /list
+                <button class="copy-button" data-copy="/list">Copy</button>
+              </div>
+              <div class="command-example">
+                --list
+                <button class="copy-button" data-copy="--list">Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="command-category">
+  <i class="fas fa-fist-raised"></i> Battle System
+</div>
+<div class="command-grid">
+  <div class="command-box">
+    <div class="command-header">
+      <div class="command-icon-large">
+        <i class="fas fa-fist-raised"></i>
+      </div>
+      <div class="command-title">
+        <div class="command-name-large">Player vs Player</div>
+        <div class="command-syntax">pvp</div>
+      </div>
+    </div>
+    <div class="command-description">
+      Challenge another player from your server to a battle.
+    </div>
+    <div class="command-examples">
+      <div class="command-examples-title">Examples:</div>
+      <div class="command-example">
+        pvp
+        <button class="copy-button" data-copy="pvp">Copy</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add the Battle command right here -->
+  <div class="command-box">
+    <div class="command-header">
+      <div class="command-icon-large">
+        <i class="fa-solid fa-user-ninja"></i>
+      </div>
+      <div class="command-title">
+        <div class="command-name-large">Battle Bosses</div>
+        <div class="command-syntax">/battle or --battle</div>
+      </div>
+    </div>
+    <div class="command-description">
+      Fight weekly bosses for exclusive rewards and materials.
+    </div>
+    <div class="command-examples">
+      <div class="command-examples-title">Examples:</div>
+      <div class="command-example">
+        /battle
+        <button class="copy-button" data-copy="/battle">Copy</button>
+      </div>
+      <div class="command-example">
+        --battle
+        <button class="copy-button" data-copy="--battle">Copy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="tab-content" id="system">
+        <div class="command-category">
+          <i class="fas fa-cog"></i> System Commands
+        </div>
+        <div class="command-grid">
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-power-off"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Enable Bot</div>
+                <div class="command-syntax">/enable</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Enable the bot in this channel (Admin-only).
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /enable
+                <button class="copy-button" data-copy="/enable">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-ban"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Disable Bot</div>
+                <div class="command-syntax">/disable</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Disable the bot in this channel (Admin-only).
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /disable
+                <button class="copy-button" data-copy="/disable">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-list"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">List Disabled Channels</div>
+                <div class="command-syntax">/listchannel</div>
+              </div>
+            </div>
+            <div class="command-description">
+              List all disabled channels (Admin-only).
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /listchannel
+                <button class="copy-button" data-copy="/listchannel">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-sliders-h"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">View Prefix</div>
+                <div class="command-syntax">/prefix or --prefix</div>
+              </div>
+            </div>
+            <div class="command-description">
+              View the current command prefix for the bot in your server.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /prefix
+                <button class="copy-button" data-copy="/prefix">Copy</button>
+              </div>
+              <div class="command-example">
+                --prefix
+                <button class="copy-button" data-copy="--prefix">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-sliders-h"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Set Prefix</div>
+                <div class="command-syntax">/setprefix [symbol] or --setprefix [symbol]</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Change the command prefix for the bot in your server.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /setprefix !
+                <button class="copy-button" data-copy="/setprefix !">Copy</button>
+              </div>
+              <div class="command-example">
+                --setprefix !
+                <button class="copy-button" data-copy="--setprefix !">Copy</button>
               </div>
             </div>
           </div>
@@ -2624,25 +2982,77 @@
               </div>
             </div>
           </div>
-          
+<!-- Add this to the All Commands tab (inside the tab-content with id="all") -->
+<!-- Premium Commands -->
+<div class="command-box">
+  <div class="command-header">
+    <div class="command-icon-large">
+      <i class="fas fa-gem"></i>
+    </div>
+    <div class="command-title">
+      <div class="command-name-large">Premium Shop</div>
+      <div class="command-syntax">/premiumshop or --premiumshop</div>
+    </div>
+  </div>
+  <div class="command-description">
+    Browse exclusive premium items available for purchase with Genesis Crystals.
+  </div>
+  <div class="command-examples">
+    <div class="command-examples-title">Examples:</div>
+    <div class="command-example">
+      /premiumshop
+      <button class="copy-button" data-copy="/premiumshop">Copy</button>
+    </div>
+    <div class="command-example">
+      --premiumshop
+      <button class="copy-button" data-copy="--premiumshop">Copy</button>
+    </div>
+  </div>
+</div>
+
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-                <i class="fas fa-sliders-h"></i>
+                <i class="fas fa-shopping-cart"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">Set Prefix</div>
-                <div class="command-syntax">--setprefix [symbol]</div>
+                <div class="command-name-large">Buy Premium Item</div>
+                <div class="command-syntax">/premium_buy [item] or --premium_buy [item]</div>
               </div>
             </div>
             <div class="command-description">
-              Change the command prefix for the bot in your server.
+              Purchase exclusive premium items using your Genesis Crystals.
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
-                --setprefix !
-                <button class="copy-button" data-copy="--setprefix !">Copy</button>
+                /premium_buy P001
+                <button class="copy-button" data-copy="/premium_buy P001">Copy</button>
+              </div>
+              <div class="command-example">
+                --premium_buy P001
+                <button class="copy-button" data-copy="--premium_buy P001">Copy</button>
+              </div>
+            </div>
+          </div>
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-window-maximize"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Create Embed</div>
+                <div class="command-syntax">/embed</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Create a custom embed message.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /embed
+                <button class="copy-button" data-copy="/embed">Copy</button>
               </div>
             </div>
           </div>
@@ -2650,21 +3060,21 @@
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-edit"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">View Prefix</div>
-                <div class="command-syntax">--prefix</div>
+                <div class="command-name-large">Edit Embed</div>
+                <div class="command-syntax">/edit_embed</div>
               </div>
             </div>
             <div class="command-description">
-              View the current command prefix for the bot in your server.
+              Edit an existing embed (Admin-only).
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
-                --prefix
-                <button class="copy-button" data-copy="--prefix">Copy</button>
+                /edit_embed
+                <button class="copy-button" data-copy="/edit_embed">Copy</button>
               </div>
             </div>
           </div>
@@ -2684,7 +3094,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Register</div>
-                <div class="command-syntax">--apply</div>
+                <div class="command-syntax">/apply or --apply</div>
               </div>
             </div>
             <div class="command-description">
@@ -2692,6 +3102,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /apply
+                <button class="copy-button" data-copy="/apply">Copy</button>
+              </div>
               <div class="command-example">
                 --apply
                 <button class="copy-button" data-copy="--apply">Copy</button>
@@ -2706,7 +3120,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Hunt</div>
-                <div class="command-syntax">--hunt</div>
+                <div class="command-syntax">/hunt or --hunt</div>
               </div>
             </div>
             <div class="command-description">
@@ -2714,6 +3128,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /hunt
+                <button class="copy-button" data-copy="/hunt">Copy</button>
+              </div>
               <div class="command-example">
                 --hunt
                 <button class="copy-button" data-copy="--hunt">Copy</button>
@@ -2728,7 +3146,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Sell</div>
-                <div class="command-syntax">--sell</div>
+                <div class="command-syntax">/sell or --sell</div>
               </div>
             </div>
             <div class="command-description">
@@ -2736,6 +3154,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /sell
+                <button class="copy-button" data-copy="/sell">Copy</button>
+              </div>
               <div class="command-example">
                 --sell
                 <button class="copy-button" data-copy="--sell">Copy</button>
@@ -2750,7 +3172,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Shop</div>
-                <div class="command-syntax">--shop</div>
+                <div class="command-syntax">/shop or --shop</div>
               </div>
             </div>
             <div class="command-description">
@@ -2758,6 +3180,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /shop
+                <button class="copy-button" data-copy="/shop">Copy</button>
+              </div>
               <div class="command-example">
                 --shop
                 <button class="copy-button" data-copy="--shop">Copy</button>
@@ -2772,7 +3198,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Wish</div>
-                <div class="command-syntax">--wish</div>
+                <div class="command-syntax">/wish or --wish</div>
               </div>
             </div>
             <div class="command-description">
@@ -2780,6 +3206,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /wish
+                <button class="copy-button" data-copy="/wish">Copy</button>
+              </div>
               <div class="command-example">
                 --wish
                 <button class="copy-button" data-copy="--wish">Copy</button>
@@ -2794,7 +3224,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Profile</div>
-                <div class="command-syntax">--profile</div>
+                <div class="command-syntax">/profile or --profile</div>
               </div>
             </div>
             <div class="command-description">
@@ -2802,6 +3232,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /profile
+                <button class="copy-button" data-copy="/profile">Copy</button>
+              </div>
               <div class="command-example">
                 --profile
                 <button class="copy-button" data-copy="--profile">Copy</button>
@@ -2816,7 +3250,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Daily</div>
-                <div class="command-syntax">--daily</div>
+                <div class="command-syntax">/daily or --daily</div>
               </div>
             </div>
             <div class="command-description">
@@ -2824,6 +3258,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /daily
+                <button class="copy-button" data-copy="/daily">Copy</button>
+              </div>
               <div class="command-example">
                 --daily
                 <button class="copy-button" data-copy="--daily">Copy</button>
@@ -2838,7 +3276,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Battle</div>
-                <div class="command-syntax">--battle</div>
+                <div class="command-syntax">/battle or --battle</div>
               </div>
             </div>
             <div class="command-description">
@@ -2847,8 +3285,90 @@
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
+                /battle
+                <button class="copy-button" data-copy="/battle">Copy</button>
+              </div>
+              <div class="command-example">
                 --battle
                 <button class="copy-button" data-copy="--battle">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-vote-yea"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Vote</div>
+                <div class="command-syntax">/vote or --vote</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Vote for the bot and earn rewards.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /vote
+                <button class="copy-button" data-copy="/vote">Copy</button>
+              </div>
+              <div class="command-example">
+                --vote
+                <button class="copy-button" data-copy="--vote">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fa-solid fa-toolbox"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Character Loot</div>
+                <div class="command-syntax">/cloot or --cloot</div>
+              </div>
+            </div>
+            <div class="command-description">
+              View characters you've obtained.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /cloot
+                <button class="copy-button" data-copy="/cloot">Copy</button>
+              </div>
+              <div class="command-example">
+                --cloot
+                <button class="copy-button" data-copy="--cloot">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fa-solid fa-toolbox"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Weapon Loot</div>
+                <div class="command-syntax">/wloot or --wloot</div>
+              </div>
+            </div>
+            <div class="command-description">
+              View weapons you've obtained.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /wloot
+                <button class="copy-button" data-copy="/wloot">Copy</button>
+              </div>
+              <div class="command-example">
+                --wloot
+                <button class="copy-button" data-copy="--wloot">Copy</button>
               </div>
             </div>
           </div>
@@ -2861,7 +3381,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Wallpaper Shop</div>
-                <div class="command-syntax">--shop1</div>
+                <div class="command-syntax">/shop1 or --shop1</div>
               </div>
             </div>
             <div class="command-description">
@@ -2869,6 +3389,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /shop1
+                <button class="copy-button" data-copy="/shop1">Copy</button>
+              </div>
               <div class="command-example">
                 --shop1
                 <button class="copy-button" data-copy="--shop1">Copy</button>
@@ -2883,7 +3407,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Buy Wallpaper</div>
-                <div class="command-syntax">--buy [code]</div>
+                <div class="command-syntax">/buy [code] or --buy [code]</div>
               </div>
             </div>
             <div class="command-description">
@@ -2891,6 +3415,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /buy A001
+                <button class="copy-button" data-copy="/buy A001">Copy</button>
+              </div>
               <div class="command-example">
                 --buy A001
                 <button class="copy-button" data-copy="--buy A001">Copy</button>
@@ -2905,7 +3433,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">My Wallpapers</div>
-                <div class="command-syntax">--mywalls</div>
+                <div class="command-syntax">/mywalls or --mywalls</div>
               </div>
             </div>
             <div class="command-description">
@@ -2913,6 +3441,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /mywalls
+                <button class="copy-button" data-copy="/mywalls">Copy</button>
+              </div>
               <div class="command-example">
                 --mywalls
                 <button class="copy-button" data-copy="--mywalls">Copy</button>
@@ -2927,7 +3459,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Set Wallpaper</div>
-                <div class="command-syntax">--setwallpaper [code]</div>
+                <div class="command-syntax">/setwallpaper [code] or --setwallpaper [code]</div>
               </div>
             </div>
             <div class="command-description">
@@ -2935,6 +3467,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /setwallpaper A001
+                <button class="copy-button" data-copy="/setwallpaper A001">Copy</button>
+              </div>
               <div class="command-example">
                 --setwallpaper A001
                 <button class="copy-button" data-copy="--setwallpaper A001">Copy</button>
@@ -2950,7 +3486,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Add Team</div>
-                <div class="command-syntax">--addteam [character]</div>
+                <div class="command-syntax">/addteam [character] or --addteam [character]</div>
               </div>
             </div>
             <div class="command-description">
@@ -2958,6 +3494,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /addteam Hu Tao
+                <button class="copy-button" data-copy="/addteam Hu Tao">Copy</button>
+              </div>
               <div class="command-example">
                 --addteam Hu Tao
                 <button class="copy-button" data-copy="--addteam Hu Tao">Copy</button>
@@ -2972,7 +3512,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Remove Team</div>
-                <div class="command-syntax">--removeteam [character]</div>
+                <div class="command-syntax">/removeteam [character] or --removeteam [character]</div>
               </div>
             </div>
             <div class="command-description">
@@ -2980,6 +3520,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /removeteam Diluc
+                <button class="copy-button" data-copy="/removeteam Diluc">Copy</button>
+              </div>
               <div class="command-example">
                 --removeteam Diluc
                 <button class="copy-button" data-copy="--removeteam Diluc">Copy</button>
@@ -2994,7 +3538,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">View Team</div>
-                <div class="command-syntax">--team</div>
+                <div class="command-syntax">/team or --team</div>
               </div>
             </div>
             <div class="command-description">
@@ -3002,6 +3546,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /team
+                <button class="copy-button" data-copy="/team">Copy</button>
+              </div>
               <div class="command-example">
                 --team
                 <button class="copy-button" data-copy="--team">Copy</button>
@@ -3061,7 +3609,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Random Ship</div>
-                <div class="command-syntax">--ship</div>
+                <div class="command-syntax">/ship or --ship</div>
               </div>
             </div>
             <div class="command-description">
@@ -3069,6 +3617,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /ship
+                <button class="copy-button" data-copy="/ship">Copy</button>
+              </div>
               <div class="command-example">
                 --ship
                 <button class="copy-button" data-copy="--ship">Copy</button>
@@ -3083,7 +3635,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Ship with User</div>
-                <div class="command-syntax">--ship @user</div>
+                <div class="command-syntax">/ship @user or --ship @user</div>
               </div>
             </div>
             <div class="command-description">
@@ -3091,6 +3643,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /ship @Friend
+                <button class="copy-button" data-copy="/ship @Friend">Copy</button>
+              </div>
               <div class="command-example">
                 --ship @Friend
                 <button class="copy-button" data-copy="--ship @Friend">Copy</button>
@@ -3105,7 +3661,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Character Ship</div>
-                <div class="command-syntax">--gship</div>
+                <div class="command-syntax">/gship or --gship</div>
               </div>
             </div>
             <div class="command-description">
@@ -3113,6 +3669,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /gship
+                <button class="copy-button" data-copy="/gship">Copy</button>
+              </div>
               <div class="command-example">
                 --gship
                 <button class="copy-button" data-copy="--gship">Copy</button>
@@ -3127,7 +3687,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Specific Character Ship</div>
-                <div class="command-syntax">--gship [character]</div>
+                <div class="command-syntax">/gship [character] or --gship [character]</div>
               </div>
             </div>
             <div class="command-description">
@@ -3135,6 +3695,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /gship Raiden Shogun
+                <button class="copy-button" data-copy="/gship Raiden Shogun">Copy</button>
+              </div>
               <div class="command-example">
                 --gship Raiden Shogun
                 <button class="copy-button" data-copy="--gship Raiden Shogun">Copy</button>
@@ -3149,7 +3713,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Custom Names Ship</div>
-                <div class="command-syntax">--gship name1 name2</div>
+                <div class="command-syntax">/gship name1 name2 or --gship name1 name2</div>
               </div>
             </div>
             <div class="command-description">
@@ -3158,8 +3722,38 @@
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
+                /gship Ayaka Kamisato
+                <button class="copy-button" data-copy="/gship Ayaka Kamisato">Copy</button>
+              </div>
+              <div class="command-example">
                 --gship Ayaka Kamisato
                 <button class="copy-button" data-copy="--gship Ayaka Kamisato">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Genshin x Genshin Ship</div>
+                <div class="command-syntax">/tship or --tship</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Create a ship between two random characters.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /tship
+                <button class="copy-button" data-copy="/tship">Copy</button>
+              </div>
+              <div class="command-example">
+                --tship
+                <button class="copy-button" data-copy="--tship">Copy</button>
               </div>
             </div>
           </div>
@@ -3171,7 +3765,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Shippable Characters</div>
-                <div class="command-syntax">--list</div>
+                <div class="command-syntax">/list or --list</div>
               </div>
             </div>
             <div class="command-description">
@@ -3179,6 +3773,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /list
+                <button class="copy-button" data-copy="/list">Copy</button>
+              </div>
               <div class="command-example">
                 --list
                 <button class="copy-button" data-copy="--list">Copy</button>
@@ -3209,29 +3807,7 @@
             </div>
           </div>
           
-          <!-- System Commands -->
-          <div class="command-box">
-            <div class="command-header">
-              <div class="command-icon-large">
-                <i class="fas fa-vote-yea"></i>
-              </div>
-              <div class="command-title">
-                <div class="command-name-large">Vote</div>
-                <div class="command-syntax">--vote</div>
-              </div>
-            </div>
-            <div class="command-description">
-              Vote for the bot and earn rewards.
-            </div>
-            <div class="command-examples">
-              <div class="command-examples-title">Examples:</div>
-              <div class="command-example">
-                --vote
-                <button class="copy-button" data-copy="--vote">Copy</button>
-              </div>
-            </div>
-          </div>
-          
+          <!-- Leaderboard Commands -->
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
@@ -3239,7 +3815,7 @@
               </div>
               <div class="command-title">
                 <div class="command-name-large">Leaderboard</div>
-                <div class="command-syntax">--leaderboard</div>
+                <div class="command-syntax">/leaderboard or --leaderboard</div>
               </div>
             </div>
             <div class="command-description">
@@ -3247,6 +3823,10 @@
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /leaderboard
+                <button class="copy-button" data-copy="/leaderboard">Copy</button>
+              </div>
               <div class="command-example">
                 --leaderboard
                 <button class="copy-button" data-copy="--leaderboard">Copy</button>
@@ -3260,8 +3840,8 @@
                 <i class="fas fa-trophy"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">Battle Leaderboard</div>
-                <div class="command-syntax">--blist</div>
+                <div class="command-name-large">Boss list</div>
+                <div class="command-syntax">/blist or --blist</div>
               </div>
             </div>
             <div class="command-description">
@@ -3270,30 +3850,35 @@
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
+                /blist
+                <button class="copy-button" data-copy="/blist">Copy</button>
+              </div>
+              <div class="command-example">
                 --blist
                 <button class="copy-button" data-copy="--blist">Copy</button>
               </div>
             </div>
           </div>
           
+          <!-- System Commands -->
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-                <i class="fa-solid fa-toolbox"></i>
+                <i class="fas fa-power-off"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">Character Loot</div>
-                <div class="command-syntax">--cloot</div>
+                <div class="command-name-large">Enable Bot</div>
+                <div class="command-syntax">/enable</div>
               </div>
             </div>
             <div class="command-description">
-              View characters you've obtained.
+              Enable the bot in this channel (Admin-only).
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
-                --cloot
-                <button class="copy-button" data-copy="--cloot">Copy</button>
+                /enable
+                <button class="copy-button" data-copy="/enable">Copy</button>
               </div>
             </div>
           </div>
@@ -3301,21 +3886,95 @@
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-                <i class="fa-solid fa-toolbox"></i>
+                <i class="fas fa-ban"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">Weapon Loot</div>
-                <div class="command-syntax">--wloot</div>
+                <div class="command-name-large">Disable Bot</div>
+                <div class="command-syntax">/disable</div>
               </div>
             </div>
             <div class="command-description">
-              View weapons you've obtained.
+              Disable the bot in this channel (Admin-only).
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
-                --wloot
-                <button class="copy-button" data-copy="--wloot">Copy</button>
+                /disable
+                <button class="copy-button" data-copy="/disable">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-list"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">List Disabled Channels</div>
+                <div class="command-syntax">/listchannel</div>
+              </div>
+            </div>
+            <div class="command-description">
+              List all disabled channels (Admin-only).
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /listchannel
+                <button class="copy-button" data-copy="/listchannel">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-sliders-h"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">View Prefix</div>
+                <div class="command-syntax">/prefix or --prefix</div>
+              </div>
+            </div>
+            <div class="command-description">
+              View the current command prefix.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /prefix
+                <button class="copy-button" data-copy="/prefix">Copy</button>
+              </div>
+              <div class="command-example">
+                --prefix
+                <button class="copy-button" data-copy="--prefix">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="command-box">
+            <div class="command-header">
+              <div class="command-icon-large">
+                <i class="fas fa-sliders-h"></i>
+              </div>
+              <div class="command-title">
+                <div class="command-name-large">Set Prefix</div>
+                <div class="command-syntax">/setprefix [symbol] or --setprefix [symbol]</div>
+              </div>
+            </div>
+            <div class="command-description">
+              Change the command prefix.
+            </div>
+            <div class="command-examples">
+              <div class="command-examples-title">Examples:</div>
+              <div class="command-example">
+                /setprefix !
+                <button class="copy-button" data-copy="/setprefix !">Copy</button>
+              </div>
+              <div class="command-example">
+                --setprefix !
+                <button class="copy-button" data-copy="--setprefix !">Copy</button>
               </div>
             </div>
           </div>
@@ -3389,21 +4048,21 @@
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-                <i class="fas fa-sliders-h"></i>
+                <i class="fas fa-window-maximize"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">Set Prefix</div>
-                <div class="command-syntax">--setprefix [symbol]</div>
+                <div class="command-name-large">Create Embed</div>
+                <div class="command-syntax">/embed</div>
               </div>
             </div>
             <div class="command-description">
-              Change the command prefix.
+              Create a custom embed message.
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
-                --setprefix !
-                <button class="copy-button" data-copy="--setprefix !">Copy</button>
+                /embed
+                <button class="copy-button" data-copy="/embed">Copy</button>
               </div>
             </div>
           </div>
@@ -3411,21 +4070,21 @@
           <div class="command-box">
             <div class="command-header">
               <div class="command-icon-large">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-edit"></i>
               </div>
               <div class="command-title">
-                <div class="command-name-large">View Prefix</div>
-                <div class="command-syntax">--prefix</div>
+                <div class="command-name-large">Edit Embed</div>
+                <div class="command-syntax">/edit_embed</div>
               </div>
             </div>
             <div class="command-description">
-              View the current command prefix.
+              Edit an existing embed (Admin-only).
             </div>
             <div class="command-examples">
               <div class="command-examples-title">Examples:</div>
               <div class="command-example">
-                --prefix
-                <button class="copy-button" data-copy="--prefix">Copy</button>
+                /edit_embed
+                <button class="copy-button" data-copy="/edit_embed">Copy</button>
               </div>
             </div>
           </div>
@@ -3448,7 +4107,9 @@
   
   <!-- Premium Section -->
   <section id="premium-info" class="fade-in">
-    <h2><i class="fas fa-crown"></i> Subscription Tiers (Daily Rewards)</h2>
+    <h2><i class="fas fa-crown"></i> Subscription Tiers & Donations</h2>
+    
+    <!-- Normal Tier -->
     <div class="tier-card normal-tier">
       <h3>
         <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 22px;">
@@ -3458,15 +4119,27 @@
       <ul>
         <li>
           <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
-          6,000 Genesis Crystals daily
+          6,000 Genesis Crystals/day
         </li>
         <li>
-          <img src="https://i.postimg.cc/vZ4h837b/Item-Iron-Chunk.webp" style="height: 20px;">
-          Gem of Iron Chunk
+          <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
+          20,000 Bonus Genesis (once)
         </li>
-        <li>Hunting bonus: +3% Mora, +1 base loot, 25% chance for extra rolls</li>
+        <li>
+          <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
+          Total Monthly Genesis: 200,000
+        </li>
+        <li>🎁 1 Free character or weapon/month</li>
+        <li>🛒 Can buy 1 character or weapon/month</li>
+        <li>➥ Total: 2 characters or weapons / month</li>
+        <li>
+          <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 16px;">
+          Hunting bonus: +3% Mora, +1 base loot, 25% chance for extra rolls
+        </li>
       </ul>
     </div>
+    
+    <!-- Plus Tier -->
     <div class="tier-card plus-tier">
       <h3>
         <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 22px;">
@@ -3476,15 +4149,27 @@
       <ul>
         <li>
           <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
-          15,000 Genesis Crystals daily
+          10,000 Genesis Crystals/day
         </li>
         <li>
-          <img src="https://i.postimg.cc/fTT5pwJ3/Item-Crystal-Chunk.webp" style="height: 20px;">
-          Gem of Crystal Chunk
+          <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
+          5,000 Bonus Genesis/day
         </li>
-        <li>Hunting bonus: +7% Mora, +2-3 base loot, 50% chance for extra rolls</li>
+        <li>
+          <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
+          Total Monthly Genesis: ~450,000
+        </li>
+        <li>🎁 2 Free items/month</li>
+        <li>🛒 Can buy 2 items/month</li>
+        <li>➥ Total: 3 items/month</li>
+        <li>
+          <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 16px;">
+          Hunting bonus: +7% Mora, +2-3 base loot, 50% chance for extra rolls
+        </li>
       </ul>
     </div>
+    
+    <!-- Premium Tier -->
     <div class="tier-card premium-tier">
       <div class="premium-badge">MOST POPULAR</div>
       <h3>
@@ -3495,16 +4180,60 @@
       <ul>
         <li>
           <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
-          30,000 Genesis Crystals daily
+          20,000 Genesis Crystals/day
         </li>
         <li>
-          <img src="https://i.postimg.cc/pXGktgFs/Item-Brilliant-Diamond-Gemstone.webp" style="height: 20px;">
-          Gem of Brilliant Diamond
+          <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
+          10,000 Bonus Genesis/day
         </li>
-        <li>Hunting bonus: +10% Mora, 10-15 base loot, guaranteed 2-4 extra rolls</li>
+        <li>
+          <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 20px;">
+          Total Monthly Genesis: 900,000
+        </li>
+        <li>🎁 2 Free items/month</li>
+        <li>🛒 Can buy 4 characters/month</li>
+        <li>➥ Total: up to 6 characters or weapons / month</li>
+        <li>
+          <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 16px;">
+          Hunting bonus: +10% Mora, 10-15 base loot, guaranteed 2-4 extra rolls
+        </li>
       </ul>
     </div>
-    <p style="margin-top: 2rem; font-size: 0.95rem; color: #999;">Prices are monthly. Rewards refresh daily upon renewal.</p>
+    
+    <!-- Donation Tiers -->
+    <h3 style="margin-top: 3rem; text-align: center; color: var(--primary-color);">One-Time Donations</h3>
+    <div class="donation-grid">
+      <div class="donation-tier">
+        <h4>$1</h4>
+        <p>7,500 Genesis Crystals</p>
+      </div>
+      <div class="donation-tier">
+        <h4>$5</h4>
+        <p>50,000 Genesis Crystals</p>
+      </div>
+      <div class="donation-tier">
+        <h4>$10</h4>
+        <p>110,000 Genesis Crystals</p>
+      </div>
+      <div class="donation-tier">
+        <h4>$20</h4>
+        <p>230,000 Genesis Crystals</p>
+      </div>
+      <div class="donation-tier">
+        <h4>$30</h4>
+        <p>360,000 Genesis Crystals</p>
+      </div>
+      <div class="donation-tier">
+        <h4>$40</h4>
+        <p>500,000 Genesis Crystals</p>
+      </div>
+      <div class="donation-tier">
+        <h4>$50</h4>
+        <p>650,000 Genesis Crystals</p>
+      </div>
+    </div>
+    
+    <p style="margin-top: 2rem; font-size: 0.95rem; color: #999;">Prices are monthly for subscriptions. One-time donations give immediate Genesis Crystals.</p>
     <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #888;">Last Updated: July 2025</p>
   </section>
   
