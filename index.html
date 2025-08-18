@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Skirk Bot - Ultimate Discord Experience</title>
-      <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/B6J0nqsW/a48e6a9947c310e5ec6dbfc2bdb29ef2.jpg">
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/B6J0nqsW/a48e6a9947c310e5ec6dbfc2bdb29ef2.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -29,6 +28,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            border-radius: 0; /* Remove all default rounding */
         }
         
         body {
@@ -40,7 +40,7 @@
             position: relative;
         }
         
-        /* Enhanced Cosmic Background */
+        /* Optimized Cosmic Background */
         body::before {
             content: '';
             position: fixed;
@@ -52,7 +52,7 @@
             z-index: -3;
         }
         
-        /* Animated Nebula Background */
+        /* Simplified Nebula Background */
         .nebula {
             position: fixed;
             top: 0;
@@ -60,19 +60,19 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
             z-index: -2;
             animation: nebulaDrift 120s infinite linear;
         }
         
         @keyframes nebulaDrift {
             0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-50px, -50px) rotate(360deg); }
+            100% { transform: translate(-30px, -30px) rotate(360deg); }
         }
         
-        /* Enhanced Starfield */
+        /* Optimized Starfield */
         .stars {
             position: fixed;
             top: 0;
@@ -85,8 +85,9 @@
         .star {
             position: absolute;
             background-color: white;
-            border-radius: 50%;
+            border-radius: 50%; /* Only stars should be rounded */
             animation: twinkle 3s infinite;
+            will-change: opacity;
         }
         
         @keyframes twinkle {
@@ -95,7 +96,7 @@
             100% { opacity: 0.2; }
         }
         
-        /* Shooting Stars */
+        /* Optimized Shooting Stars */
         .shooting-star {
             position: fixed;
             top: 0;
@@ -108,6 +109,7 @@
             z-index: -1;
             animation: shootingStar 3s linear infinite;
             opacity: 0;
+            will-change: transform, opacity;
         }
         
         @keyframes shootingStar {
@@ -135,7 +137,7 @@
             transform: translateX(-50%) translateY(-50%);
         }
         
-        /* Floating Particles */
+        /* Simplified Floating Particles */
         .particles {
             position: fixed;
             top: 0;
@@ -147,13 +149,14 @@
         
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 3px;
+            height: 3px;
             border-radius: 50%;
-            background-color: rgba(106, 27, 254, 0.5);
-            box-shadow: 0 0 10px 2px rgba(106, 27, 254, 0.5);
+            background-color: rgba(106, 27, 254, 0.4);
+            box-shadow: 0 0 8px 1px rgba(106, 27, 254, 0.4);
             animation: float 20s infinite linear;
             opacity: 0;
+            will-change: transform, opacity;
         }
         
         @keyframes float {
@@ -173,7 +176,7 @@
             }
         }
         
-        /* Cosmic Grid Background */
+        /* Simplified Cosmic Grid */
         .cosmic-grid {
             position: fixed;
             top: 0;
@@ -181,11 +184,11 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(106, 27, 254, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(106, 27, 254, 0.1) 1px, transparent 1px);
+                linear-gradient(rgba(106, 27, 254, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(106, 27, 254, 0.08) 1px, transparent 1px);
             background-size: 50px 50px;
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.2;
             animation: gridMove 20s linear infinite;
         }
         
@@ -324,7 +327,7 @@
             transition: 0.3s;
         }
         
-        /* Enhanced Hero Section */
+        /* Enhanced Hero Section with Original GIF */
         .hero {
             background: radial-gradient(ellipse at center, rgba(25, 25, 60, 0.7) 0%, rgba(5, 5, 16, 0.9) 100%);
             color: white;
@@ -332,6 +335,10 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .hero::before {
@@ -343,31 +350,27 @@
             height: 100%;
             background: url("https://i.postimg.cc/7Ls9GFHn/skirk-skirk-burst.gif") no-repeat center center;
             background-size: cover;
-            opacity: 0.15;
+            opacity: 0.25;
             z-index: 0;
-        }
-        
-        @keyframes slowRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
         
         .hero-content {
             position: relative;
             z-index: 1;
+            max-width: 800px;
         }
         
         .hero h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px rgba(106, 27, 254, 0.8);
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 30px rgba(106, 27, 254, 0.8);
             animation: fadeInDown 1s, glow 2s infinite alternate;
             background: linear-gradient(to right, #4facfe, #00f2fe);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
         
         @keyframes glow {
@@ -376,34 +379,34 @@
         }
         
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             animation: fadeInUp 1s;
             color: #b0b0ff;
+            text-shadow: 0 0 10px rgba(106, 27, 254, 0.5);
         }
         
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
             animation: fadeIn 1.5s;
         }
         
         .btn {
             display: inline-block;
-            padding: 14px 32px;
+            padding: 16px 36px;
             background: linear-gradient(135deg, #311b92, #4a148c);
             color: white;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: bold;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 15px rgba(106, 27, 254, 0.5);
-            font-size: 1rem;
+            font-size: 1.1rem;
             border: 1px solid rgba(106, 27, 254, 0.3);
             position: relative;
             overflow: hidden;
@@ -497,8 +500,6 @@
             width: 100px;
             height: 4px;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
-            border-radius: 2px;
-            box-shadow: 0 0 10px rgba(106, 27, 254, 0.7);
             animation: expandWidth 1.5s ease-out;
         }
         
@@ -516,7 +517,6 @@
         .feature-card {
             background: rgba(20, 20, 40, 0.7);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
             padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 20px rgba(106, 27, 254, 0.2);
             transition: all 0.4s;
@@ -547,7 +547,6 @@
             width: 100px;
             height: 100px;
             background: radial-gradient(circle, rgba(106, 27, 254, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
             transform: translate(30px, 30px);
             z-index: -1;
         }
@@ -555,7 +554,6 @@
         .feature-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(106, 27, 254, 0.5);
-            border-color: rgba(106, 27, 254, 0.5);
         }
         
         .feature-icon {
@@ -596,12 +594,10 @@
         
         .commands-container::-webkit-scrollbar-track {
             background: rgba(106, 27, 254, 0.1);
-            border-radius: 4px;
         }
         
         .commands-container::-webkit-scrollbar-thumb {
             background: rgba(106, 27, 254, 0.5);
-            border-radius: 4px;
         }
         
         .commands-container::-webkit-scrollbar-thumb:hover {
@@ -665,7 +661,6 @@
         
         .command-item {
             background: rgba(106, 27, 254, 0.1);
-            border-radius: 8px;
             padding: 0.8rem;
             transition: all 0.3s;
             border: 1px solid rgba(106, 27, 254, 0.2);
@@ -762,7 +757,6 @@
         .tier-card {
             background: rgba(20, 20, 40, 0.7);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 20px rgba(106, 27, 254, 0.2);
@@ -868,7 +862,6 @@
         .donation-tier {
             background: rgba(20, 20, 40, 0.7);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
             padding: 1.8rem;
             text-align: center;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 15px rgba(106, 27, 254, 0.2);
@@ -924,8 +917,6 @@
             background: linear-gradient(135deg, #311b92, #4a148c);
             color: white;
             padding: 16px 36px;
-            border-radius: 50px;
-            text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 20px rgba(106, 27, 254, 0.5);
@@ -998,7 +989,6 @@
             margin: 0 auto;
             background: rgba(20, 20, 40, 0.5);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
             padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 20px rgba(106, 27, 254, 0.2);
             border: 1px solid rgba(106, 27, 254, 0.2);
@@ -1109,7 +1099,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
             background: rgba(20, 20, 40, 0.7);
             border: 1px solid rgba(106, 27, 254, 0.3);
         }
@@ -1205,7 +1194,6 @@
             height: 80px;
             border: 10px solid rgba(106, 27, 254, 0.2);
             border-top-color: var(--secondary);
-            border-radius: 50%;
             animation: spin 1s linear infinite;
             margin-bottom: 20px;
         }
@@ -1221,14 +1209,14 @@
             text-shadow: 0 0 10px rgba(106, 27, 254, 0.7);
         }
         
-        /* Responsive Design */
+        /* Mobile Optimizations */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
             
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             
             .section-title {
@@ -1268,11 +1256,11 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             .section-title {
@@ -1296,6 +1284,20 @@
                 align-items: center;
                 gap: 1rem;
             }
+            
+            /* Reduce animations on mobile for better performance */
+            .nebula {
+                animation: none;
+            }
+            
+            .cosmic-grid {
+                animation: none;
+                opacity: 0.1;
+            }
+            
+            .particle {
+                animation: none;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1304,7 +1306,7 @@
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .btn-group {
@@ -1328,6 +1330,15 @@
             .policy-content {
                 padding: 1.5rem;
             }
+            
+            /* Further reduce animations on small screens */
+            .star {
+                animation: none;
+            }
+            
+            .shooting-star {
+                animation: none;
+            }
         }
     </style>
 </head>
@@ -1338,7 +1349,7 @@
         <div class="loading-text">Entering the World of Teyvat...</div>
     </div>
     
-    <!-- Enhanced Cosmic Background -->
+    <!-- Optimized Cosmic Background -->
     <div class="nebula"></div>
     <div class="cosmic-grid"></div>
     <div class="particles" id="particles"></div>
@@ -1367,7 +1378,7 @@
         </div>
     </nav>
     
-    <!-- Hero Section -->
+    <!-- Hero Section with Original GIF -->
     <section class="hero" id="home">
         <div class="container hero-content">
             <h1>Skirk Bot</h1>
@@ -1907,9 +1918,9 @@
             }, 1500);
         });
         
-        // Generate stars
+        // Generate stars - optimized for performance
         const starsContainer = document.getElementById('stars');
-        const numberOfStars = 150;
+        const numberOfStars = 50; // Reduced from 150 to 50
         
         for (let i = 0; i < numberOfStars; i++) {
             const star = document.createElement('div');
@@ -1920,7 +1931,7 @@
             const top = Math.random() * 100;
             
             // Random size
-            const size = Math.random() * 3;
+            const size = Math.random() * 2 + 1; // Reduced size range
             
             // Random animation delay
             const delay = Math.random() * 3;
@@ -1934,7 +1945,7 @@
             starsContainer.appendChild(star);
         }
         
-        // Generate shooting stars
+        // Generate shooting stars - optimized
         function createShootingStar() {
             const shootingStar = document.createElement('div');
             shootingStar.classList.add('shooting-star');
@@ -1954,12 +1965,12 @@
             }, 3000);
         }
         
-        // Create shooting stars periodically
-        setInterval(createShootingStar, 8000);
+        // Create shooting stars periodically - reduced frequency
+        setInterval(createShootingStar, 15000); // Changed from 8000ms to 15000ms
         
-        // Generate floating particles
+        // Generate floating particles - optimized
         const particlesContainer = document.getElementById('particles');
-        const numberOfParticles = 30;
+        const numberOfParticles = 15; // Reduced from 30 to 15
         
         for (let i = 0; i < numberOfParticles; i++) {
             const particle = document.createElement('div');
@@ -1969,11 +1980,11 @@
             const left = Math.random() * 100;
             
             // Random size
-            const size = Math.random() * 4 + 2;
+            const size = Math.random() * 2 + 1; // Reduced size range
             
             // Random animation delay and duration
             const delay = Math.random() * 20;
-            const duration = Math.random() * 20 + 10;
+            const duration = Math.random() * 15 + 15; // Adjusted duration range
             
             particle.style.left = `${left}%`;
             particle.style.width = `${size}px`;
