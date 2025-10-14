@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skirk Bot - Ultimate Discord Experience</title>
+    <title>Skirk Bot - Ultimate Discord Experience | Genshin Impact Gaming Bot</title>
+    <meta name="description" content="Skirk Bot is the ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, build your dream team, and enjoy premium features with subscription tiers.">
+    <meta name="keywords" content="Discord bot, Genshin Impact, gaming, Skirk Bot, monster hunting, character collection, Discord gaming">
+    <meta name="author" content="Galaxy Hunter">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Skirk Bot - Ultimate Discord Experience">
+    <meta property="og:description" content="The ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, and build your dream team!">
+    <meta property="og:image" content="https://i.postimg.cc/B6J0nqsW/a48e6a9947c310e5ec6dbfc2bdb29ef2.jpg">
+    <meta property="og:url" content="https://skirk-github-io-iota.vercel.app/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skirk Bot - Ultimate Discord Experience">
+    <meta name="twitter:description" content="The ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, and build your dream team!">
+    <meta name="twitter:image" content="https://i.postimg.cc/B6J0nqsW/a48e6a9947c310e5ec6dbfc2bdb29ef2.jpg">
+    
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/B6J0nqsW/a48e6a9947c310e5ec6dbfc2bdb29ef2.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -519,6 +536,40 @@
             margin: 3px 0;
             transition: 0.3s;
         }
+        /* Stats Badge */
+        .stats-badge {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            z-index: 999;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .light-mode .stats-badge {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        .stat-item i {
+            color: var(--accent);
+        }
+        .stat-value {
+            font-weight: bold;
+            color: var(--neon-blue);
+        }
         /* Hero Section */
         .hero {
             padding: 140px 0 80px;
@@ -662,6 +713,95 @@
         }
         .btn-test:hover {
             box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 0 20px rgba(243, 82, 33, 0.7);
+        }
+        /* How Bot Works Section */
+        .how-it-works {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--section-bg), rgba(10, 10, 26, 0.8));
+            position: relative;
+            overflow: hidden;
+        }
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .step-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 20px rgba(106, 27, 254, 0.2);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .light-mode .step-card {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 20px rgba(52, 152, 219, 0.1);
+        }
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(106, 27, 254, 0.5);
+        }
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
+        }
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .step-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .step-desc {
+            color: var(--text);
+            text-align: center;
+            line-height: 1.6;
+        }
+        .command-example {
+            background: var(--command-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+            color: var(--neon-blue);
+            text-align: center;
+            border: 1px solid rgba(106, 27, 254, 0.2);
         }
         /* Features Section - Completely Redesigned */
         .features {
@@ -853,6 +993,71 @@
             position: absolute;
             top: 0.5rem;
             right: 0.5rem;
+        }
+        /* Reactions Section */
+        .reactions {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--section-bg), rgba(10, 10, 26, 0.8));
+            position: relative;
+            overflow: hidden;
+        }
+        .reactions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        .reactions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .reaction-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 15px rgba(106, 27, 254, 0.2);
+            position: relative;
+        }
+        .light-mode .reaction-card {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1), 0 0 15px rgba(52, 152, 219, 0.1);
+        }
+        .reaction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 25px rgba(106, 27, 254, 0.5);
+        }
+        .reaction-gif {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .reaction-card:hover .reaction-gif {
+            transform: scale(1.05);
+        }
+        .reaction-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .reaction-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .reaction-command {
+            font-family: 'Courier New', monospace;
+            color: var(--neon-blue);
+            font-size: 0.9rem;
         }
         /* Video Section */
         .video-section {
@@ -1343,6 +1548,16 @@
             .section-title {
                 font-size: 2.5rem;
             }
+            
+            .stats-badge {
+                top: 70px;
+                right: 10px;
+                padding: 10px 15px;
+            }
+            
+            .stat-item {
+                font-size: 0.8rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1406,6 +1621,16 @@
                 gap: 1rem;
             }
             
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step-card {
+                width: 90%;
+                max-width: 350px;
+            }
+            
             /* Reduce animations on mobile for better performance */
             .nebula {
                 animation: none;
@@ -1452,6 +1677,10 @@
                 padding: 1.5rem;
             }
             
+            .stats-badge {
+                display: none;
+            }
+            
             /* Further reduce animations on small screens */
             .star {
                 animation: none;
@@ -1481,6 +1710,18 @@
         <i class="fas fa-arrow-up"></i>
     </div>
     
+    <!-- Stats Badge -->
+    <div class="stats-badge">
+        <div class="stat-item">
+            <i class="fas fa-server"></i>
+            <span>Servers: <span class="stat-value">166</span></span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <span>Users: <span class="stat-value">250</span></span>
+        </div>
+    </div>
+    
     <!-- Cosmic Background -->
     <div class="cosmic-grid"></div>
     <div class="particles" id="particles"></div>
@@ -1497,7 +1738,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#reactions">Reactions</a></li>
                 <li><a href="#video">How to Play</a></li>
                 <li><a href="#premium-info">Premium</a></li>
                 <li><a href="#policy">Policy</a></li>
@@ -1519,6 +1762,55 @@
                 <a href="https://discord.com/oauth2/authorize?client_id=1131915476335870023&permissions=2048&integration_type=0&scope=bot" class="btn" id="inviteBtn">Invite Bot</a>
                 <a href="https://discord.gg/ApE66m9FVu" class="btn btn-outline" id="joinBtn">Join Server</a>
                 <a href="https://discord.gg/XcUufJ9JtA" class="btn btn-test" id="testBtn">Test Server</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How the Bot Works</h2>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3 class="step-title">Command System</h3>
+                    <p class="step-desc">Skirk Bot responds to commands with either slash commands (/) or the double dash prefix (--). Both work the same way, so use whichever you prefer!</p>
+                    <div class="command-example">/hunt or --hunt</div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="step-title">Custom Prefix</h3>
+                    <p class="step-desc">Server admins can change the command prefix to something custom using the /setprefix command. This allows for multiple bots with different prefixes in the same server.</p>
+                    <div class="command-example">/setprefix !</div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3 class="step-title">Check Prefix</h3>
+                    <p class="step-desc">Forgot what prefix is being used in your server? Simply use the /prefix command to see the current active prefix for Skirk Bot.</p>
+                    <div class="command-example">/prefix</div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="step-title">Admin Controls</h3>
+                    <p class="step-desc">Server admins have additional control over the bot, including enabling/disabling it in specific channels and managing announcement settings.</p>
+                    <div class="command-example">/enable #channel</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1872,12 +2164,38 @@
         </div>
     </section>
     
+    <!-- Reactions Section -->
+    <section class="reactions" id="reactions">
+        <div class="container">
+            <h2 class="section-title">Fun Reactions</h2>
+            <p style="text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Spice up your Discord conversations with our collection of animated reaction GIFs! Simply use the commands below to trigger these fun animations.
+            </p>
+            
+            <div class="reactions-grid" id="reactionsGrid">
+                <!-- Reactions will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
     <!-- Video Section -->
     <section class="video-section" id="video">
         <div class="container">
             <h2 class="section-title">How to Play</h2>
             <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/6jo4wrW7EQ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                <h3 style="color: var(--text); margin-bottom: 1rem;">Getting Started Guide</h3>
+                <ol style="text-align: left; max-width: 800px; margin: 0 auto; color: var(--text); line-height: 1.8;">
+                    <li>Invite Skirk Bot to your Discord server using the button above</li>
+                    <li>Use <code style="background: var(--command-bg); padding: 2px 6px; border-radius: 4px;">/apply</code> to register as a hunter</li>
+                    <li>Start hunting monsters with <code style="background: var(--command-bg); padding: 2px 6px; border-radius: 4px;">/hunt</code> to collect loot</li>
+                    <li>Sell your loot for Mora using <code style="background: var(--command-bg); padding: 2px 6px; border-radius: 4px;">/sell</code></li>
+                    <li>Use Mora to buy Primogems in the shop with <code style="background: var(--command-bg); padding: 2px 6px; border-radius: 4px;">/shop</code></li>
+                    <li>Pull characters and weapons with <code style="background: var(--command-bg); padding: 2px 6px; border-radius: 4px;">/wish</code></li>
+                    <li>Build your team and battle others with <code style="background: var(--command-bg); padding: 2px 6px; border-radius: 4px;">/team</code> and <code style="background: var(--command-bg); padding: 2px 6px; border-radius: 4px;">/battle</code></li>
+                </ol>
             </div>
         </div>
     </section>
@@ -2049,6 +2367,13 @@
                     <li>To personalize your experience (team builds, wallpaper settings)</li>
                     <li>To improve game balance and engagement over time</li>
                 </ul>
+                <h3 class="neutral">🔄 Data Retention & Security</h3>
+                <ul>
+                    <li>Your data is stored securely on encrypted servers</li>
+                    <li>Game data is retained for 365 days of inactivity</li>
+                    <li>You can request data deletion at any time through our support server</li>
+                    <li>We implement industry-standard security measures to protect your information</li>
+                </ul>
                 <h3 class="neutral">🔄 Opt-Out & Removal</h3>
                 <p>If you want your data deleted, just contact us through our support server. You can also disable presence-based features by going invisible or not using commands that rely on online status.</p>
                 <p style="margin-top: 2rem; font-size: 0.95rem; color: #999;">Last Updated: July 2025</p>
@@ -2075,6 +2400,237 @@
     </footer>
     
     <script>
+        // Reaction GIFs data
+        const MENTION_REACTIONS = {
+            "hug": ["https://i.postimg.cc/q7mvk6V0/a-rank-party-a-rank.gif", "https://i.postimg.cc/RFyCtrZD/anime-hug-anime-cry.gif", "https://i.postimg.cc/7YgP5W8K/anime-squeezing-hug-eris-squeeze-hug.gif", "https://i.postimg.cc/bvYvcH53/cute.gif", "https://i.postimg.cc/C1zLdMS8/happy-smile.gif", "https://i.postimg.cc/BQWQQGy8/hibike-euphonium.gif", "https://i.postimg.cc/QdmXbKM5/hug-comfortable.gif", "https://i.postimg.cc/d3CsmW7t/shiideraii.gif", "https://i.postimg.cc/qB6vT7mV/yukon-child-form-embracing-ulquiorra.gif", "https://i.postimg.cc/XYsbFM2k/natsu-natsu-dragneel.gif", "https://i.postimg.cc/qMd4Hxhy/kitsune-upload-anime.gif", "https://i.postimg.cc/Mp6wvZYG/haikyuu-anime.gif","https://i.postimg.cc/02dxkKD3/foxplushy-foxy.gif"],
+            "kiss": [
+                "https://i.postimg.cc/pT84s3B7/anime-kiss.gif",
+                "https://i.postimg.cc/qMLVVVdH/hyakkano-100-girlfriends.gif",
+                "https://i.postimg.cc/4xxCXLJ7/ichigo-hiro.gif",
+                "https://i.postimg.cc/g2SCjVJM/miyamura-hori.gif",
+                "https://i.postimg.cc/yYB4b6tT/sealyx-frieren-beyond-journey-s-end.gif",
+                "https://i.postimg.cc/9fsstcyZ/kiss.gif",
+                "https://i.postimg.cc/wxDY2Rfv/kiss-1.gif",
+                "https://i.postimg.cc/XvrTCrBn/kiss-gentle-kiss.gif"
+            ],
+            "slap": [
+                "https://i.postimg.cc/Bn6zrjg2/azumanga-azumanga-daioh.gif",
+                "https://i.postimg.cc/wvh4XLqY/chainsaw-man-csm.gif",
+                "https://i.postimg.cc/MTkrfd8Y/girl-slap.gif",
+                "https://i.postimg.cc/RZDY4vsy/slap.gif",
+                "https://i.postimg.cc/bYx4kcrS/slap-chie.gif",
+                "https://i.postimg.cc/bvSBv44J/slap-jjk.gif",
+                "https://i.postimg.cc/28TJ9Q4z/taiga-toradora.gif",
+                "https://i.postimg.cc/9FcKB8w8/uma-musume.gif"
+            ],
+            "pat": [
+                "https://i.postimg.cc/zB5F1Mr4/angel-beats-tachibana-kanade.gif",
+                "https://i.postimg.cc/J4hKn9kL/anime-head-pat-anime-pat.gif",
+                "https://i.postimg.cc/Jnqc7q70/anime-pat-anime.gif",
+                "https://i.postimg.cc/43pQqGrz/danjo-no-yuujou-wa-seiritsu-suru-can-a-boy-girl-friendship-survive.gif",
+                "https://i.postimg.cc/T3L9jg0N/konohana-kitan-yuzu.gif",
+                "https://i.postimg.cc/sxgPMh1c/mai-sakurajima.gif",
+                "https://i.postimg.cc/x8pvM1zS/tsumiki-anime.gif",
+                "https://i.postimg.cc/3Jb1DnXD/spy-x-family-anya.gif",
+                "https://i.postimg.cc/sfmw3V1m/shiideraii-1.gif",
+                "https://i.postimg.cc/ncMYZByV/rudeus-rudeus-greyrat.gif",
+                "https://i.postimg.cc/J7pc9Pdd/qualidea-code-head-pat.gif",
+                "https://i.postimg.cc/RZkTghbS/pat.gif"
+            ],
+            "poke": [
+                "https://i.postimg.cc/br4GqDnd/anime-sleep.gif",
+                "https://i.postimg.cc/DwLGygBh/boop-anime.gif",
+                "https://i.postimg.cc/tCVZ2k06/boop-poke.gif",
+                "https://i.postimg.cc/fLTSChZW/highschool-dxd-anime.gif",
+                "https://i.postimg.cc/R0TnwZkb/nekone-utawarerumono.gif",
+                "https://i.postimg.cc/zX9WrMwp/poke-anime.gif"
+            ],
+            "bite": [
+                "https://i.postimg.cc/13rprB6H/anime-acchi-kocchi.gif",
+                "https://i.postimg.cc/Qtw5dyGX/anime-bite.gif",
+                "https://i.postimg.cc/1zWwLzvV/anime-bite-1.gif",
+                "https://i.postimg.cc/pdVKGjJt/anime-bite-2.gif",
+                "https://i.postimg.cc/TwpgGXs7/anime-bite-3.gif",
+                "https://i.postimg.cc/3JpjdYxz/anime-bite-4.gif",
+                "https://i.postimg.cc/nhJ4mgsr/anime-bite-5.gif",
+                "https://i.postimg.cc/cC33gB0f/vnc-vanitas.gif"
+            ],
+            "lick": [
+                "https://i.postimg.cc/4d48XpHv/big-dog-anime.gif",
+                "https://i.postimg.cc/G2MXt9vW/anime-lick.gif",
+                "https://i.postimg.cc/YSHny5ps/anime-lick-face.gif",
+                "https://i.postimg.cc/kM1HXYc2/saikin-yatotta-maid-ga-ayashii-anime-lick.gif",
+                "https://i.postimg.cc/zfCMzJtN/shura-hiwa-lamer.gif",
+                "https://i.postimg.cc/bv9CXmrN/talentless-nana-anime-lick.gif",
+                "https://i.postimg.cc/zvV0g5jV/urushi-yaotome-cat.gif"
+            ],
+            "highfive": [
+                "https://i.postimg.cc/vBSvMksM/anime-high-five.gif",
+                "https://i.postimg.cc/W1PCQF88/ban-meliodas.gif",
+                "https://i.postimg.cc/JhMxQjxw/high-five.gif",
+                "https://i.postimg.cc/CxjJDcjH/high-five-anime.gif",
+                "https://i.postimg.cc/8c2Bfvc0/high-five-high5.gif",
+                "https://i.postimg.cc/yxgyNj1R/high-touch-satoshi.gif",
+                "https://i.postimg.cc/bJvR7843/hunter-x-hunter-high-five.gif",
+                "https://i.postimg.cc/d06BNDNh/jujutsu-kaisen-itadori-and-gojo.gif"
+            ],
+            "stare": [
+                "https://i.postimg.cc/SRYGmDsY/anime-frieren.gif",
+                "https://i.postimg.cc/nVNyBWq5/geto.gif",
+                "https://i.postimg.cc/y8H2rSQy/kaede-azusagawa-rascal-does-not-dream-of-bunny-girl-senpai.gif",
+                "https://i.postimg.cc/4x6BKL1z/lu-guang-link-click.gif",
+                "https://i.postimg.cc/76dW1CJ7/nahida-nahida-genshin.gif",
+                "https://i.postimg.cc/wBF221ZM/rin-anime.gif",
+                "https://i.postimg.cc/RZL2rV25/sololeveling-anime.gif",
+                "https://i.postimg.cc/xqr38MJx/venti-genshin-impact-venti.gif"
+            ],
+            "tickle": [
+                "https://i.postimg.cc/br09Gdxq/anime-tickle.gif",
+                "https://i.postimg.cc/CKd7vhg4/cat-love.gif",
+                "https://i.postimg.cc/3xfC0sv0/date-a-live-date-a-live-iv.gif",
+                "https://i.postimg.cc/VkkW6fdc/gif-anime-armpit.gif",
+                "https://i.postimg.cc/DygcnJfg/girl-neko.gif",
+                "https://i.postimg.cc/Zqgc2GYz/laugh-droll.gif",
+                "https://i.postimg.cc/rwVQrGZ3/miria-akagi-akagi-miria.gif",
+                "https://i.postimg.cc/52spqHZ0/natsu-erza.gif",
+                "https://i.postimg.cc/QNcbYYRv/nezuko-mitsuri.gif",
+                "https://i.postimg.cc/SsCW5jtc/onimai-momiji-hozuki.gif",
+                "https://i.postimg.cc/fWd2nR02/poke-anime-1.gif",
+                "https://i.postimg.cc/VLBKvZgX/saikin-yatotta-maid-ga-ayashii-anime-tickle.gif",
+                "https://i.postimg.cc/5tH5BsB7/tickle-laugh.gif",
+                "https://i.postimg.cc/fyQvTY0H/vanilla-nekopara.gif"
+            ],
+            "kick": [
+                "https://i.postimg.cc/vTPDSsMW/anime-love-after-world-domination.gif",
+                "https://i.postimg.cc/HLGnN3GP/anime-ouch.gif",
+                "https://i.postimg.cc/xC3XMm4p/arlecchino-genshinimpact.gif",
+                "https://i.postimg.cc/Z5v0j2Qd/bleach-anime.gif",
+                "https://i.postimg.cc/pXTm5pYk/genshin-genshin-impact.gif",
+                "https://i.postimg.cc/zDpLfnWV/gifdapumpkin-pumpkinama-danganronpa.gif",
+                "https://i.postimg.cc/LX2X9X8t/gintama-anime.gif",
+                "https://i.postimg.cc/rFPK1MfT/mad-angry.gif",
+                "https://i.postimg.cc/Wzphn3RN/ranma-ryoga.gif",
+                "https://i.postimg.cc/GpY83VJC/roshidere-anime.gif",
+                "https://i.postimg.cc/8PKrZhPq/scaramouche-wanderer.gif",
+                "https://i.postimg.cc/L661kyRt/signora-kicking-venti.gif",
+                "https://i.postimg.cc/wTZjtFBT/spy-x-family-loid-forger.gif",
+                "https://i.postimg.cc/t48njp6k/xilonen-angry-xilonen.gif"
+            ],
+            "feed": [
+                "https://i.postimg.cc/RFDjPsyW/aharen-san-aharen-san-anime.gif",
+                "https://i.postimg.cc/KvMyWbZx/anime-acchi-kocchi-1.gif",
+                "https://i.postimg.cc/J09Ch65f/anime-alya.gif",
+                "https://i.postimg.cc/7LmvzYNM/kawaii-wholesome.gif",
+                "https://i.postimg.cc/9QPHWBRk/kubo-nagisa-anime.gif",
+                "https://i.postimg.cc/NGVcbFvd/lycoris-recoil-anime-feed.gif",
+                "https://i.postimg.cc/W42LtJ01/nyanko-days-hd-gif.gif"
+            ],
+            "kill": [
+                "https://i.postimg.cc/j5BRWSs3/akame-akame-ga-kill.gif",
+                "https://i.postimg.cc/261z8ZfB/anime.gif",
+                "https://i.postimg.cc/fbTzpP2C/anime-manga.gif",
+                "https://i.postimg.cc/zGkDdNj3/assassin-smile.gif",
+                "https://i.postimg.cc/sxSs5Cxj/falling-from-window-anime-death.gif",
+                "https://i.postimg.cc/tgSqjz8j/hxh-killua.gif",
+                "https://i.postimg.cc/T3xYq1nZ/kuma-kuma-kuma-bear-fina.gif",
+                "https://i.postimg.cc/NGW0FpFG/nui-harime-harime-nui.gif"
+            ],
+            "tease": [
+                "https://i.postimg.cc/3wCGCzyZ/anime-bleh.gif",
+                "https://i.postimg.cc/5NYFkXYy/anime-girl.gif",
+                "https://i.postimg.cc/DZvXC5L3/anime-girl-anime.gif",
+                "https://i.postimg.cc/TYprMkSR/anime-kawaii.gif",
+                "https://i.postimg.cc/SN3cy6Fc/girl-silly.gif",
+                "https://i.postimg.cc/L8jg2GVM/girls-anime.gif",
+                "https://i.postimg.cc/jjKw5v8n/konosuba-aqua.gif",
+                "https://i.postimg.cc/wjNL31gZ/lime-saber-marionette.gif",
+                "https://i.postimg.cc/fTG04MmK/nagatoro-hayase-nagatoro.gif",
+                "https://i.postimg.cc/nz3QN7Gj/scaramouche-the-wanderer.gif",
+                "https://i.postimg.cc/mrGM9TrD/tongue-tongue-out.gif"
+            ],
+        };
+
+        const SINGLE_REACTIONS = {
+            "blush": [
+                "https://i.postimg.cc/HLpwKp1N/anime-arrouser.gif",
+                "https://i.postimg.cc/2yBhvyn1/anime-blush.gif",
+                "https://i.postimg.cc/P5bb2C9Z/anime-blushing.gif",
+                "https://i.postimg.cc/nzrvF0zY/blushing-anime.gif",
+                "https://i.postimg.cc/tgT5JXvx/marin-marin-kitagawa.gif",
+                "https://i.postimg.cc/jjd8f62C/idk.gif",
+                "https://i.postimg.cc/pXfk1cnp/real.gif",
+                "https://i.postimg.cc/W1VYNcPG/when-supernatural-battles-became-commonplace-embarrassed.gif",
+                "https://i.postimg.cc/PrjQZbFh/sumi-sakurasawa-rent-a-girlfriend-1.gif"
+            ],
+            "sad": [
+                "https://i.postimg.cc/W3qwm5vp/anime-kanna.gif",
+                "https://i.postimg.cc/v89vc2h3/anime-look-away.gif",
+                "https://i.postimg.cc/8C0brqxn/anime-sad.gif",
+                "https://i.postimg.cc/XqMcs9jf/bocchi-the.gif",
+                "https://i.postimg.cc/YSh6kdjN/crying-girl-anime.gif",
+                "https://i.postimg.cc/4x86rD4N/sad-anime-guy-lonely-anime-guy.gif",
+                "https://i.postimg.cc/7YnMNCpz/pokemon-pikachu.gif",
+                "https://i.postimg.cc/cCQ726CV/sad-anime.gif"
+            ],
+            "stress": [
+                "https://i.postimg.cc/T2ScwMny/adalfarus-okbb.gif",
+                "https://i.postimg.cc/sg3KFPpK/anime-girl-panic-attack.gif",
+                "https://i.postimg.cc/JnFjGZHw/chika.gif",
+                "https://i.postimg.cc/8P6mfKbZ/idol-precure-precure.gif",
+                "https://i.postimg.cc/RZGdv3dm/jujutsu-kaisen-choso.gif",
+                "https://i.postimg.cc/fy67gmM7/shock-anime.gif"
+            ],
+            "wave": [
+                "https://i.postimg.cc/Y2DVksX0/aino-aino-genshin-1.gif",
+                "https://i.postimg.cc/xdPxZxJ0/anime-bye-bye-maki.gif",
+                "https://i.postimg.cc/CKCXgMtp/bye-anime.gif",
+                "https://i.postimg.cc/SKWFxfn5/charlotte-charlotte-genshin.gif",
+                "https://i.postimg.cc/gcM9jJ0Y/kazuha-genshin-impact-kazuha-hi.gif",
+                "https://i.postimg.cc/HxsZ1wXb/laid-back-camp-nadeshiko.gif",
+                "https://i.postimg.cc/6QKbYJQj/owari-no-seraph-seraph-of-the-end.gif",
+                "https://i.postimg.cc/tTXfCQQZ/pjsk-pjsk-anime.gif",
+                "https://i.postimg.cc/sX6njM4q/sumi-sakurasawa-rent-a-girlfriend.gif",
+                "https://i.postimg.cc/KzxXk3LY/yae-miko-smile-yae-miko.gif",
+                "https://i.postimg.cc/rp62TPwx/yoimiya-genshin-impact.gif",
+                "https://i.postimg.cc/Nfyn0kV4/yun-jin.gif"
+            ],
+            "happy": [
+                "https://i.postimg.cc/Vks9Zf8V/anime-anime-girl.gif",
+                "https://i.postimg.cc/52kzP8pX/beast-tamer-kanade.gif",
+                "https://i.postimg.cc/DZG14mr8/excited-anime.gif",
+                "https://i.postimg.cc/Bvkxv21r/how-i-attended-an-all-guys-mixer-anime.gif",
+                "https://i.postimg.cc/bv7tP878/kusuriya-no-hitorigoto-apothecary.gif",
+                "https://i.postimg.cc/cCNwRZhT/natsu-natsu-dragneel-1.gif",
+                "https://i.postimg.cc/m2B7hLtg/yay-yeah.gif"
+            ],
+            "laugh": [
+                "https://i.postimg.cc/63Z16WTh/evil-laugh-greatest-alchemist.gif",
+                "https://i.postimg.cc/j2r3Lp7Y/hakase-shinonome-nichijou.gif",
+                "https://i.postimg.cc/VvBGMKqr/laugh-giggle.gif",
+                "https://i.postimg.cc/d1zPnNZ5/makeine-losing-heroine.gif",
+                "https://i.postimg.cc/9fKnjRXM/momo-ayase-ayase-momo.gif",
+                "https://i.postimg.cc/6QbN4pWJ/my-dress-up-darling-anime-laugh.gif",
+                "https://i.postimg.cc/wxhbSjCq/sylent-zenyte.gif"
+            ],
+            "mad": [
+                "https://i.postimg.cc/dtVm4QvS/anime-angry-slow-loop.gif",
+                "https://i.postimg.cc/G3QxFT0y/annoyed-anime-girl-annoyed.gif",
+                "https://i.postimg.cc/52H5WPXB/demon-slayer-kimetsu-no-yaiba.gif",
+                "https://i.postimg.cc/DZh1snB6/dont-toy-with-me-miss-nagatoro-hayase-nagatoro.gif",
+                "https://i.postimg.cc/85bMm9YS/dandadan-momo-ayase.gif"
+            ],
+            "absolute": [
+                "https://i.postimg.cc/m2mH8n6h/absolute-cinema.gif",
+                "https://i.postimg.cc/qvgCYG9S/absolute-cinema-arcane.gif",
+                "https://i.postimg.cc/FHf7GHLx/absolute-cinema-kpop-demon-hunters.gif",
+                "https://i.postimg.cc/6qjpLk6Y/cinema.gif",
+                "https://i.postimg.cc/d3HVmbQb/momo-ayase-dandadan.gif",
+                "https://i.postimg.cc/nrcLmFx6/nokotan-absolute-cinema.gif",
+                "https://i.postimg.cc/nrcLmFxw/skirk-genshin.gif",
+                "https://i.postimg.cc/Hxmnp0PZ/zero-two-darling-in-the-franxx.gif"
+            ]
+        };
+
         // Check for saved theme preference or default to dark mode
         const currentTheme = localStorage.getItem('theme') || 'dark';
         if (currentTheme === 'light') {
@@ -2262,6 +2818,48 @@
         faders.forEach(fader => {
             appearOnScroll.observe(fader);
         });
+        
+        // Populate Reactions Section
+        function populateReactions() {
+            const reactionsGrid = document.getElementById('reactionsGrid');
+            
+            // Add mention reactions
+            for (const [reaction, gifs] of Object.entries(MENTION_REACTIONS)) {
+                const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+                
+                const reactionCard = document.createElement('div');
+                reactionCard.className = 'reaction-card';
+                reactionCard.innerHTML = `
+                    <img src="${randomGif}" alt="${reaction} reaction" class="reaction-gif">
+                    <div class="reaction-info">
+                        <h4 class="reaction-name">${reaction.charAt(0).toUpperCase() + reaction.slice(1)}</h4>
+                        <p class="reaction-command">--${reaction} @user</p>
+                    </div>
+                `;
+                
+                reactionsGrid.appendChild(reactionCard);
+            }
+            
+            // Add single reactions
+            for (const [reaction, gifs] of Object.entries(SINGLE_REACTIONS)) {
+                const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+                
+                const reactionCard = document.createElement('div');
+                reactionCard.className = 'reaction-card';
+                reactionCard.innerHTML = `
+                    <img src="${randomGif}" alt="${reaction} reaction" class="reaction-gif">
+                    <div class="reaction-info">
+                        <h4 class="reaction-name">${reaction.charAt(0).toUpperCase() + reaction.slice(1)}</h4>
+                        <p class="reaction-command">--${reaction}</p>
+                    </div>
+                `;
+                
+                reactionsGrid.appendChild(reactionCard);
+            }
+        }
+        
+        // Initialize reactions section
+        populateReactions();
         
         // Button Effects
         function createRipple(event, button) {
