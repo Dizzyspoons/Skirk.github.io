@@ -227,7 +227,7 @@
         }
         
         h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2rem, 6vw, 4rem);
             font-weight: 900;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
@@ -262,7 +262,7 @@
         }
         
         h2 {
-            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             position: relative;
             margin-bottom: 2rem;
         }
@@ -292,12 +292,12 @@
         }
         
         h3 {
-            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
         }
         
         p {
             margin-bottom: 1.2rem;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
             line-height: 1.7;
             color: var(--text-secondary);
         }
@@ -335,14 +335,14 @@
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
         
         /* ===== Premium Navigation ===== */
         nav {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -363,7 +363,7 @@
             display: flex;
             align-items: center;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             font-weight: 900;
             color: var(--text-primary);
             text-decoration: none;
@@ -387,8 +387,8 @@
         }
         
         .logo-img {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             margin-right: 1rem;
             background: url('https://i.postimg.cc/ZKpMW6GB/Generated_Image_October_15__2025_-_1_46AM-removebg-preview_cropped.png') center center;
@@ -406,16 +406,17 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1rem;
         }
         
         .nav-links a {
             color: var(--text-secondary);
             font-weight: 600;
-            padding: 0.8rem 1rem;
+            padding: 0.5rem 0.8rem;
             position: relative;
             transition: var(--transition-smooth);
             border-radius: 8px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
         }
         
         .nav-links a::before {
@@ -456,10 +457,10 @@
         }
         
         .menu-toggle span {
-            width: 30px;
+            width: 25px;
             height: 3px;
             background: var(--text-primary);
-            margin: 4px 0;
+            margin: 3px 0;
             transition: var(--transition-smooth);
             border-radius: 3px;
             position: absolute;
@@ -471,7 +472,7 @@
         }
         
         .menu-toggle span:nth-child(2) {
-            top: 12px;
+            top: 10px;
         }
         
         .menu-toggle span:nth-child(3) {
@@ -481,7 +482,7 @@
         /* Hamburger menu animation */
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg);
-            top: 12px;
+            top: 10px;
         }
         
         .menu-toggle.active span:nth-child(2) {
@@ -490,7 +491,7 @@
         
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg);
-            bottom: 12px;
+            bottom: 10px;
         }
         
         /* ===== Premium Buttons ===== */
@@ -498,10 +499,10 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.8rem;
-            padding: 1rem 2rem;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: clamp(0.8rem, 2vw, 1rem);
             cursor: pointer;
             transition: var(--transition-smooth);
             border: none;
@@ -564,10 +565,10 @@
         
         .btn-group {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
         }
         
         /* ===== Premium Cards ===== */
@@ -575,7 +576,7 @@
             background: var(--bg-card);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             border: 1px solid var(--border-color);
             transition: var(--transition-bounce);
@@ -625,8 +626,17 @@
             height: 100%;
             background: url("https://i.postimg.cc/XN9500dr/skirk-genshin-impact-hd-wallpaper-uhdpaper-com-32-5-h.jpg") no-repeat center center;
             background-size: cover;
+            background-position: center 30%;
             z-index: -1;
         }
+        
+        @media (max-width: 912px) {
+                .hero::before {
+                    background-position: -350px center;
+                    background-size: 1400px;
+                }
+            }
+
         
         @keyframes heroZoom {
             0%, 100% { transform: scale(1); }
@@ -638,10 +648,11 @@
             max-width: 900px;
             position: relative;
             z-index: 1;
+            padding: 0 1rem;
         }
         
         .hero p {
-            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+            font-size: clamp(1rem, 3vw, 1.4rem);
             color: var(--text-secondary);
             margin-bottom: 2.5rem;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -649,7 +660,7 @@
         
         /* ===== Premium Section System ===== */
         .section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             position: relative;
             background: var(--bg-secondary);
             transition: var(--transition-page);
@@ -688,14 +699,14 @@
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
-            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             color: var(--text-primary);
             position: relative;
         }
         
         /* ===== App Showcase Section ===== */
         .app-showcase {
-            padding: 6rem 0;
+            padding: 4rem 0;
             position: relative;
             background: var(--bg-secondary);
             overflow: hidden;
@@ -704,15 +715,15 @@
         .showcase-container {
             display: flex;
             flex-direction: column;
-            gap: 4rem;
-            margin-top: 3rem;
+            gap: 3rem;
+            margin-top: 2rem;
         }
         
         .showcase-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 4rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
         
@@ -722,12 +733,12 @@
         
         .showcase-content {
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
         }
         
         .showcase-content h2 {
             text-align: left;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .showcase-content h2::after {
@@ -736,15 +747,15 @@
         }
         
         .showcase-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 1.5rem;
         }
         
         .showcase-features {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .showcase-feature {
@@ -754,21 +765,21 @@
         }
         
         .showcase-feature-icon {
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--gradient-primary);
             color: white;
             border-radius: 12px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         
         .showcase-feature-content h3 {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             margin-bottom: 0.5rem;
         }
         
@@ -778,7 +789,7 @@
         
         .showcase-visual {
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -787,11 +798,11 @@
         
         /* ===== Phone Mockup ===== */
         .phone-mockup {
-            width: 280px;
-            height: 560px;
+            width: 250px;
+            height: 500px;
             background: #1a1a1a;
-            border-radius: 40px;
-            padding: 15px;
+            border-radius: 30px;
+            padding: 10px;
             position: relative;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             transform: rotateY(-10deg);
@@ -806,7 +817,7 @@
             width: 100%;
             height: 100%;
             background: #fff;
-            border-radius: 30px;
+            border-radius: 25px;
             overflow: hidden;
             position: relative;
         }
@@ -816,10 +827,10 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
-            height: 25px;
+            width: 100px;
+            height: 20px;
             background: #1a1a1a;
-            border-radius: 0 0 20px 20px;
+            border-radius: 0 0 15px 15px;
             z-index: 2;
         }
         
@@ -828,7 +839,7 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            border-radius: 30px;
+            border-radius: 25px;
             transition: transform 0.5s ease;
         }
         
@@ -837,138 +848,78 @@
         }
         
         /* ===== Laptop Mockup ===== */
-        /* ===== Laptop Mockup ===== */
-.laptop-mockup {
-    width: 600px;
-    perspective: 1000px;
-    transform: rotateX(5deg);
-    box-sizing: border-box;
-    margin: 0 auto;
-}
-
-.screen-area {
-    width: 100%;
-    height: 380px;
-    background-color: #333;
-    border: 8px solid #333;
-    border-radius: 5px 5px 0 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-}
-
-.screen {
-    width: 100%;
-    height: 100%;
-    background-color: #A9A9A9;
-    position: relative;
-}
-
-.screen iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: #000;
-}
-
-.keyboard-area {
-    width: 105%;
-    height: 25px;
-    margin: 0 -2.5%;
-    background-color: #E0E0E0;
-    border-radius: 0 0 15px 15px;
-    position: relative;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-}
-
-.keyboard {
-    position: absolute;
-    top: 5px;
-    left: 2.5%;
-    width: 95%;
-    height: 15px;
-    background-color: #FFFFFF;
-    border-radius: 3px;
-}
-
-.keyboard::before {
-    content: '';
-    display: block;
-    width: 98%;
-    height: 60%;
-    background-color: #404040;
-    margin: 2px auto;
-    border-radius: 2px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 1200px) {
-    .laptop-mockup {
-        width: 500px;
-    }
-    
-    .screen-area {
-        height: 320px;
-        right: 9px;
-    }
-}
-
-@media (max-width: 992px) {
-    .laptop-mockup {
-        width: 450px;
-    }
-    
-    .screen-area {
-        height: 280px;
-    }
-}
-
-@media (max-width: 768px) {
-    .laptop-mockup {
-        width: 10%;
-        max-width: 250px;
-        height: auto;
-        left: 100%;
-    }
-    
-    .screen-area {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/10;
-        max-height: 50vh;
-    }
-    
-    .keyboard-area {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/1;
-        max-height: 15vh;
-    }
-}
-
-@media (max-width: 576px) {
-    .laptop-mockup {
-        max-width: 300px;
-    }
-    
-    .screen-area {
-        max-height: 40vh;
-    }
-    
-    .keyboard-area {
-        max-height: 10vh;
-    }
-}
- 
+        .laptop-mockup {
+            width: 600px;
+            max-width: 100%;
+            perspective: 1000px;
+            transform: rotateX(5deg);
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        
+        .screen-area {
+            width: 100%;
+            height: 380px;
+            background-color: #333;
+            border: 8px solid #333;
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .screen {
+            width: 100%;
+            height: 100%;
+            background-color: #A9A9A9;
+            position: relative;
+        }
+        
+        .screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #000;
+        }
+        
+        .keyboard-area {
+            width: 105%;
+            height: 25px;
+            margin: 0 -2.5%;
+            background-color: #E0E0E0;
+            border-radius: 0 0 15px 15px;
+            position: relative;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+        }
+        
+        .keyboard {
+            position: absolute;
+            top: 5px;
+            left: 2.5%;
+            width: 95%;
+            height: 15px;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+        }
+        
+        .keyboard::before {
+            content: '';
+            display: block;
+            width: 98%;
+            height: 60%;
+            background-color: #404040;
+            margin: 2px auto;
+            border-radius: 2px;
+        }
         
         /* ===== Feature Cards ===== */
         .feature-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .feature-card {
@@ -976,7 +927,7 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border: 1px solid var(--border-color);
             transition: var(--transition-bounce);
@@ -991,13 +942,13 @@
         }
         
         .feature-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
             color: white;
             position: relative;
             overflow: hidden;
@@ -1034,7 +985,7 @@
         }
         
         .feature-title {
-            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
@@ -1047,10 +998,10 @@
         
         /* ===== Command Showcase ===== */
         .command-showcase {
-            margin-top: 3rem;
+            margin-top: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2rem;
         }
         
         .command-category {
@@ -1062,7 +1013,7 @@
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             border: 1px solid var(--border-color);
-            padding: 2.5rem;
+            padding: 1.5rem;
             transition: var(--transition-bounce);
         }
         
@@ -1074,41 +1025,23 @@
         .category-header {
             display: flex;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             position: relative;
         }
         
-        /* ===== Command Category Icon ===== */
         .category-icon {
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: white;
             border-radius: 16px;
-            margin-right: 1.5rem;
+            margin-right: 1rem;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
-        }
-
-        /* Mobile overrides - ONLY for category icon */
-        @media (max-width: 768px) {
-            .category-icon {
-                width: 60px !important;
-                height: 60px !important;
-                font-size: 1.7rem !important;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .category-icon {
-                width: 50px !important;
-                height: 50px !important;
-                font-size: 1.5rem !important;
-            }
         }
         
         .category-icon::before {
@@ -1123,7 +1056,7 @@
         }
         
         .category-title {
-            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-size: clamp(1.3rem, 3vw, 2.2rem);
             font-weight: 800;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
@@ -1135,19 +1068,19 @@
         .category-desc {
             color: var(--text-secondary);
             margin-top: 0.5rem;
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
         }
         
         .commands-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
         }
         
         .command-item {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            padding: 1.2rem;
+            padding: 1rem;
             border: 1px solid var(--border-color);
             transition: var(--transition-smooth);
             position: relative;
@@ -1193,7 +1126,7 @@
             font-family: 'JetBrains Mono', monospace;
             font-weight: 700;
             color: var(--accent-tertiary);
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
@@ -1201,21 +1134,21 @@
         }
         
         .command-name i {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--accent-primary);
         }
         
         .command-desc {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: clamp(0.8rem, 1.5vw, 0.95rem);
         }
         
         /* ===== Premium Tiers Section ===== */
         .tier-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .tier-card {
@@ -1266,7 +1199,7 @@
             color: white;
             padding: 0.5rem 4rem;
             transform: rotate(45deg);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -1274,36 +1207,37 @@
         }
         
         .tier-title {
-            font-size: clamp(1.8rem, 3vw, 2rem);
-            margin-bottom: 1.5rem;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            margin-bottom: 1rem;
             color: var(--text-primary);
             text-align: center;
         }
         
         .tier-price {
-            font-size: clamp(2rem, 3vw, 2.5rem);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
             font-weight: 900;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             padding: 0.5rem 0;
             border-radius: 8px;
         }
         
         .tier-features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .tier-feature {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--text-secondary);
             transition: var(--transition-smooth);
+            font-size: clamp(0.85rem, 1.5vw, 0.95rem);
         }
         
         .tier-feature:hover {
@@ -1315,7 +1249,7 @@
             color: var(--accent-primary);
             margin-right: 0.8rem;
             margin-top: 0.2rem;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
         
         /* ===== Premium Footer ===== */
@@ -1329,8 +1263,8 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
         
@@ -1338,7 +1272,7 @@
             color: var(--text-secondary);
             transition: var(--transition-smooth);
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
         }
         
         .footer-links a:hover {
@@ -1349,13 +1283,13 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .social-links a {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1363,7 +1297,7 @@
             color: var(--text-secondary);
             transition: var(--transition-bounce);
             border-radius: 50%;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
         
         .social-links a:hover {
@@ -1375,14 +1309,14 @@
         
         .copyright {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
         }
         
         /* ===== Premium UI Elements ===== */
         .theme-toggle {
             position: fixed;
-            top: 2rem;
-            right: 2rem;
+            top: 20px;
+            right: 15px;
             z-index: 1001;
             background: var(--bg-card);
             width: 50px;
@@ -1411,7 +1345,7 @@
         .back-to-top {
             position: fixed;
             bottom: 2rem;
-            right: 2rem;
+            right: 20px;
             width: 50px;
             height: 50px;
             background: var(--gradient-primary);
@@ -1505,7 +1439,7 @@
         .mobile-fab-menu-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
             padding: 0.8rem;
             border-radius: 12px;
             transition: var(--transition-smooth);
@@ -1527,6 +1461,7 @@
         .mobile-fab-menu-item span {
             color: var(--text-primary);
             font-weight: 600;
+            font-size: 0.95rem;
         }
         
         .mobile-fab-menu-divider {
@@ -1557,13 +1492,13 @@
         }
         
         .loader {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border: 4px solid var(--bg-tertiary);
             border-top-color: var(--accent-primary);
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         @keyframes spin {
@@ -1572,7 +1507,7 @@
         
         .loading-text {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: var(--text-primary);
             font-weight: 700;
             animation: pulse 1.5s ease-in-out infinite;
@@ -1585,67 +1520,59 @@
         
         /* ===== Responsive Design ===== */
         @media (max-width: 1200px) {
-            .container {
-                padding: 0 1.5rem;
+            .laptop-mockup {
+                width: 500px;
             }
             
+            .screen-area {
+                height: 320px;
+            }
+        }
+        
+        @media (max-width: 992px) {
             .showcase-row {
                 flex-direction: column;
-                gap: 3rem;
+                gap: 2rem;
             }
             
             .showcase-row:nth-child(even) {
                 flex-direction: column;
             }
             
-            .laptop-mockup {
-                width: 500px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-            
-            .nav-links {
-                gap: 1.5rem;
-            }
-            
-            h1 {
-                font-size: clamp(2.5rem, 5vw, 3rem);
-            }
-            
             .commands-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 1.5rem;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
             }
             
             .tier-cards {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: 1fr;
             }
             
             .laptop-mockup {
                 width: 450px;
+            }
+            
+            .screen-area {
+                height: 280px;
             }
         }
         
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background: var(--bg-secondary);
                 flex-direction: column;
                 align-items: center;
-                padding: 2rem 0;
+                padding: 1.5rem 0;
                 transform: translateY(-100%);
                 opacity: 0;
                 visibility: hidden;
                 transition: var(--transition-page);
                 z-index: 999;
-                gap: 1rem;
+                gap: 0.8rem;
             }
             
             .nav-links.active {
@@ -1658,11 +1585,6 @@
                 display: flex;
             }
             
-            .commands-grid,
-            .tier-cards {
-                grid-template-columns: 1fr;
-            }
-            
             .btn-group {
                 flex-direction: column;
                 align-items: center;
@@ -1670,7 +1592,7 @@
             
             .btn {
                 width: 100%;
-                max-width: 320px;
+                max-width: 280px;
             }
             
             .theme-toggle,
@@ -1682,169 +1604,8 @@
                 display: flex;
             }
             
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .laptop-mockup {
-                width: 100%;
-                max-width: 350px;
-            }
-            
-            .phone-mockup {
-                width: 220px;
-                height: 440px;
-            }
-            
-            /* Mobile Command Icons - Make them smaller */
-            .command-name i {
-                font-size: 0.8rem !important;
-            }
-            
-            .command-item {
-                padding: 1rem !important;
-            }
-            
-            .command-name {
-                font-size: 0.9rem !important;
-            }
-            
-            .command-desc {
-                font-size: 0.85rem !important;
-            }
-            
-            /* Mobile Category Icons - Make them smaller */
-            .category-icon {
-                width: 50px !important;
-                height: 50px !important;
-                font-size: 1.5rem !important;
-            }
-            
-            /* Mobile Feature Icons - Make them smaller */
-            .feature-icon {
-                width: 50px !important;
-                height: 50px !important;
-                font-size: 1.5rem !important;
-            }
-            
-            /* Mobile Discord Integration - Make it smaller */
-            .discord-integration {
-                padding: 1.5rem !important;
-            }
-            
-            .discord-integration-icon {
-                width: 50px !important;
-                height: 50px !important;
-                font-size: 1.5rem !important;
-            }
-            /* fuck this shit man */
-            .discord-integration-title {
-            font-size: clamp(1.8rem, 3vw, 2.2rem);
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin: 0;
-        }
-            
-            .discord-integration-title {
-                font-size: 1.5rem !important;
-            }
-            
-            .discord-integration-desc {
-                font-size: 1rem !important;
-            }
-            
-            /* Mobile Command Examples - Make them smaller */
-            .command-example {
-                padding: 0.8rem !important;
-                min-width: 150px !important;
-            }
-            
-            .command-name {
-                font-size: 0.9rem !important;
-            }
-            
-            .command-desc {
-                font-size: 0.85rem !important;
-            }
-            
-            /* Mobile Showcase Features - Make them smaller */
-            .showcase-feature-icon {
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1rem !important;
-            }
-            
-            .showcase-feature-content h3 {
-                font-size: 1rem !important;
-            }
-            
-            .showcase-feature-content p {
-                font-size: 0.9rem !important;
-            }
-            
-            /* Mobile Cards - Make them smaller */
-            .card {
-                padding: 1.5rem !important;
-            }
-            
-            /* Mobile Tiers - Make them smaller */
-            .tier-card {
-                padding: 1.5rem !important;
-            }
-            
-            .tier-title {
-                font-size: 1.5rem !important;
-            }
-            
-            .tier-price {
-                font-size: 1.8rem !important;
-            }
-            
-            .tier-feature {
-                font-size: 0.9rem !important;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            h1 {
-                font-size: clamp(2rem, 4vw, 2.5rem);
-            }
-            
-            h2 {
-                font-size: clamp(1.8rem, 4vw, 2rem);
-            }
-            
             .section {
                 padding: 3rem 0;
-            }
-            
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-            
-            .card {
-                padding: 1.5rem;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .social-links {
-                gap: 1rem;
             }
             
             .phone-mockup {
@@ -1852,55 +1613,203 @@
                 height: 400px;
             }
             
-            /* Even smaller command icons for very small screens */
-            .command-name i {
-                font-size: 0.7rem !important;
+            .command-item {
+                padding: 0.8rem;
             }
             
-            .command-item {
-                padding: 0.8rem !important;
+            .category-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .laptop-mockup {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .screen-area {
+                height: 220px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: clamp(1.8rem, 5vw, 2.5rem);
+            }
+            
+            h2 {
+                font-size: clamp(1.3rem, 4vw, 2rem);
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .card {
+                padding: 1rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            .social-links {
+                gap: 0.8rem;
+            }
+            
+            .phone-mockup {
+                width: 180px;
+                height: 360px;
             }
             
             .command-name {
-                font-size: 0.8rem !important;
+                font-size: 0.85rem;
             }
             
             .command-desc {
-                font-size: 0.8rem !important;
+                font-size: 0.8rem;
             }
             
-            /* Even smaller category icons */
             .category-icon {
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1.2rem !important;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
             }
             
-            /* Even smaller feature icons */
             .feature-icon {
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1.2rem !important;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
             }
             
-            /* Even smaller discord integration */
-            .discord-integration {
-                padding: 1rem !important;
+            .laptop-mockup {
+                max-width: 300px;
             }
             
-            .discord-integration-icon {
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1.2rem !important;
+            .screen-area {
+                height: 180px;
             }
+        }
+        
+        /* Discord Integration Styles */
+        .skirk {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .command-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .command-example {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .command-example:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .command-example::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .command-example:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .skirk-card {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            min-height: 350px;
             
-            .discord-integration-title {
-                font-size: 1.2rem !important;
-            }
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             
-            .discord-integration-desc {
-                font-size: 0.9rem !important;
-            }
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition-bounce);
+            
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .skirk-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .discord-integration-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .bot-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+        
+        .discord-preview {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        
+        .skirk-gradiant {
+            display: inline-block;
+            background: linear-gradient(90deg, #7915a0, #4c00fe, #7e1212);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
     </style>
 </head>
@@ -1951,28 +1860,42 @@
             <span>Vote on Top.gg</span>
         </div>
     </div>
-    
-    <!-- Premium Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#home" class="logo">
+    <style>
+        .skirk-small-text {
+    font-size: 1.5rem;   /* try 0.7rem or 12px if needed */
+}
+
+    </style>
+<nav>
+    <div class="container nav-container">
+
+        <!-- Logo -->
+        <a href="#home" class="logo">
+            <span class="skirk-small-text">
                 ꧁⎝ 𓆩༺Skirk༻𓆪 ⎠꧂
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" data-section="home">Home</a></li>
-                <li><a href="#showcase" data-section="showcase">Showcase</a></li>
-                <li><a href="#features" data-section="features">Features</a></li>
-                <li><a href="#commands" data-section="commands">Commands</a></li>
-                <li><a href="#premium" data-section="premium">Premium</a></li>
-                <li><a href="#policy" data-section="policy">Policy</a></li>
-            </ul>
-            <button class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+            </span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" data-section="home">Home</a></li>
+            <li><a href="#showcase" data-section="showcase">Showcase</a></li>
+            <li><a href="#features" data-section="features">Features</a></li>
+            <li><a href="#commands" data-section="commands">Commands</a></li>
+            <li><a href="#premium" data-section="premium">Premium</a></li>
+            <li><a href="#policy" data-section="policy">Policy</a></li>
+        </ul>
+
+        <!-- Mobile menu -->
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</nav>
+
     
     <!-- Epic Hero Section -->
     <section class="section active" id="home">
@@ -1980,7 +1903,10 @@
             <div class="hero">
                 <div class="hero-content">
                     <h1>Skirk Bot</h1>
-                    <p>The ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, and build your dream team!</p>
+                    <p class="skirk-gradiant">
+                        The ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, and build your dream team!
+                    </p>
+                    
                     <div class="btn-group">
                         <a href="https://discord.com/oauth2/authorize?client_id=1131915476335870023&permissions=2048&integration_type=0&scope=bot" class="btn btn-primary">
                             <i class="fas fa-plus"></i> Invite Bot
@@ -2007,7 +1933,7 @@
                 <div class="showcase-row">
                     <div class="showcase-content">
                         <h2>Mobile Experience</h2>
-                        <p>Take Skirk Bot anywhere! Our mobile-optimized interface ensures smooth gameplay on any device. Hunt monsters, manage your team, and stay connected with the Genshin community on the go.</p>
+                        <p>Take Skirk Bot anywhere! Our mobile-optimized interface ensures smooth gameplay on any device. Hunt monsters, manage your team, and stay connected with Genshin community on go.</p>
                         
                         <div class="showcase-features">
                             <div class="showcase-feature">
@@ -2097,186 +2023,67 @@
                     </div>
                 </div>
                 
-<!-- Discord Interface Showcase -->
-<div class="showcase-row">
-
-    <!-- Text Content -->
-    <div class="showcase-content">
-        <h2>Discord Integration</h2>
-        <p>
-            Skirk Bot works seamlessly with Discord using both modern slash commands (/)
-            and traditional prefix commands (--). No complex setup required — just invite
-            and start playing!
-        </p>
-
-        <div class="command-examples">
-            <div class="command-example">
-                <span class="command-name">/hunt</span>
-                <span class="command-desc">Modern slash command</span>
-            </div>
-
-            <div class="command-example">
-                <span class="command-name">--hunt</span>
-                <span class="command-desc">Traditional prefix command</span>
-            </div>
-        </div>
-
-        <div class="btn-group">
-            <a
-                href="https://discord.com/oauth2/authorize?client_id=1131915476335870023&permissions=2048&integration_type=0&scope=bot"
-                class="btn btn-primary"
-            >
-                <i class="fab fa-discord"></i> Add to Discord
-            </a>
-        </div>
-    </div>
-
-    <!-- Card Preview -->
-    <div class="skirk">
-        <div class="skirk-card">
-
-            <div class="discord-integration-header">
-                <img
-                    class="bot-avatar"
-                    src="https://i.postimg.cc/c4b2hDf1/1440960312386916383.webp"
-                    alt="Skirk Bot Avatar"
-                />
-
-                <div>
-                    <h3 class="category-title">˗ˏˋ Commands ≽^• ˕ • ྀི≼</h3>
-                    <p class="discord-integration-desc">
-                        You can set a custom prefix or use <b>--</b> , <b>/</b>
-                    </p>
+                <!-- Discord Interface Showcase -->
+                <div class="showcase-row">
+                    <div class="showcase-content">
+                        <h2>Discord Integration</h2>
+                        <p>
+                            Skirk Bot works seamlessly with Discord using both modern slash commands (/)
+                            and traditional prefix commands (--). No complex setup required — just invite
+                            and start playing!
+                        </p>
+                        
+                        <div class="command-examples">
+                            <div class="command-example">
+                                <span class="command-name">/hunt</span>
+                                <span class="command-desc">Modern slash command</span>
+                            </div>
+                            
+                            <div class="command-example">
+                                <span class="command-name">--hunt</span>
+                                <span class="command-desc">Traditional prefix command</span>
+                            </div>
+                        </div>
+                        
+                        <div class="btn-group">
+                            <a
+                                href="https://discord.com/oauth2/authorize?client_id=1131915476335870023&permissions=2048&integration_type=0&scope=bot"
+                                class="btn btn-primary"
+                            >
+                                <i class="fab fa-discord"></i> Add to Discord
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="skirk">
+                        <div class="skirk-card">
+                            <div class="discord-integration-header">
+                                <img
+                                    class="bot-avatar"
+                                    src="https://i.postimg.cc/c4b2hDf1/1440960312386916383.webp"
+                                    alt="Skirk Bot Avatar"
+                                />
+                                
+                                <div>
+                                    <h3 class="category-title">˗ˏˋ Commands ≽^• ˕ • ྀི≼</h3>
+                                    <p class="discord-integration-desc">
+                                        You can set a custom prefix or use <b>--</b> , <b>/</b>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <img
+                                class="discord-preview"
+                                src="https://i.postimg.cc/rs5tKZ1b/l-ship-໒-Radiant-Galaxy-Discord-2025-12-15-17-53-20-converted.gif"
+                                alt="Skirk Bot Discord Interface"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <img
-                class="discord-preview"
-                src="https://i.postimg.cc/rs5tKZ1b/l-ship-໒-Radiant-Galaxy-Discord-2025-12-15-17-53-20-converted.gif"
-                alt="Skirk Bot Discord Interface"
-            />
         </div>
-    </div>
-
-</div>
-<style>
-    .skirk {
-    flex: 1;
-    min-width: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Card */
-        .command-examples {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .command-example {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 1.2rem;
-            border: 1px solid var(--border-color);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-        }
-        
-        .command-example:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .command-example::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-primary);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .command-example:hover::before {
-            transform: scaleY(1);
-        }
-    .command-examples {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-.skirk-card {
-    width: 100%;
-    max-width: 520px;        /* responsive instead of 2000px */
-    height: 400px;
-
-    background: var(--bg-card);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border-radius: 16px;
-    padding: 2rem;
-    border: 1px solid var(--border-color);
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: var(--transition-bounce);
-
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-/* Hover effect */
-.skirk-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-/* Header */
-.discord-integration-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.bot-avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-}
-
-/* Text */
-.category-title {
-    font-size: 1.2rem;
-    margin: 0;
-}
-
-.discord-integration-desc {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* Image */
-.skirk-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* control spacing here */
-}
-
-</style>
+    </section>
+    
     <!-- Features Section -->
     <section class="section" id="features">
         <div class="section-content">
@@ -2352,7 +2159,7 @@
                             </div>
                             <div>
                                 <h3 class="category-title">Shipping</h3>
-                                <p class="category-desc">Feel free to simp everyne does hehe</p>
+                                <p class="category-desc">Feel free to simp everyone does hehe</p>
                             </div>
                         </div>
                         
@@ -2369,7 +2176,7 @@
                             </div>
                             <div>
                                 <h3 class="category-title">System</h3>
-                                <p class="category-desc">commands for managing the bot</p>
+                                <p class="category-desc">Commands for managing the bot</p>
                             </div>
                         </div>
                         
