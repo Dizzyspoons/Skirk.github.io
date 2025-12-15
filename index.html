@@ -569,11 +569,7 @@
             justify-content: center;
             margin-top: 2.5rem;
         }
-        .discord-integration-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        
         /* ===== Premium Cards ===== */
         .card {
             background: var(--bg-card);
@@ -629,7 +625,6 @@
             height: 100%;
             background: url("https://i.postimg.cc/XN9500dr/skirk-genshin-impact-hd-wallpaper-uhdpaper-com-32-5-h.jpg") no-repeat center center;
             background-size: cover;
-            opacity: 0.0.5;
             z-index: -1;
         }
         
@@ -790,72 +785,6 @@
             position: relative;
         }
         
-        /* ===== MacBook-Style Laptop Mockup ===== */
-        .laptop-container {
-            width: 600px;
-            perspective: 1000px;
-            transform: rotateX(5deg);
-            box-sizing: border-box;
-        }
-
-        .screen-area {
-            width: 100%;
-            height: 380px;
-            background-color: #333;
-            border: 8px solid #333;
-            border-radius: 5px 5px 0 0;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .screen {
-            width: 100%;
-            height: 100%;
-            background-color: #A9A9A9;
-            position: relative;
-        }
-
-        .screen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Maintains aspect ratio */
-            image-rendering: -webkit-optimize-contrast; /* Improves quality */
-            image-rendering: crisp-edges;
-        }
-
-        .keyboard-area {
-            width: 105%;
-            height: 25px;
-            margin: 0 -2.5%;
-            background-color: #E0E0E0;
-            border-radius: 0 0 15px 15px;
-            position: relative;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-            box-sizing: border-box;
-        }
-
-        .keyboard {
-            position: absolute;
-            top: 5px;
-            left: 2.5%;
-            width: 95%;
-            height: 15px;
-            background-color: #FFFFFF;
-            border-radius: 3px;
-        }
-
-        .keyboard::before {
-            content: '';
-            display: block;
-            width: 98%;
-            height: 60%;
-            background-color: #404040;
-            margin: 2px auto;
-            border-radius: 2px;
-        }
-        
         /* ===== Phone Mockup ===== */
         .phone-mockup {
             width: 280px;
@@ -907,117 +836,132 @@
             transform: scale(1.1);
         }
         
-        /* ===== Discord Integration Section ===== */
-        .discord-integration {
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-color);
-            transition: var(--transition-bounce);
-            position: relative;
-            overflow: hidden;
-            margin-top: 3rem;
-        }
-        
-        .discord-integration:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .discord-integration-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        
-        .discord-integration-icon {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            background: var(--gradient-primary);
-            border-radius: 16px;
-            margin-right: 1.5rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .discord-integration-title {
-            font-size: clamp(1.8rem, 3vw, 2.2rem);
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin: 0;
-        }
-        
-        .discord-integration-desc {
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .command-examples {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .command-example {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 1.2rem;
-            border: 1px solid var(--border-color);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-        }
-        
-        .command-example:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .command-example::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-primary);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .command-example:hover::before {
-            transform: scaleY(1);
-        }
-        
-        .command-name {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            color: var(--accent-tertiary);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .command-desc {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
+        /* ===== Laptop Mockup ===== */
+        /* ===== Laptop Mockup ===== */
+.laptop-mockup {
+    width: 600px;
+    perspective: 1000px;
+    transform: rotateX(5deg);
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.screen-area {
+    width: 100%;
+    height: 380px;
+    background-color: #333;
+    border: 8px solid #333;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background-color: #A9A9A9;
+    position: relative;
+}
+
+.screen iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #000;
+}
+
+.keyboard-area {
+    width: 105%;
+    height: 25px;
+    margin: 0 -2.5%;
+    background-color: #E0E0E0;
+    border-radius: 0 0 15px 15px;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.keyboard {
+    position: absolute;
+    top: 5px;
+    left: 2.5%;
+    width: 95%;
+    height: 15px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+}
+
+.keyboard::before {
+    content: '';
+    display: block;
+    width: 98%;
+    height: 60%;
+    background-color: #404040;
+    margin: 2px auto;
+    border-radius: 2px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1200px) {
+    .laptop-mockup {
+        width: 500px;
+    }
+    
+    .screen-area {
+        height: 320px;
+        right: 9px;
+    }
+}
+
+@media (max-width: 992px) {
+    .laptop-mockup {
+        width: 450px;
+    }
+    
+    .screen-area {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .laptop-mockup {
+        width: 10%;
+        max-width: 250px;
+        height: auto;
+        left: 100%;
+    }
+    
+    .screen-area {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/10;
+        max-height: 50vh;
+    }
+    
+    .keyboard-area {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/1;
+        max-height: 15vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .laptop-mockup {
+        max-width: 300px;
+    }
+    
+    .screen-area {
+        max-height: 40vh;
+    }
+    
+    .keyboard-area {
+        max-height: 10vh;
+    }
+}
+ 
         
         /* ===== Feature Cards ===== */
         .feature-cards {
@@ -1134,6 +1078,7 @@
             position: relative;
         }
         
+        /* ===== Command Category Icon ===== */
         .category-icon {
             width: 70px;
             height: 70px;
@@ -1147,6 +1092,23 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
+        }
+
+        /* Mobile overrides - ONLY for category icon */
+        @media (max-width: 768px) {
+            .category-icon {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 1.7rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.5rem !important;
+            }
         }
         
         .category-icon::before {
@@ -1295,58 +1257,7 @@
                 box-shadow: 0 0 40px rgba(79, 172, 254, 0.8);
             }
         }
-        /* CSS for phone */
-        .showcase-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .phone-mockup {
-            width: 280px;
-            aspect-ratio: 9 / 19.5;
-        }
-
-        .phone-frame {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: #111;
-            border-radius: 36px;
-            padding: 12px;
-            box-shadow:
-                0 30px 60px rgba(0,0,0,0.4),
-                inset 0 0 0 2px #222;
-        }
-
-        .phone-notch {
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 22px;
-            background: #000;
-            border-radius: 0 0 14px 14px;
-            z-index: 3;
-        }
-
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: #000;
-            border-radius: 28px;
-            overflow: hidden;
-        }
-
-        .phone-content {
-            width: 100%;
-            height: 100%;
-            background-image: url("https://i.postimg.cc/rskNnTsf/Screenshot-20251215-142454-Discord.jpg");
-            background-size: cover;
-            background-position: center;
-        }
-
+        
         .tier-badge {
             position: absolute;
             top: 1.5rem;
@@ -1408,104 +1319,9 @@
         }
         
         /* ===== Premium Footer ===== */
-        /* New Laptop Design Styles */
-        .laptop {
-            width: 650px;
-            position: relative;
-        }
-
-        .screen {
-            width: 100%;
-            height: 380px;
-            background: #888;
-            border-radius: 8px;
-            border: 12px solid #222;
-            position: relative;
-            margin-bottom: -5px;
-            overflow: hidden;
-        }
-
-        .screen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .hinge {
-            width: 100%;
-            height: 10px;
-            background: #222;
-            position: relative;
-            margin-top: -5px;
-        }
-
-        .base {
-            width: 100%;
-            height: 180px;
-            background: #e0e0e0;
-            border-radius: 0 0 8px 8px;
-            position: relative;
-            border-top: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .keyboard {
-            display: grid;
-            grid-template-columns: repeat(15, 1fr);
-            grid-gap: 4px;
-            width: 95%;
-            margin-bottom: 15px;
-        }
-
-        .key {
-            background: #222;
-            border-radius: 2px;
-            height: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-            color: #fff;
-            user-select: none;
-        }
-
-        .key.space {
-            grid-column: span 5;
-        }
-
-        .trackpad {
-            width: 60%;
-            height: 40px;
-            background: #e8e8e8;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-
-        .loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            display: none;
-        }
-
-        @keyframes spin {
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
         footer {
-            background: #000 ;
-            padding: 1rem 0 0.1rem;
+            background: #000;
+            padding: 2rem 0 1rem;
             text-align: center;
             border-top: 1px solid var(--border-color);
         }
@@ -1624,115 +1440,6 @@
         
         .back-to-top i {
             font-size: 1.3rem;
-        }
-        
-        /* Enhanced Stats Badge */
-        .stats-badge {
-            position: fixed;
-            top: 7rem;
-            right: 2rem;
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 1.5rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-            transition: var(--transition-smooth);
-            z-index: 999;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            min-width: 180px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .stats-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .stats-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .stats-title i {
-            color: var(--accent-primary);
-            font-size: 1.3rem;
-        }
-        
-        .stats-body {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: var(--text-secondary);
-            font-size: 1rem;
-            transition: var(--transition-smooth);
-        }
-        
-        .stat-item:hover {
-            transform: translateX(5px);
-            color: var(--text-primary);
-        }
-        
-        .stat-item i {
-            color: var(--accent-primary);
-            font-size: 1.2rem;
-            width: 24px;
-            text-align: center;
-        }
-        
-        .stat-value {
-            font-weight: 700;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-        }
-        
-        /* Fixed Top.gg Widget */
-        .topgg-widget {
-            position: fixed;
-            bottom: 7rem;
-            right: 2rem;
-            background: var(--bg-card);
-            padding: 1rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-            transition: var(--transition-smooth);
-            z-index: 999;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            max-width: 220px;
-            overflow: hidden;
-        }
-        
-        .topgg-widget a {
-            display: block;
-            text-decoration: none;
-        }
-        
-        .topgg-widget img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .topgg-widget:hover img {
-            transform: scale(1.05);
         }
         
         /* Mobile Floating Action Button */
@@ -1892,8 +1599,7 @@
             }
             
             .laptop-mockup {
-                width: 650px;
-                height: 380px;
+                width: 500px;
             }
         }
         
@@ -1920,8 +1626,7 @@
             }
             
             .laptop-mockup {
-                width: 550px;
-                height: 320px;
+                width: 450px;
             }
         }
         
@@ -1969,8 +1674,6 @@
             }
             
             .theme-toggle,
-            .stats-badge,
-            .topgg-widget,
             .back-to-top {
                 display: none;
             }
@@ -1989,8 +1692,123 @@
             
             .laptop-mockup {
                 width: 100%;
-                max-width: 450px;
-                height: auto;
+                max-width: 350px;
+            }
+            
+            .phone-mockup {
+                width: 220px;
+                height: 440px;
+            }
+            
+            /* Mobile Command Icons - Make them smaller */
+            .command-name i {
+                font-size: 0.8rem !important;
+            }
+            
+            .command-item {
+                padding: 1rem !important;
+            }
+            
+            .command-name {
+                font-size: 0.9rem !important;
+            }
+            
+            .command-desc {
+                font-size: 0.85rem !important;
+            }
+            
+            /* Mobile Category Icons - Make them smaller */
+            .category-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.5rem !important;
+            }
+            
+            /* Mobile Feature Icons - Make them smaller */
+            .feature-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.5rem !important;
+            }
+            
+            /* Mobile Discord Integration - Make it smaller */
+            .discord-integration {
+                padding: 1.5rem !important;
+            }
+            
+            .discord-integration-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.5rem !important;
+            }
+            /* fuck this shit man */
+            .discord-integration-title {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+        }
+            
+            .discord-integration-title {
+                font-size: 1.5rem !important;
+            }
+            
+            .discord-integration-desc {
+                font-size: 1rem !important;
+            }
+            
+            /* Mobile Command Examples - Make them smaller */
+            .command-example {
+                padding: 0.8rem !important;
+                min-width: 150px !important;
+            }
+            
+            .command-name {
+                font-size: 0.9rem !important;
+            }
+            
+            .command-desc {
+                font-size: 0.85rem !important;
+            }
+            
+            /* Mobile Showcase Features - Make them smaller */
+            .showcase-feature-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1rem !important;
+            }
+            
+            .showcase-feature-content h3 {
+                font-size: 1rem !important;
+            }
+            
+            .showcase-feature-content p {
+                font-size: 0.9rem !important;
+            }
+            
+            /* Mobile Cards - Make them smaller */
+            .card {
+                padding: 1.5rem !important;
+            }
+            
+            /* Mobile Tiers - Make them smaller */
+            .tier-card {
+                padding: 1.5rem !important;
+            }
+            
+            .tier-title {
+                font-size: 1.5rem !important;
+            }
+            
+            .tier-price {
+                font-size: 1.8rem !important;
+            }
+            
+            .tier-feature {
+                font-size: 0.9rem !important;
             }
         }
         
@@ -2029,18 +1847,59 @@
                 gap: 1rem;
             }
             
-            .laptop-keyboard-container {
-                padding: 10px 15px;
+            .phone-mockup {
+                width: 200px;
+                height: 400px;
             }
             
-            .keyboard-key {
-                width: 25px;
-                height: 25px;
-                font-size: 0.7rem;
+            /* Even smaller command icons for very small screens */
+            .command-name i {
+                font-size: 0.7rem !important;
             }
             
-            .keyboard-key.space {
-                width: 140px;
+            .command-item {
+                padding: 0.8rem !important;
+            }
+            
+            .command-name {
+                font-size: 0.8rem !important;
+            }
+            
+            .command-desc {
+                font-size: 0.8rem !important;
+            }
+            
+            /* Even smaller category icons */
+            .category-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1.2rem !important;
+            }
+            
+            /* Even smaller feature icons */
+            .feature-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1.2rem !important;
+            }
+            
+            /* Even smaller discord integration */
+            .discord-integration {
+                padding: 1rem !important;
+            }
+            
+            .discord-integration-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1.2rem !important;
+            }
+            
+            .discord-integration-title {
+                font-size: 1.2rem !important;
+            }
+            
+            .discord-integration-desc {
+                font-size: 0.9rem !important;
             }
         }
     </style>
@@ -2068,10 +1927,6 @@
         <i class="fas fa-arrow-up"></i>
     </div>
     
-    <!-- Enhanced Stats Badge -->
-    
-    <!-- Fixed Top.gg Widget -->
-
     <!-- Mobile Floating Action Button -->
     <div class="mobile-fab" id="mobileFab">
         <i class="fas fa-plus"></i>
@@ -2100,8 +1955,8 @@
     <!-- Premium Navigation -->
     <nav>
         <div class="container nav-container">
-            <a href="" class="logo">
-                Skirk Bot
+            <a href="#home" class="logo">
+                ꧁⎝ 𓆩༺Skirk༻𓆪 ⎠꧂
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" data-section="home">Home</a></li>
@@ -2183,17 +2038,15 @@
                         </div>
                     </div>
                     
-                <div class="showcase-visual">
-                    <div class="phone-mockup">
-                        <div class="phone-frame">
-                            <div class="phone-notch"></div>
+                    <div class="showcase-visual">
+                        <div class="phone-mockup">
                             <div class="phone-screen">
-                                <div class="phone-content"></div>
+                                <div class="phone-notch"></div>
+                                <div class="phone-content" style="background-image: url('https://i.postimg.cc/rskNnTsf/Screenshot-20251215-142454-Discord.jpg');"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 
                 <!-- Desktop/Laptop Showcase -->
                 <div class="showcase-row">
@@ -2232,72 +2085,198 @@
                     
                     <div class="showcase-visual">
                         <div class="laptop-mockup">
-                            <div class="laptop-container">
-                                <div class="screen-area">
-                                    <div class="screen" id="screen">
-                                        <!-- Default image will load here -->
-                                    </div>
+                            <div class="screen-area">
+                                <div class="screen">
+                                    <iframe src="https://www.youtube.com/embed/6jo4wrW7EQ4?autoplay=1&mute=1&controls=0&loop=1&playlist=6jo4wrW7EQ4" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-
-                                <div class="keyboard-area">
-                                    <div class=""></div>
-                                </div>
+                            </div>
+                            <div class="keyboard-area">
+                                <div class="keyboard"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                    
-                    <!-- New laptop-mockup with interactive functionality -->
-                    <div class="laptop-mockup">
-                            </div>
-                            
                 
-                <!-- Discord Interface Showcase -->
-                <div class="showcase-row">
-                    <div class="showcase-content">
-                        <h2>Discord Integration</h2>
-                        <p>Skirk Bot works seamlessly with Discord using both modern slash commands (/) and traditional prefix commands (--). No complex setup required - just invite and start playing!</p>
-                        
-                        <div class="command-examples">
-                            <div class="command-example">
-                                <div class="command-name">/hunt</div>
-                                <div class="command-desc">Modern slash command</div>
-                            </div>
-                            <div class="command-example">
-                                <div class="command-name">--hunt</div>
-                                <div class="command-desc">Traditional prefix command</div>
-                            </div>
-                        </div>
-                        
-                        <div class="btn-group">
-                            <a href="https://discord.com/oauth2/authorize?client_id=1131915476335870023&permissions=2048&integration_type=0&scope=bot" class="btn btn-primary">
-                                <i class="fab fa-discord"></i> Add to Discord
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="showcase-visual">
-                        <div class="discord-integration">
-                            <div class="discord-integration-header">
-                                <div class="">
-                                    <img
-                                        src="https://i.postimg.cc/c4b2hDf1/1440960312386916383.webp"
-                                    />
-                                </div>
-                                <div>
-                                    <h3 class="discord-integration-title">˗ˏˋCommands ≽^• ˕ • ྀི≼</h3>
-                                    <p class="discord-integration-desc">you can set custom prefix or use[--],[/]</p>
-                                </div>
-                            </div>
-                            
-                            <img src="https://i.postimg.cc/rs5tKZ1b/l-ship-໒-Radiant-Galaxy-Discord-2025-12-15-17-53-20-converted.gif" alt="Skirk Bot Discord Interface" style="width: 100%; border-radius: 8px; margin-top: 1rem;">
-                        </div>
-                    </div>
-                </div>
+<!-- Discord Interface Showcase -->
+<div class="showcase-row">
+
+    <!-- Text Content -->
+    <div class="showcase-content">
+        <h2>Discord Integration</h2>
+        <p>
+            Skirk Bot works seamlessly with Discord using both modern slash commands (/)
+            and traditional prefix commands (--). No complex setup required — just invite
+            and start playing!
+        </p>
+
+        <div class="command-examples">
+            <div class="command-example">
+                <span class="command-name">/hunt</span>
+                <span class="command-desc">Modern slash command</span>
+            </div>
+
+            <div class="command-example">
+                <span class="command-name">--hunt</span>
+                <span class="command-desc">Traditional prefix command</span>
             </div>
         </div>
-    </section>
 
+        <div class="btn-group">
+            <a
+                href="https://discord.com/oauth2/authorize?client_id=1131915476335870023&permissions=2048&integration_type=0&scope=bot"
+                class="btn btn-primary"
+            >
+                <i class="fab fa-discord"></i> Add to Discord
+            </a>
+        </div>
+    </div>
+
+    <!-- Card Preview -->
+    <div class="skirk">
+        <div class="skirk-card">
+
+            <div class="discord-integration-header">
+                <img
+                    class="bot-avatar"
+                    src="https://i.postimg.cc/c4b2hDf1/1440960312386916383.webp"
+                    alt="Skirk Bot Avatar"
+                />
+
+                <div>
+                    <h3 class="category-title">˗ˏˋ Commands ≽^• ˕ • ྀི≼</h3>
+                    <p class="discord-integration-desc">
+                        You can set a custom prefix or use <b>--</b> , <b>/</b>
+                    </p>
+                </div>
+            </div>
+
+            <img
+                class="discord-preview"
+                src="https://i.postimg.cc/rs5tKZ1b/l-ship-໒-Radiant-Galaxy-Discord-2025-12-15-17-53-20-converted.gif"
+                alt="Skirk Bot Discord Interface"
+            />
+        </div>
+    </div>
+
+</div>
+<style>
+    .skirk {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+        .command-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .command-example {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.2rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .command-example:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .command-example::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .command-example:hover::before {
+            transform: scaleY(1);
+        }
+    .command-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+.skirk-card {
+    width: 100%;
+    max-width: 520px;        /* responsive instead of 2000px */
+    height: 400px;
+
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-bounce);
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Hover effect */
+.skirk-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.discord-integration-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bot-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+/* Text */
+.category-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.discord-integration-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Image */
+.skirk-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* control spacing here */
+}
+
+</style>
     <!-- Features Section -->
     <section class="section" id="features">
         <div class="section-content">
@@ -2356,7 +2335,7 @@
                             </div>
                             <div>
                                 <h3 class="category-title">Gameplay</h3>
-                                <p class="category-desc">Core gameplay features for hunting, collecting, and battling</p>
+                                <p class="category-desc">Try out the fun</p>
                             </div>
                         </div>
                         
@@ -2373,7 +2352,7 @@
                             </div>
                             <div>
                                 <h3 class="category-title">Shipping</h3>
-                                <p class="category-desc">Fun shipping commands for creating character pairings</p>
+                                <p class="category-desc">Feel free to simp everyne does hehe</p>
                             </div>
                         </div>
                         
@@ -2390,7 +2369,7 @@
                             </div>
                             <div>
                                 <h3 class="category-title">System</h3>
-                                <p class="category-desc">Administrative commands for managing the bot in your server</p>
+                                <p class="category-desc">commands for managing the bot</p>
                             </div>
                         </div>
                         
@@ -2571,7 +2550,6 @@
     </footer>
     
     <script>
-        
         // Command data
         const GAMEPLAY_COMMANDS = [
             { name: "/apply", desc: "Register as a hunter", icon: "fa-user-plus" },
@@ -2619,53 +2597,7 @@
             { name: "/disableannouncing", desc: "Disable alerts", icon: "fa-bell-slash" },
             { name: "/setannounce", desc: "Set alerts channel", icon: "fa-bullhorn" }
         ];
-        // Add this to your existing script section
         
-        const loadImageBtn = document.getElementById("loadImage");
-        const screen = document.getElementById("screen");
-        const loading = document.getElementById("loading");
-
-
-        function loadImage(url) {
-            loading.style.display = "block";
-            screen.innerHTML = "";
-            
-            const img = document.createElement("img");
-            img.src = url;
-            img.onload = () => {
-                screen.appendChild(img);
-                loading.style.display = "none";
-            };
-            
-            img.onerror = () => {
-                loading.style.display = "none";
-                screen.innerHTML = "<div style='color: white; text-align: center; padding: 20px;'>Failed to load image</div>";
-            };
-        }   
-            // new video stuff
-            document.addEventListener("DOMContentLoaded", function () {
-                const screen = document.getElementById("screen");
-                if (!screen) return;
-
-                screen.innerHTML = ""; // clear old content
-
-                const iframe = document.createElement("iframe");
-                iframe.src =
-                    "https://www.youtube.com/embed/6jo4wrW7EQ4?autoplay=1&mute=1&controls=1&loop=1&playlist=6jo4wrW7EQ4";
-
-                iframe.style.width = "100%";
-                iframe.style.height = "100%";
-                iframe.style.border = "0";
-                iframe.style.display = "block";
-
-                iframe.allow =
-                    "autoplay; encrypted-media; picture-in-picture";
-                iframe.allowFullscreen = true;
-
-                screen.appendChild(iframe);
-            });
-
-
         // Check for saved theme preference
         const currentTheme = localStorage.getItem('theme') || 'dark';
         if (currentTheme === 'light') {
@@ -2674,19 +2606,17 @@
             document.getElementById('themeIcon').classList.add('fa-sun');
             document.getElementById('mobileThemeIcon').classList.remove('fa-moon');
             document.getElementById('mobileThemeIcon').classList.add('fa-sun');
-            localStorage.setItem('theme', 'light');
         }
         
         // Generate floating particles
         function generateParticles() {
             const particleField = document.getElementById('particleField');
-            const particleCount = 20; // Reduced from 30 to improve performance
+            const particleCount = 20;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 
-                // Random properties
                 const left = Math.random() * 100;
                 const size = Math.random() * 3 + 2;
                 const delay = Math.random() * 15;
@@ -2717,7 +2647,7 @@
             
             setTimeout(() => {
                 pageTransition.remove();
-            }, 300); // Reduced from 500ms to improve performance
+            }, 300);
         }
         
         // Section activation system
@@ -2727,7 +2657,7 @@
                 section.classList.remove('active');
             });
             
-            // Show the target section
+            // Show target section
             setTimeout(() => {
                 const targetSection = document.getElementById(sectionId);
                 if (targetSection) {
@@ -2741,7 +2671,7 @@
             setTimeout(function() {
                 document.getElementById('loadingScreen').classList.add('hidden');
                 activateSection('home');
-            }, 800); // Reduced from 1000ms to improve performance
+            }, 800);
         });
         
         // Theme Toggle
@@ -2864,7 +2794,7 @@
                             behavior: 'smooth'
                         });
                     }
-                }, 200); // Reduced from 300ms to improve performance
+                }, 200);
             });
         });
         
