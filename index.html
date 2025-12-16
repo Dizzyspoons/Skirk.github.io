@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skirk Bot - Ultimate Discord Experience | Genshin Impact Gaming Bot</title>
     <meta name="description" content="Skirk Bot is ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, and build your dream team!">
-    <meta name="keywords" content="Discord bot, Genshin Impact, gaming, Skirk Bot, monster hunting, character collection, Discord gaming">
+    <meta name="keywords" content="Skirk, skirk bot, skirk discord bot, galaxy hunter bot, Discord bot, Genshin Impact, gaming, monster hunting, character collection, Discord gaming, anime bot, roleplay bot, Genshin commands, Genshin game, Discord server, premium bot, Genesis Crystals, Gacha system">
     <meta name="author" content="Galaxy Hunter">
     
     <!-- Open Graph Meta Tags -->
@@ -27,6 +27,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Skirk Bot",
+        "alternateName": "skirk bot, skirk discord bot, galaxy hunter bot",
         "description": "The ultimate Discord bot for Genshin Impact fans",
         "url": "https://skirk-github-io-iota.vercel.app/",
         "applicationCategory": "Game",
@@ -1874,6 +1875,90 @@
             font-weight: 700;
         }
         
+        /* Mobile Optimizations for Reaction Section */
+        @media (max-width: 768px) {
+            .reactions-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .reaction-card {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .reaction-gif {
+                height: 150px; /* Reduced height for mobile */
+                object-fit: cover;
+                transition: transform 0.3s ease; /* Faster transition for mobile */
+            }
+            
+            .reaction-card:hover .reaction-gif {
+                transform: scale(1.05); /* Smaller scale for mobile */
+            }
+            
+            .reaction-info {
+                padding: 1rem; /* Reduced padding for mobile */
+            }
+            
+            .reaction-name {
+                font-size: 1.2rem; /* Smaller font size for mobile */
+                margin-bottom: 0.5rem;
+            }
+            
+            .reaction-command {
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
+            
+            /* Add loading state for GIFs on mobile */
+            .reaction-gif {
+                background-color: var(--bg-tertiary);
+                background-image: linear-gradient(90deg, var(--bg-tertiary) 0%, var(--bg-tertiary) 50%, var(--bg-tertiary) 100%);
+                background-size: 200% 100%;
+                background-position: 100% 0;
+                animation: shimmer 2s infinite;
+            }
+            
+            .reaction-gif.loaded {
+                background-image: none;
+                background-color: transparent;
+                animation: none;
+            }
+            
+            @keyframes shimmer {
+                0% {
+                    background-position: 100% 0;
+                }
+                100% {
+                    background-position: -100% 0;
+                }
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .reactions-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 1rem;
+            }
+            
+            .reaction-gif {
+                height: 120px; /* Even smaller for very small screens */
+            }
+            
+            .reaction-info {
+                padding: 0.8rem; /* Even smaller padding for very small screens */
+            }
+            
+            .reaction-name {
+                font-size: 1rem;
+                margin-bottom: 0.4rem;
+            }
+            
+            .reaction-command {
+                font-size: 0.8rem;
+            }
+        }
+        
         /* Genesis Pricing Styles */
         .genesis-pricing {
             margin-top: 2rem;
@@ -3111,6 +3196,18 @@
                 
                 reactionsGrid.appendChild(reactionCard);
             }
+            
+            // Add mobile optimization for GIFs
+            const reactionGifs = document.querySelectorAll('.reaction-gif');
+            reactionGifs.forEach(gif => {
+                // Add loading animation
+                gif.classList.add('loading');
+                
+                // Add load event listener
+                gif.addEventListener('load', () => {
+                    gif.classList.add('loaded');
+                });
+            });
         }
         
         // Initialize
