@@ -1811,6 +1811,108 @@
             -webkit-text-fill-color: transparent;
             color: transparent;
         }
+        
+        /* Reaction Section Styles */
+        .reactions-section {
+            padding: 4rem 0;
+            position: relative;
+            background: var(--bg-secondary);
+        }
+        
+        .reactions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .reaction-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition-bounce);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .reaction-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .reaction-gif {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .reaction-card:hover .reaction-gif {
+            transform: scale(1.1);
+        }
+        
+        .reaction-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .reaction-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .reaction-command {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-tertiary);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        
+        /* Genesis Pricing Styles */
+        .genesis-pricing {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .genesis-tier {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-bounce);
+            border-radius: 16px;
+        }
+        
+        .genesis-tier:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .genesis-tier h4 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-family: 'Space Grotesk', sans-serif;
+            text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+            font-weight: 700;
+        }
+        
+        .genesis-tier p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -1882,6 +1984,7 @@
             <li><a href="#showcase" data-section="showcase">Showcase</a></li>
             <li><a href="#features" data-section="features">Features</a></li>
             <li><a href="#commands" data-section="commands">Commands</a></li>
+            <li><a href="#reactions" data-section="reactions">Reactions</a></li>
             <li><a href="#premium" data-section="premium">Premium</a></li>
             <li><a href="#policy" data-section="policy">Policy</a></li>
         </ul>
@@ -1978,7 +2081,7 @@
                 <div class="showcase-row">
                     <div class="showcase-content">
                         <h2>Desktop Power</h2>
-                        <p>Experience the full potential of Skirk Bot on desktop. Advanced features, detailed statistics, and seamless integration with Discord's desktop app for the ultimate gaming experience.</p>
+                        <p>Experience full potential of Skirk Bot on desktop. Advanced features, detailed statistics, and seamless integration with Discord's desktop app for ultimate gaming experience.</p>
                         
                         <div class="showcase-features">
                             <div class="showcase-feature">
@@ -2142,7 +2245,7 @@
                             </div>
                             <div>
                                 <h3 class="category-title">Gameplay</h3>
-                                <p class="category-desc">Try out the fun</p>
+                                <p class="category-desc">Try out fun</p>
                             </div>
                         </div>
                         
@@ -2189,6 +2292,22 @@
         </div>
     </section>
     
+    <!-- Reactions Section -->
+    <section class="reactions-section section" id="reactions">
+        <div class="section-content">
+            <div class="container">
+                <h2 class="section-title">Fun Reactions</h2>
+                <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; font-size: 1.3rem; color: var(--text-secondary);">
+                    Spice up your Discord conversations with our collection of animated reaction GIFs! Simply use the commands below to trigger these fun animations.
+                </p>
+                
+                <div class="reactions-grid" id="reactionsGrid">
+                    <!-- Reactions will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Premium Section -->
     <section class="section" id="premium">
         <div class="section-content">
@@ -2208,6 +2327,10 @@
                             <li class="tier-feature">
                                 <i class="fas fa-check"></i>
                                 <span>20,000 Bonus Genesis (once)</span>
+                            </li>
+                            <li class="tier-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Total Monthly Genesis: 200,000</span>
                             </li>
                             <li class="tier-feature">
                                 <i class="fas fa-check"></i>
@@ -2237,6 +2360,10 @@
                             <li class="tier-feature">
                                 <i class="fas fa-check"></i>
                                 <span>5,000 Bonus Genesis/day</span>
+                            </li>
+                            <li class="tier-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Total Monthly Genesis: ~450,000</span>
                             </li>
                             <li class="tier-feature">
                                 <i class="fas fa-check"></i>
@@ -2270,6 +2397,10 @@
                             </li>
                             <li class="tier-feature">
                                 <i class="fas fa-check"></i>
+                                <span>Total Monthly Genesis: 900,000</span>
+                            </li>
+                            <li class="tier-feature">
+                                <i class="fas fa-check"></i>
                                 <span>2 Free character or weapon/month (5 stars)</span>
                             </li>
                             <li class="tier-feature">
@@ -2284,6 +2415,42 @@
                         <a href="https://discord.gg/ApE66m9FVu" class="btn btn-primary" style="width: 100%;">Purchase</a>
                     </div>
                 </div>
+                
+                <!-- Genesis Pricing Section -->
+                <h3 style="margin-top: 4rem; text-align: center; color: var(--text-primary); font-size: 2.5rem;">One-Time Donations</h3>
+                <div class="genesis-pricing">
+                    <div class="genesis-tier">
+                        <h4>$1</h4>
+                        <p>7,500 Genesis Crystals</p>
+                    </div>
+                    <div class="genesis-tier">
+                        <h4>$5</h4>
+                        <p>50,000 Genesis Crystals</p>
+                    </div>
+                    <div class="genesis-tier">
+                        <h4>$10</h4>
+                        <p>110,000 Genesis Crystals</p>
+                    </div>
+                    <div class="genesis-tier">
+                        <h4>$20</h4>
+                        <p>230,000 Genesis Crystals</p>
+                    </div>
+                    <div class="genesis-tier">
+                        <h4>$30</h4>
+                        <p>360,000 Genesis Crystals</p>
+                    </div>
+                    <div class="genesis-tier">
+                        <h4>$40</h4>
+                        <p>500,000 Genesis Crystals</p>
+                    </div>
+                    <div class="genesis-tier">
+                        <h4>$50</h4>
+                        <p>650,000 Genesis Crystals</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 3rem; font-size: 1.1rem; color: var(--text-secondary); text-align: center;">Prices are monthly for subscriptions. One-time donations give immediate Genesis Crystals.</p>
+                <p style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--text-secondary); text-align: center;">Last Updated: July 2025</p>
             </div>
         </div>
     </section>
@@ -2357,6 +2524,233 @@
     </footer>
     
     <script>
+        // Reaction GIFs data
+        const MENTION_REACTIONS = {
+            "hug": ["https://i.postimg.cc/q7mvk6V0/a-rank-party-a-rank.gif", "https://i.postimg.cc/RFyCtrZD/anime-hug-anime-cry.gif", "https://i.postimg.cc/7YgP5W8K/anime-squeezing-hug-eris-squeeze-hug.gif", "https://i.postimg.cc/bvYvcH53/cute.gif", "https://i.postimg.cc/C1zLdMS8/happy-smile.gif", "https://i.postimg.cc/BQWQQGy8/hibike-euphonium.gif", "https://i.postimg.cc/QdmXbKM5/hug-comfortable.gif", "https://i.postimg.cc/d3CsmW7t/shiideraii.gif", "https://i.postimg.cc/qB6vT7mV/yukon-child-form-embracing-ulquiorra.gif", "https://i.postimg.cc/XYsbFM2k/natsu-natsu-dragneel.gif", "https://i.postimg.cc/qMd4Hxhy/kitsune-upload-anime.gif", "https://i.postimg.cc/Mp6wvZYG/haikyuu-anime.gif","https://i.postimg.cc/02dxkKD3/foxplushy-foxy.gif"],
+            "kiss": [
+                "https://i.postimg.cc/pT84s3B7/anime-kiss.gif",
+                "https://i.postimg.cc/qMLVVVdH/hyakkano-100-girlfriends.gif",
+                "https://i.postimg.cc/4xxCXLJ7/ichigo-hiro.gif",
+                "https://i.postimg.cc/g2SCjVJM/miyamura-hori.gif",
+                "https://i.postimg.cc/yYB4b6tT/sealyx-frieren-beyond-journey-s-end.gif",
+                "https://i.postimg.cc/9fsstcyZ/kiss.gif",
+                "https://i.postimg.cc/wxDY2Rfv/kiss-1.gif",
+                "https://i.postimg.cc/XvrTCrBn/kiss-gentle-kiss.gif"
+            ],
+            "slap": [
+                "https://i.postimg.cc/Bn6zrjg2/azumanga-azumanga-daioh.gif",
+                "https://i.postimg.cc/wvh4XLqY/chainsaw-man-csm.gif",
+                "https://i.postimg.cc/MTkrfd8Y/girl-slap.gif",
+                "https://i.postimg.cc/RZDY4vsy/slap.gif",
+                "https://i.postimg.cc/bYx4kcrS/slap-chie.gif",
+                "https://i.postimg.cc/bvSBv44J/slap-jjk.gif",
+                "https://i.postimg.cc/28TJ9Q4z/taiga-toradora.gif",
+                "https://i.postimg.cc/9FcKB8w8/uma-musume.gif"
+            ],
+            "pat": [
+                "https://i.postimg.cc/zB5F1Mr4/angel-beats-tachibana-kanade.gif",
+                "https://i.postimg.cc/J4hKn9kL/anime-head-pat-anime-pat.gif",
+                "https://i.postimg.cc/Jnqc7q70/anime-pat-anime.gif",
+                "https://i.postimg.cc/43pQqGrz/danjo-no-yuujou-wa-seiritsu-suru-can-a-boy-girl-friendship-survive.gif",
+                "https://i.postimg.cc/T3L9jg0N/konohana-kitan-yuzu.gif",
+                "https://i.postimg.cc/sxgPMh1c/mai-sakurajima.gif",
+                "https://i.postimg.cc/x8pvM1zS/tsumiki-anime.gif",
+                "https://i.postimg.cc/3Jb1DnXD/spy-x-family-anya.gif",
+                "https://i.postimg.cc/sfmw3V1m/shiideraii-1.gif",
+                "https://i.postimg.cc/ncMYZByV/rudeus-rudeus-greyrat.gif",
+                "https://i.postimg.cc/J7pc9Pdd/qualidea-code-head-pat.gif",
+                "https://i.postimg.cc/RZkTghbS/pat.gif"
+            ],
+            "poke": [
+                "https://i.postimg.cc/br4GqDnd/anime-sleep.gif",
+                "https://i.postimg.cc/DwLGygBh/boop-anime.gif",
+                "https://i.postimg.cc/tCVZ2k06/boop-poke.gif",
+                "https://i.postimg.cc/R0TnwZkb/nekone-utawarerumono.gif",
+                "https://i.postimg.cc/zX9WrMwp/poke-anime.gif"
+            ],
+            "bite": [
+                "https://i.postimg.cc/13rprB6H/anime-acchi-kocchi.gif",
+                "https://i.postimg.cc/Qtw5dyGX/anime-bite.gif",
+                "https://i.postimg.cc/1zWwLzvV/anime-bite-1.gif",
+                "https://i.postimg.cc/pdVKGjJt/anime-bite-2.gif",
+                "https://i.postimg.cc/TwpgGXs7/anime-bite-3.gif",
+                "https://i.postimg.cc/3JpjdYxz/anime-bite-4.gif",
+                "https://i.postimg.cc/nhJ4mgsr/anime-bite-5.gif",
+                "https://i.postimg.cc/cC33gB0f/vnc-vanitas.gif"
+            ],
+            "lick": [
+                "https://i.postimg.cc/4d48XpHv/big-dog-anime.gif",
+                "https://i.postimg.cc/G2MXt9vW/anime-lick.gif",
+                "https://i.postimg.cc/YSHny5ps/anime-lick-face.gif",
+                "https://i.postimg.cc/kM1HXYc2/saikin-yatotta-maid-ga-ayashii-anime-lick.gif",
+                "https://i.postimg.cc/zfCMzJtN/shura-hiwa-lamer.gif",
+                "https://i.postimg.cc/bv9CXmrN/talentless-nana-anime-lick.gif",
+                "https://i.postimg.cc/zvV0g5jV/urushi-yaotome-cat.gif"
+            ],
+            "highfive": [
+                "https://i.postimg.cc/vBSvMksM/anime-high-five.gif",
+                "https://i.postimg.cc/W1PCQF88/ban-meliodas.gif",
+                "https://i.postimg.cc/JhMxQjxw/high-five.gif",
+                "https://i.postimg.cc/CxjJDcjH/high-five-anime.gif",
+                "https://i.postimg.cc/8c2Bfvc0/high-five-high5.gif",
+                "https://i.postimg.cc/yxgyNj1R/high-touch-satoshi.gif",
+                "https://i.postimg.cc/bJvR7843/hunter-x-hunter-high-five.gif",
+                "https://i.postimg.cc/d06BNDNh/jujutsu-kaisen-itadori-and-gojo.gif"
+            ],
+            "stare": [
+                "https://i.postimg.cc/SRYGmDsY/anime-frieren.gif",
+                "https://i.postimg.cc/nVNyBWq5/geto.gif",
+                "https://i.postimg.cc/y8H2rSQy/kaede-azusagawa-rascal-does-not-dream-of-bunny-girl-senpai.gif",
+                "https://i.postimg.cc/4x6BKL1z/lu-guang-link-click.gif",
+                "https://i.postimg.cc/76dW1CJ7/nahida-nahida-genshin.gif",
+                "https://i.postimg.cc/wBF221ZM/rin-anime.gif",
+                "https://i.postimg.cc/RZL2rV25/sololeveling-anime.gif",
+                "https://i.postimg.cc/xqr38MJx/venti-genshin-impact-venti.gif"
+            ],
+            "tickle": [
+                "https://i.postimg.cc/br09Gdxq/anime-tickle.gif",
+                "https://i.postimg.cc/CKd7vhg4/cat-love.gif",
+                "https://i.postimg.cc/3xfC0sv0/date-a-live-date-a-live-iv.gif",
+                "https://i.postimg.cc/VkkW6fdc/gif-anime-armpit.gif",
+                "https://i.postimg.cc/DygcnJfg/girl-neko.gif",
+                "https://i.postimg.cc/Zqgc2GYz/laugh-droll.gif",
+                "https://i.postimg.cc/rwVQrGZ3/miria-akagi-akagi-miria.gif",
+                "https://i.postimg.cc/52spqHZ0/natsu-erza.gif",
+                "https://i.postimg.cc/QNcbYYRv/nezuko-mitsuri.gif",
+                "https://i.postimg.cc/SsCW5jtc/onimai-momiji-hozuki.gif",
+                "https://i.postimg.cc/fWd2nR02/poke-anime-1.gif",
+                "https://i.postimg.cc/VLBKvZgX/saikin-yatotta-maid-ga-ayashii-anime-tickle.gif",
+                "https://i.postimg.cc/fyQvTY0H/vanilla-nekopara.gif"
+            ],
+            "kick": [
+                "https://i.postimg.cc/vTPDSsMW/anime-love-after-world-domination.gif",
+                "https://i.postimg.cc/HLGnN3GP/anime-ouch.gif",
+                "https://i.postimg.cc/xC3XMm4p/arlecchino-genshinimpact.gif",
+                "https://i.postimg.cc/Z5v0j2Qd/bleach-anime.gif",
+                "https://i.postimg.cc/pXTm5pYk/genshin-genshin-impact.gif",
+                "https://i.postimg.cc/zDpLfnWV/gifdapumpkin-pumpkinama-danganronpa.gif",
+                "https://i.postimg.cc/LX2X9X8t/gintama-anime.gif",
+                "https://i.postimg.cc/rFPK1MfT/mad-angry.gif",
+                "https://i.postimg.cc/Wzphn3RN/ranma-ryoga.gif",
+                "https://i.postimg.cc/GpY83VJC/roshidere-anime.gif",
+                "https://i.postimg.cc/8PKrZhPq/scaramouche-wanderer.gif",
+                "https://i.postimg.cc/L661kyRt/signora-kicking-venti.gif",
+                "https://i.postimg.cc/wTZjtFBT/spy-x-family-loid-forger.gif",
+                "https://i.postimg.cc/t48njp6k/xilonen-angry-xilonen.gif"
+            ],
+            "feed": [
+                "https://i.postimg.cc/RFDjPsyW/aharen-san-aharen-san-anime.gif",
+                "https://i.postimg.cc/KvMyWbZx/anime-acchi-kocchi-1.gif",
+                "https://i.postimg.cc/J09Ch65f/anime-alya.gif",
+                "https://i.postimg.cc/7LmvzYNM/kawaii-wholesome.gif",
+                "https://i.postimg.cc/9QPHWBRk/kubo-nagisa-anime.gif",
+                "https://i.postimg.cc/NGVcbFvd/lycoris-recoil-anime-feed.gif",
+                "https://i.postimg.cc/W42LtJ01/nyanko-days-hd-gif.gif"
+            ],
+            "kill": [
+                "https://i.postimg.cc/j5BRWSs3/akame-akame-ga-kill.gif",
+                "https://i.postimg.cc/261z8ZfB/anime.gif",
+                "https://i.postimg.cc/fbTzpP2C/anime-manga.gif",
+                "https://i.postimg.cc/zGkDdNj3/assassin-smile.gif",
+                "https://i.postimg.cc/sxSs5Cxj/falling-from-window-anime-death.gif",
+                "https://i.postimg.cc/tgSqjz8j/hxh-killua.gif",
+                "https://i.postimg.cc/T3xYq1nZ/kuma-kuma-kuma-bear-fina.gif",
+                "https://i.postimg.cc/NGW0FpFG/nui-harime-harime-nui.gif"
+            ],
+            "tease": [
+                "https://i.postimg.cc/3wCGCzyZ/anime-bleh.gif",
+                "https://i.postimg.cc/5NYFkXYy/anime-girl.gif",
+                "https://i.postimg.cc/DZvXC5L3/anime-girl-anime.gif",
+                "https://i.postimg.cc/TYprMkSR/anime-kawaii.gif",
+                "https://i.postimg.cc/SN3cy6Fc/girl-silly.gif",
+                "https://i.postimg.cc/L8jg2GVM/girls-anime.gif",
+                "https://i.postimg.cc/jjKw5v8n/konosuba-aqua.gif",
+                "https://i.postimg.cc/wjNL31gZ/lime-saber-marionette.gif",
+                "https://i.postimg.cc/nz3QN7Gj/scaramouche-the-wanderer.gif",
+                "https://i.postimg.cc/mrGM9TrD/tongue-tongue-out.gif"
+            ],
+        };
+
+        const SINGLE_REACTIONS = {
+            "blush": [
+                "https://i.postimg.cc/HLpwKp1N/anime-arrouser.gif",
+                "https://i.postimg.cc/2yBhvyn1/anime-blush.gif",
+                "https://i.postimg.cc/P5bb2C9Z/anime-blushing.gif",
+                "https://i.postimg.cc/nzrvF0zY/blushing-anime.gif",
+                "https://i.postimg.cc/tgT5JXvx/marin-marin-kitagawa.gif",
+                "https://i.postimg.cc/jjd8f62C/idk.gif",
+                "https://i.postimg.cc/pXfk1cnp/real.gif",
+                "https://i.postimg.cc/W1VYNcPG/when-supernatural-battles-became-commonplace-embarrassed.gif",
+                "https://i.postimg.cc/PrjQZbFh/sumi-sakurasawa-rent-a-girlfriend-1.gif"
+            ],
+            "sad": [
+                "https://i.postimg.cc/W3qwm5vp/anime-kanna.gif",
+                "https://i.postimg.cc/v89vc2h3/anime-look-away.gif",
+                "https://i.postimg.cc/8C0brqxn/anime-sad.gif",
+                "https://i.postimg.cc/XqMcs9jf/bocchi-the.gif",
+                "https://i.postimg.cc/YSh6kdjN/crying-girl-anime.gif",
+                "https://i.postimg.cc/4x86rD4N/sad-anime-guy-lonely-anime-guy.gif",
+                "https://i.postimg.cc/7YnMNCpz/pokemon-pikachu.gif",
+                "https://i.postimg.cc/cCQ726CV/sad-anime.gif"
+            ],
+            "stress": [
+                "https://i.postimg.cc/T2ScwMny/adalfarus-okbb.gif",
+                "https://i.postimg.cc/sg3KFPpK/anime-girl-panic-attack.gif",
+                "https://i.postimg.cc/JnFjGZHw/chika.gif",
+                "https://i.postimg.cc/8P6mfKbZ/idol-precure-precure.gif",
+                "https://i.postimg.cc/RZGdv3dm/jujutsu-kaisen-choso.gif",
+                "https://i.postimg.cc/fy67gmM7/shock-anime.gif"
+            ],
+            "wave": [
+                "https://i.postimg.cc/Y2DVksX0/aino-aino-genshin-1.gif",
+                "https://i.postimg.cc/xdPxZxJ0/anime-bye-bye-maki.gif",
+                "https://i.postimg.cc/CKCXgMtp/bye-anime.gif",
+                "https://i.postimg.cc/SKWFxfn5/charlotte-charlotte-genshin.gif",
+                "https://i.postimg.cc/gcM9jJ0Y/kazuha-genshin-impact-kazuha-hi.gif",
+                "https://i.postimg.cc/HxsZ1wXb/laid-back-camp-nadeshiko.gif",
+                "https://i.postimg.cc/6QKbYJQj/owari-no-seraph-seraph-of-the-end.gif",
+                "https://i.postimg.cc/tTXfCQQZ/pjsk-pjsk-anime.gif",
+                "https://i.postimg.cc/sX6njM4q/sumi-sakurasawa-rent-a-girlfriend.gif",
+                "https://i.postimg.cc/KzxXk3LY/yae-miko-smile-yae-miko.gif",
+                "https://i.postimg.cc/rp62TPwx/yoimiya-genshin-impact.gif",
+                "https://i.postimg.cc/Nfyn0kV4/yun-jin.gif"
+            ],
+            "happy": [
+                "https://i.postimg.cc/Vks9Zf8V/anime-anime-girl.gif",
+                "https://i.postimg.cc/52kzP8pX/beast-tamer-kanade.gif",
+                "https://i.postimg.cc/DZG14mr8/excited-anime.gif",
+                "https://i.postimg.cc/Bvkxv21r/how-i-attended-an-all-guys-mixer-anime.gif",
+                "https://i.postimg.cc/cCNwRZhT/kusuriya-no-hitorigoto-apothecary.gif",
+                "https://i.postimg.cc/m2B7hLtg/yay-yeah.gif"
+            ],
+            "laugh": [
+                "https://i.postimg.cc/63Z16WTh/evil-laugh-greatest-alchemist.gif",
+                "https://i.postimg.cc/j2r3Lp7Y/hakase-shinonome-nichijou.gif",
+                "https://i.postimg.cc/VvBGMKqr/laugh-giggle.gif",
+                "https://i.postimg.cc/d1zPnNZ5/makeine-losing-heroine.gif",
+                "https://i.postimg.cc/9fKnjRXM/momo-ayase-ayase-momo.gif",
+                "https://i.postimg.cc/6QbN4pWJ/my-dress-up-darling-anime-laugh.gif",
+                "https://i.postimg.cc/wxhbSjCq/sylent-zenyte.gif"
+            ],
+            "mad": [
+                "https://i.postimg.cc/dtVm4QvS/anime-angry-slow-loop.gif",
+                "https://i.postimg.cc/G3QxFT0y/annoyed-anime-girl-annoyed.gif",
+                "https://i.postimg.cc/52H5WPXB/demon-slayer-kimetsu-no-yaiba.gif",
+                "https://i.postimg.cc/DZh1snB6/dont-toy-with-me-miss-nagatoro-hayase-nagatoro.gif",
+                "https://i.postimg.cc/85bMm9YS/dandadan-momo-ayase.gif"
+            ],
+            "absolute": [
+                "https://i.postimg.cc/m2mH8n6h/absolute-cinema.gif",
+                "https://i.postimg.cc/qvgCYG9S/absolute-cinema-arcane.gif",
+                "https://i.postimg.cc/FHf7GHLx/absolute-cinema-kpop-demon-hunters.gif",
+                "https://i.postimg.cc/6qjpLk6Y/cinema.gif",
+                "https://i.postimg.cc/d3HVmbQb/momo-ayase-dandadan.gif",
+                "https://i.postimg.cc/nrcLmFx6/nokotan-absolute-cinema.gif",
+                "https://i.postimg.cc/nrcLmFxw/skirk-genshin.gif",
+                "https://i.postimg.cc/Hxmnp0PZ/zero-two-darling-in-the-franxx.gif"
+            ]
+        };
+        
         // Command data
         const GAMEPLAY_COMMANDS = [
             { name: "/apply", desc: "Register as a hunter", icon: "fa-user-plus" },
@@ -2680,9 +3074,49 @@
             });
         }
         
+        // Populate Reactions Section
+        function populateReactions() {
+            const reactionsGrid = document.getElementById('reactionsGrid');
+            
+            // Add mention reactions
+            for (const [reaction, gifs] of Object.entries(MENTION_REACTIONS)) {
+                const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+                
+                const reactionCard = document.createElement('div');
+                reactionCard.className = 'reaction-card';
+                reactionCard.innerHTML = `
+                    <img src="${randomGif}" alt="${reaction} reaction" class="reaction-gif" loading="lazy">
+                    <div class="reaction-info">
+                        <h4 class="reaction-name">${reaction.charAt(0).toUpperCase() + reaction.slice(1)}</h4>
+                        <p class="reaction-command">--${reaction} @user</p>
+                    </div>
+                `;
+                
+                reactionsGrid.appendChild(reactionCard);
+            }
+            
+            // Add single reactions
+            for (const [reaction, gifs] of Object.entries(SINGLE_REACTIONS)) {
+                const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+                
+                const reactionCard = document.createElement('div');
+                reactionCard.className = 'reaction-card';
+                reactionCard.innerHTML = `
+                    <img src="${randomGif}" alt="${reaction} reaction" class="reaction-gif" loading="lazy">
+                    <div class="reaction-info">
+                        <h4 class="reaction-name">${reaction.charAt(0).toUpperCase() + reaction.slice(1)}</h4>
+                        <p class="reaction-command">--${reaction}</p>
+                    </div>
+                `;
+                
+                reactionsGrid.appendChild(reactionCard);
+            }
+        }
+        
         // Initialize
         generateParticles();
         populateCommands();
+        populateReactions();
         
         // Intersection Observer for scroll animations
         const observerOptions = {
