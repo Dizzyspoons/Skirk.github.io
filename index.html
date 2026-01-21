@@ -341,7 +341,7 @@
         
         /* ===== Premium Navigation ===== */
         nav {
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(100px);
             -webkit-backdrop-filter: blur(20px);
             padding: 1rem 0;
             position: fixed;
@@ -350,8 +350,9 @@
             z-index: 1000;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             border-bottom: 1px solid var(--border-color);
-            transition: var(--transition-smooth);
+            transition: var(--transition-smooth);            
         }
+
         
         /* Fix for light mode navigation */
         .nav-container {
@@ -828,8 +829,8 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 20px;
+            width: 50px;
+            height: 5px;
             background: #1a1a1a;
             border-radius: 0 0 15px 15px;
             z-index: 2;
@@ -2049,7 +2050,10 @@
     </div>
     <style>
         .skirk-small-text {
-    font-size: 1.5rem;   /* try 0.7rem or 12px if needed */
+    font-size: 1.5rem;
+}
+nav {
+    color: #000;
 }
 
     </style>
@@ -2156,7 +2160,7 @@
                         <div class="phone-mockup">
                             <div class="phone-screen">
                                 <div class="phone-notch"></div>
-                                <div class="phone-content" style="background-image: url('https://i.postimg.cc/rskNnTsf/Screenshot-20251215-142454-Discord.jpg');"></div>
+                                <div class="phone-content" style="background-image: url('https://i.postimg.cc/B65mPXwk/Ryu-twi.png');"></div>
                             </div>
                         </div>
                     </div>
@@ -2393,171 +2397,355 @@
         </div>
     </section>
     
-    <!-- Premium Section -->
-    <section class="section" id="premium">
-        <div class="section-content">
-            <div class="container">
-                <h2>Premium Tiers</h2>
-                
-                <div class="tier-cards">
-                    <!-- Normal Tier -->
-                    <div class="card tier-card normal-tier">
-                        <h3 class="tier-title">Normal Tier</h3>
-                        <div class="tier-price">$2/month</div>
-                        <ul class="tier-features">
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>6,000 Genesis Crystals/day</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>20,000 Bonus Genesis (once)</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Total Monthly Genesis: 200,000</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>1 Free character or weapon/month (5 stars)</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Can buy 1 character or weapon/month (10 stars)</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Hunting bonus: +3% Mora, +1 base loot</span>
-                            </li>
-                        </ul>
-                        <a href="https://discord.gg/ApE66m9FVu" class="btn btn-primary" style="width: 100%;">Purchase</a>
-                    </div>
-                    
-                    <!-- Plus Tier -->
-                    <div class="card tier-card plus-tier">
-                        <h3 class="tier-title">Plus Tier</h3>
-                        <div class="tier-price">$5/month</div>
-                        <ul class="tier-features">
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>10,000 Genesis Crystals/day</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>5,000 Bonus Genesis/day</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Total Monthly Genesis: ~450,000</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>2 Free character or weapon/month (5 stars)</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Can buy 2 items/month (10 stars)</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Hunting bonus: +7% Mora, +2-3 base loot</span>
-                            </li>
-                        </ul>
-                        <a href="https://discord.gg/ApE66m9FVu" class="btn btn-primary" style="width: 100%;">Purchase</a>
-                    </div>
-                    
-                    <!-- Premium Tier -->
-                    <div class="card tier-card premium-tier">
-                        <div class="tier-badge">POPULAR</div>
-                        <h3 class="tier-title">Premium Tier</h3>
-                        <div class="tier-price">$9/month</div>
-                        <ul class="tier-features">
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>20,000 Genesis Crystals/day</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>10,000 Bonus Genesis/day</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Total Monthly Genesis: 900,000</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>2 Free character or weapon/month (5 stars)</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Can buy 4 characters/month (10 stars)</span>
-                            </li>
-                            <li class="tier-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Hunting bonus: +10% Mora, 10-15 base loot</span>
-                            </li>
-                        </ul>
-                        <a href="https://discord.gg/ApE66m9FVu" class="btn btn-primary" style="width: 100%;">Purchase</a>
-                    </div>
+<section class="section" id="premium">
+    <div class="section-content">
+        <div class="container">
+            <h2>Premium Tiers</h2>
+            
+            <div class="tier-cards">
+                <!-- Normal Tier -->
+                <div class="card tier-card normal-tier">
+                    <h3 class="tier-title">Normal Tier</h3>
+                    <div class="tier-price">$2/month</div>
+                    <ul class="tier-features">
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>6,000 Genesis Crystals/day</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>20,000 Bonus Genesis (once)</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Total Monthly Genesis: 200,000</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>1 Free character or weapon/month (5 stars)</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Can buy 1 character or weapon/month (10 stars)</span>
+                        </li>
+                    </ul>
+                    <a href="https://discord.gg/ApE66m9FVu" class="btn btn-primary" style="width: 100%;">Purchase</a>
                 </div>
                 
-                <!-- Genesis Pricing Section -->
-                <h3 style="margin-top: 4rem; text-align: center; color: var(--text-primary); font-size: 2.5rem;">One-Time Donations</h3>
-                <div class="genesis-pricing">
-                    <div class="genesis-tier">
-                        <h4>$1</h4>
-                        <p>7,500 Genesis Crystals</p>
-                    </div>
-                    <div class="genesis-tier">
-                        <h4>$5</h4>
-                        <p>50,000 Genesis Crystals</p>
-                    </div>
-                    <div class="genesis-tier">
-                        <h4>$10</h4>
-                        <p>110,000 Genesis Crystals</p>
-                    </div>
-                    <div class="genesis-tier">
-                        <h4>$20</h4>
-                        <p>230,000 Genesis Crystals</p>
-                    </div>
-                    <div class="genesis-tier">
-                        <h4>$30</h4>
-                        <p>360,000 Genesis Crystals</p>
-                    </div>
-                    <div class="genesis-tier">
-                        <h4>$40</h4>
-                        <p>500,000 Genesis Crystals</p>
-                    </div>
-                    <div class="genesis-tier">
-                        <h4>$50</h4>
-                        <p>650,000 Genesis Crystals</p>
-                    </div>
+                <!-- Plus Tier -->
+                <div class="card tier-card plus-tier">
+                    <h3 class="tier-title">Plus Tier</h3>
+                    <div class="tier-price">$6.99/month</div>
+                    <ul class="tier-features">
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>10,000 Genesis Crystals/day</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>5,000 Bonus Genesis/day</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Total Monthly Genesis: ~450,000</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>2 Free character or weapon/month (5 stars)</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Can buy 2 items/month (10 stars)</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Custom wallpaper everywhere</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Add partner</span>
+                        </li>
+                    </ul>
+                    <a href="https://discord.gg/ApE66m9FVu" class="btn btn-primary" style="width: 100%;">Purchase</a>
                 </div>
                 
-                <p style="margin-top: 3rem; font-size: 1.1rem; color: var(--text-secondary); text-align: center;">Prices are monthly for subscriptions. One-time donations give immediate Genesis Crystals.</p>
-                <p style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--text-secondary); text-align: center;">Last Updated: July 2025</p>
+                <!-- Premium Tier -->
+                <div class="card tier-card premium-tier">
+                    <div class="tier-badge">POPULAR</div>
+                    <h3 class="tier-title">Premium Tier</h3>
+                    <div class="tier-price">$10.99/month</div>
+                    <ul class="tier-features">
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>20,000 Genesis Crystals/day</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>10,000 Bonus Genesis/day</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Total Monthly Genesis: 900,000</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>2 Free character or weapon/month (5 stars)</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Can buy 4 characters/month (10 stars)</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Custom wallpaper everywhere</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Beautiful profile (ability to customize profile color & name)</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Add partner</span>
+                        </li>
+                        <li class="tier-feature">
+                            <i class="fas fa-check"></i>
+                            <span>50 Cookies, 20 Skirk Items</span>
+                        </li>
+                    </ul>
+                    <a href="https://discord.gg/ApE66m9FVu" class="btn btn-primary" style="width: 100%;">Purchase</a>
+                </div>
             </div>
+            
+            <!-- Genesis Pricing Section -->
+            <h3 style="margin-top: 4rem; text-align: center; color: var(--text-primary); font-size: 2.5rem;">One-Time Donations</h3>
+            <div class="genesis-pricing">
+                <div class="genesis-tier">
+                    <h4>$1</h4>
+                    <p>7,500 Genesis Crystals</p>
+                </div>
+                <div class="genesis-tier">
+                    <h4>$5</h4>
+                    <p>50,000 Genesis Crystals</p>
+                </div>
+                <div class="genesis-tier">
+                    <h4>$10</h4>
+                    <p>110,000 Genesis Crystals</p>
+                </div>
+                <div class="genesis-tier">
+                    <h4>$20</h4>
+                    <p>230,000 Genesis Crystals</p>
+                </div>
+                <div class="genesis-tier">
+                    <h4>$30</h4>
+                    <p>360,000 Genesis Crystals</p>
+                </div>
+                <div class="genesis-tier">
+                    <h4>$40</h4>
+                    <p>500,000 Genesis Crystals</p>
+                </div>
+                <div class="genesis-tier">
+                    <h4>$50</h4>
+                    <p>650,000 Genesis Crystals</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 3rem; font-size: 1.1rem; color: var(--text-secondary); text-align: center;">Prices are monthly for subscriptions. One-time donations give immediate Genesis Crystals.</p>
+            <p style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--text-secondary); text-align: center;">Last Updated: July 2025</p>
         </div>
-    </section>
-    
+    </div>
+</section>
+<style>
+    /* --- Policy Section Styles --- */
+:root {
+    --policy-bg: #0f172a;          /* Dark Slate Background */
+    --policy-card-bg: #1e293b;     /* Card Background */
+    --policy-border: #334155;      /* Border Color */
+    --policy-text-main: #f8fafc;   /* White Text */
+    --policy-text-muted: #94a3b8;  /* Muted Text */
+    --policy-accent: #38bdf8;      /* Light Blue Accent */
+    --policy-success: #4ade80;     /* Green for 'Collect' */
+    --policy-danger: #f87171;      /* Red for 'Don't Collect' */
+    --policy-code-bg: #0f172a;     /* Code snippet background */
+}
+
+#policy {
+    padding: 6rem 1rem;
+    background-color: var(--policy-bg);
+    background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.05), transparent 40%);
+    position: relative;
+}
+
+#policy h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+};
+/* Card Container */
+.policy-card {
+    background: var(--policy-card-bg);
+    border: 1px solid var(--policy-border);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle top glow line */
+.policy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--policy-accent), transparent);
+    opacity: 0.5;
+}
+
+/* Intro Text */
+.policy-intro {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--policy-text-muted);
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--policy-border);
+    padding-bottom: 2rem;
+}
+
+.policy-intro strong {
+    color: var(--policy-text-main);
+    font-weight: 700;
+}
+
+/* Section Headings */
+.policy-card h3 {
+    color: var(--policy-text-main);
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Decorative line next to H3 */
+.policy-card h3::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--policy-border);
+    margin-left: 1rem;
+}
+
+/* Custom List Styling */
+.policy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.policy-list li {
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    color: var(--policy-text-muted);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Hover effect for list items */
+.policy-list li:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.6);
+    transform: translateX(5px);
+}
+
+/* Icons inside list items */
+.policy-list li::before {
+    font-family: "Font Awesome 6 Free"; /* Assuming you use FontAwesome */
+    content: '\f00c'; /* Default check */
+    font-weight: 900;
+}
+
+/* Specific list coloring via parent class */
+.collect-list li::before {
+    color: var(--policy-success);
+    content: '\f00c'; /* Check */
+}
+
+.dont-collect-list li::before {
+    color: var(--policy-danger);
+    content: '\f00d'; /* X */
+}
+
+.usage-list li::before {
+    color: var(--policy-accent);
+    content: '\f0eb'; /* Lightbulb */
+}
+
+/* Inline Code Styling */
+code {
+    background-color: var(--policy-code-bg);
+    color: var(--policy-accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.9em;
+    border: 1px solid var(--policy-border);
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* Footer Info */
+.policy-footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--policy-text-muted);
+    font-size: 0.875rem;
+    border-top: 1px solid var(--policy-border);
+    padding-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #policy h2 { font-size: 2rem; }
+    .policy-card { padding: 1.5rem; }
+    .policy-card h3 { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .policy-card h3::after { display: none; }
+}
+</style>
     <!-- Policy Section -->
     <section class="section" id="policy">
         <div class="section-content">
             <div class="container">
                 <h2>Privacy & Data Policy</h2>
                 
-                <div class="card" style="max-width: 900px; margin: 0 auto;">
-                    <p><strong>Skirk Bot</strong> is designed with your privacy and data safety in mind. We only collect the bare minimum required to provide an immersive and enjoyable experience. We do not track personal activity, and your data is never sold or shared.</p>
+                <div class="policy-card">
+                    <p class="policy-intro"><strong>Skirk Bot</strong> is designed with your privacy and data safety in mind. We only collect the bare minimum required to provide an immersive and enjoyable experience. We do not track personal activity, and your data is never sold or shared.</p>
                     
                     <h3>What We Collect</h3>
-                    <ul>
+                    <ul class="policy-list collect-list">
                         <li>Your Discord user ID</li>
                         <li>Game-related data (wishes, team setup, inventory, levels)</li>
-                        <li>Command usage (e.g. <code style="background: var(--bg-tertiary); padding: 0.3rem 0.6rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-weight: 600;">/hunt</code>, <code style="background: var(--bg-tertiary); padding: 0.3rem 0.6rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-weight: 600;">/profile</code>, <code style="background: var(--bg-tertiary); padding: 0.3rem 0.6rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-weight: 600;">/pvp</code>)</li>
+                        <li>Command usage (e.g. <code>/hunt</code>, <code>/profile</code>, <code>/pvp</code>)</li>
                     </ul>
                     
                     <h3>What We Don't Collect</h3>
-                    <ul>
+                    <ul class="policy-list dont-collect-list">
                         <li>Message logs or chat history</li>
                         <li>Presence data logs (no online/offline storage)</li>
                         <li>Personal identifiable info (email, IP, etc.)</li>
@@ -2565,14 +2753,14 @@
                     </ul>
                     
                     <h3>How We Use Your Data</h3>
-                    <ul>
+                    <ul class="policy-list usage-list">
                         <li>To enable core features like profiles, gacha pulls, and leaderboards</li>
                         <li>To personalize your experience (team builds, wallpaper settings)</li>
                         <li>To improve game balance and engagement over time</li>
                     </ul>
                     
                     <h3>Data Retention & Security</h3>
-                    <ul>
+                    <ul class="policy-list">
                         <li>Your data is stored securely on encrypted servers</li>
                         <li>Game data is retained forever</li>
                         <li>You can request data deletion at any time through our support server</li>
@@ -2580,9 +2768,11 @@
                     </ul>
                     
                     <h3>Opt-Out & Removal</h3>
-                    <p>If you want your data deleted, just contact us through our support server. You can also disable presence-based features by going invisible or not using commands that rely on online status.</p>
+                    <p style="color: var(--policy-text-muted); line-height: 1.7;">If you want your data deleted, just contact us through our support server. You can also disable presence-based features by going invisible or not using commands that rely on online status.</p>
                     
-                    <p style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">Last Updated: July 2025</p>
+                    <div class="policy-footer">
+                        <p>Last Updated: July 2025</p>
+                    </div>
                 </div>
             </div>
         </div>
